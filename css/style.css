@@ -33,6 +33,7 @@ img {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  margin: auto;
 
   @media screen and (max-width: 420px) {
     width: 100%;
