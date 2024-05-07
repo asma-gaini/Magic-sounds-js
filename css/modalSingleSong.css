@@ -1,9 +1,35 @@
+.modal-body {
+  background-color: rgb(33, 32, 30);
+}
 .modalContent-body {
   width: 300px;
   margin: auto;
 }
 
 .modalSong-Image {
-  width: 300px;
+  width: 100px;
+  margin: auto;
+}
+.modalSong-Image img {
   border-radius: 10px;
 }
+.modalSong-info {
+text-align: center;
+padding-top: 5px;
+}
+.modalSong-title {
+  color: white;
+  font-size: 15px;
+}
+.modalSong-artistName {
+  color: white;
+  font-size: 10px;
+}
+.modualSong-audio{
+  height: 30px;
+}
+audio::-webkit-media-controls-play-button,
+     audio::-webkit-media-controls-panel {
+     background-color: #6f6f76;
+     color: #000000;
+     }
