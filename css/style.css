@@ -99,7 +99,7 @@ img {
   padding: 0;
   list-style-type: none;
 }
-.playList-item-link {
+/* .playList-item-link {
   display: flex;
   align-items: center;
   margin: 0;
@@ -110,18 +110,21 @@ img {
   transition: all 0.2s ease-in;
   overflow: auto;
   text-decoration: none;
-}
-/* .playList-item{
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 10px 20px;
-    border-bottom: 1px solid rgba(198, 178, 250, 0.1);
-    cursor: pointer;
-    background-color:var(--main-color);
-    transition: all 0.2s ease-in;
-    overflow: auto;
 } */
+.playList-item {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(198, 178, 250, 0.1);
+  cursor: pointer;
+  background-color: var(--main-color);
+  transition: all 0.2s ease-in;
+  overflow: auto;
+}
+.playList-item-link {
+  text-decoration: none;
+}
 .playList-item-image {
   margin: 0;
   border-bottom: 1px solid rgba(198, 178, 250, 0.1);
@@ -151,7 +154,6 @@ img {
   font-size: 10px;
   color: var(--secondary-font-color);
   margin-bottom: 5px;
-
 }
 
 .btn-add {
@@ -159,5 +161,5 @@ img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  margin-left: auto;
+  margin-left: auto !important;
 }

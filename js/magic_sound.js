@@ -120,3 +120,8 @@ const textEn = [
   }
 ];
 
+var myAudio = document.getElementById("single-song");
+
+function togglePlay() {
+  return myAudio.paused ? myAudio.play() : myAudio.pause();
+};
