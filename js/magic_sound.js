@@ -138,3 +138,17 @@ function togglePlay() {
   console.log(image.classList);
 }
 //function bezanam ag play bood remove kon pause add kon
+var textSongEn = document.getElementById("englishText");
+var textSongFa = document.getElementById("persianText");
+
+let englishText = "";
+let persianText = "";
+for (let i = 0; i < textEn[0].length; i++) {
+  englishText += textEn[0][i] + "<br>";
+}
+for (let i = 0; i < textFa[0].length; i++) {
+  persianText += textFa[0][i] + "<br>";
+}
+
+textSongEn.innerHTML = englishText;
+textSongFa.innerHTML = persianText;

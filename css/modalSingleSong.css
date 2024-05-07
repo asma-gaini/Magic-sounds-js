@@ -1,3 +1,7 @@
+.modal-header {
+  height: 40px;
+  background-color: #dfdfe4;
+}
 .modal-body {
   background-color: rgb(33, 32, 30);
 }
@@ -14,8 +18,8 @@
   border-radius: 10px;
 }
 .modalSong-info {
-text-align: center;
-padding-top: 5px;
+  text-align: center;
+  padding-top: 5px;
 }
 .modalSong-title {
   color: white;
@@ -25,11 +29,43 @@ padding-top: 5px;
   color: white;
   font-size: 10px;
 }
-.modualSong-audio{
+.modualSong-audio {
   height: 30px;
 }
 audio::-webkit-media-controls-play-button,
-     audio::-webkit-media-controls-panel {
-     background-color: #6f6f76;
-     color: #000000;
-     }
+audio::-webkit-media-controls-panel {
+  background-color: #6f6f76;
+  color: #000000;
+}
+
+.textContent {
+  color: aliceblue;
+  text-align: center;
+  text-shadow: 2px 2px #000000;
+}
+.text {
+  /* background-color: #6f6f76; */
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 3px 5px 3px 5px rgb(0 0 0 / 28%);
+  padding: 5px;
+  margin: 5px;
+}
+.modal-footer {
+  height: 40px;
+  background-color: #dfdfe4;
+  padding: 0px 20px !important;
+}
+.btnClose {
+  width: 50px;
+  height: 20px;
+  font-size: 15px;
+}
+.btn {
+  --bs-btn-padding-x: 0 !important;
+  --bs-btn-padding-y: 0 !important;
+  color: #000000 !important ;
+  background-color: #6f6f76 !important;
+  --bs-btn-border-width: 0px !important;
+  --bs-btn-font-size: 10px !important;
+}
