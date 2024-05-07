@@ -24,16 +24,20 @@ const data_music = [
 
 var myAudio = document.getElementById("single-song");
 var image = document.getElementById("testt");
-var pauseSvg = document.getElementById("pause");
-var playSvg = document.getElementById("play");
 
 function togglePlay() {
   myAudio.paused ? myAudio.play() : myAudio.pause();
   console.log(image.classList);
   image.classList.add("active");
-  image.classList.add("play");
-
+  toggleSvg();
   console.log(image.classList);
 }
-//function bezanam ag play bood remove kon pause add kon
-
+function toggleSvg() {
+  if (image.classList.contains("play")) {
+    image.classList.remove("play");
+    image.classList.add("pause");
+  } else {
+    image.classList.remove("pause");
+    image.classList.add("play");
+  }
+}

@@ -184,13 +184,9 @@ img {
   opacity: 1;
 }
 
-
 .playList-item-div-image.play svg:last-child {
   opacity: 1;
 }
-/* .single-item:hover .single-item__cover.play svg {
-  opacity: 0;
-} */
 .playList-item-div-image.play svg {
   opacity: 0;
 }
