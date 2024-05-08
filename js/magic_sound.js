@@ -372,6 +372,10 @@ function toggleSvg(clicked) {
   }
 }
 
+function openModal(clicked) {
+  setSongInformation(clicked);
+}
+
 function setText(idClicked) {
   console.log(idClicked);
   var textSong = document.getElementById("text");
