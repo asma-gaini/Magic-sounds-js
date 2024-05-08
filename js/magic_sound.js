@@ -343,11 +343,24 @@ function playAndPuaseSong() {
 }
 function togglePlay(clicked) {
   setSongInformation(clicked);
+  let contentActiveClass = document.getElementsByClassName("active");
+  let contentPlayClass = document.getElementsByClassName("play");
+  let contentPauseClass = document.getElementsByClassName("pause");
+
+  for (let i = 0; i < contentActiveClass.length; i++) {
+    contentActiveClass[i].classList.remove("active");
+    // if (contentPlayClass.length > 0)
+    //   contentPlayClass[i].classList.remove("play");
+    // if (contentPauseClass.length > 0)
+    //   contentPauseClass[i].classList.remove("pause");
+  }
+
   // console.log(document.getElementById("single-song"));
   // playAndPuaseSong();
   document.getElementById(clicked).classList.add("active");
   toggleSvg(clicked);
 }
+
 function setSongInformation(clicked) {
   for (let i = 0; i < data_music.length; i++) {
     if (data_music[i].id == clicked) {
@@ -377,14 +390,11 @@ function openModal(clicked) {
 }
 
 function setText(idClicked) {
-  console.log(idClicked);
   var textSong = document.getElementById("text");
   let textContent = "";
 
   for (let k = 0; k < data_music[idClicked - 1].textMusic.length; k++) {
     textContent += data_music[idClicked - 1].textMusic[k] + "<br>";
   }
-  console.log(textContent);
   textSong.innerHTML = textContent;
-  console.log(textSong);
 }
