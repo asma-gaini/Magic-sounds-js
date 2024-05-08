@@ -98,14 +98,40 @@ const data_music = [
 ];
 
 var myAudio = document.getElementById("single-song");
-var image = document.getElementById("1");
+var songImage = document.getElementById("single-song-image");
+var songTitle = document.getElementById("modalSong-title");
+var songArtistName = document.getElementById("modalSong-artistName");
 
+// function playMusic(clicked) {
+  // setSongInformation(clicked);
+  // console.log(clicked);
+// }
+
+function playAndPuaseSong() {
+  document.getElementById("single-song").paused
+    ? document.getElementById("single-song").play()
+    : document.getElementById("single-song").pause();
+  console.log(document.getElementById("single-song"));
+}
 function togglePlay(clicked) {
-  myAudio.paused ? myAudio.play() : myAudio.pause();
-  // console.log(image.classList);
+  setSongInformation(clicked);
+  // console.log(document.getElementById("single-song"));
+  playAndPuaseSong();
   document.getElementById(clicked).classList.add("active");
   toggleSvg(clicked);
-  console.log("id" + clicked);
+}
+function setSongInformation(clicked) {
+  for (let i = 0; i < data_music.length; i++) {
+    if (data_music[i].id == clicked) {
+      document
+        .getElementById("single-song")
+        .setAttribute("src", data_music[i].audioSrc);
+      songImage.setAttribute("src", data_music[i].image);
+      songTitle.innerHTML = data_music[i].title;
+      songArtistName.innerHTML = data_music[i].artist;
+      return;
+    }
+  }
 }
 function toggleSvg(clicked) {
   if (document.getElementById(clicked).classList.contains("play")) {
