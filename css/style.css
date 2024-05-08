@@ -11,7 +11,9 @@
   box-sizing: border-box;
   outline: none;
 }
-
+body {
+  background-color: #545151 !important;
+}
 button {
   background: transparent;
   border: none;
@@ -35,6 +37,7 @@ img {
   display: flex;
   flex-direction: column;
   margin: auto;
+  margin-bottom: 10px;
 
   @media screen and (max-width: 420px) {
     width: 100%;

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/modalSingleSong.css" />
     <link rel="stylesheet" href="../css/modalPagination.css" />
+    <link rel="stylesheet" href="../css/modalVerticalNavigation.css" />
 
     <link
       rel="stylesheet"
@@ -22,545 +23,854 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
-    <div class="music-app">
-      <!-- <div class="cover">
-        <div class="cover-title">
-          <p>magic sound</p>
-        </div>
-        <div class="cover-image"></div>
-      </div> -->
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
 
-      <div class="content">
-        <!-- <div class="content-header">
-          <button class="btn-all">all song</button>
-        </div> -->
-        <ul class="playList">
-          <li class="playList-item">
-            <div
-              class="playList-item-div-image"
-              id="1"
-              onClick="togglePlay(this.id)"
+            <!-- **************************************************** DASHBOARD___MENU  **************************************************** -->
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+          <div
+            class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+          >
+            <a
+              href="/"
+              class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
             >
-              <img
-                src="../image/music cover/shaye-nistameton.png"
-                alt="nistameton"
-                class="playList-item-image"
-              />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                id="play"
-                viewBox="0 0 24 24"
+              <span class="fs-5 d-none d-sm-inline">Menu</span>
+            </a>
+            <ul
+              class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+              id="menu"
+            >
+              <li class="nav-item">
+                <a href="#" class="nav-link align-middle px-0">
+                  <i class="fs-4 bi-house"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
+                      /></svg
+                  ></i>
+                  <span class="ms-1 d-none d-sm-inline">Home</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#submenu1"
+                  data-bs-toggle="collapse"
+                  class="nav-link px-0 align-middle"
+                >
+                  <i class="fs-4 bi-speedometer2"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                    >
+                      <g fill="currentColor">
+                        <path
+                          d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4M3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.39.39 0 0 0-.029-.518z"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911c-1.087.352-2.49.003-2.932-1.25A8 8 0 0 1 0 10m8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3"
+                        />
+                      </g></svg
+                  ></i>
+                  <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                </a>
+                <ul
+                  class="collapse show nav flex-column ms-1"
+                  id="submenu1"
+                  data-bs-parent="#menu"
+                >
+                  <li class="w-100">
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Item</span> 1
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Item</span> 2
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="nav-link px-0 align-middle">
+                  <i class="fs-4 bi-table"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z"
+                      /></svg
+                  ></i>
+                  <span class="ms-1 d-none d-sm-inline">Orders</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#submenu2"
+                  data-bs-toggle="collapse"
+                  class="nav-link px-0 align-middle"
+                >
+                  <i class="fs-4 bi-bootstrap"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                    >
+                      <g fill="currentColor">
+                        <path
+                          d="M5.062 12h3.475c1.804 0 2.888-.908 2.888-2.396c0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816c0-1.3-.955-2.11-2.542-2.11H5.062zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237c0 .802-.604 1.23-1.764 1.23zm0 3.762V8.162h1.822c1.236 0 1.887.463 1.887 1.348c0 .896-.627 1.377-1.811 1.377z"
+                        />
+                        <path
+                          d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3z"
+                        />
+                      </g></svg
+                  ></i>
+                  <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a
+                >
+                <ul
+                  class="collapse nav flex-column ms-1"
+                  id="submenu2"
+                  data-bs-parent="#menu"
+                >
+                  <li class="w-100">
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Item</span> 1</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Item</span> 2</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#submenu3"
+                  data-bs-toggle="collapse"
+                  class="nav-link px-0 align-middle"
+                >
+                  <i class="fs-4 bi-grid"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"
+                      /></svg
+                  ></i>
+                  <span class="ms-1 d-none d-sm-inline">Products</span>
+                </a>
+                <ul
+                  class="collapse nav flex-column ms-1"
+                  id="submenu3"
+                  data-bs-parent="#menu"
+                >
+                  <li class="w-100">
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Product</span> 1</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Product</span> 2</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Product</span> 3</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Product</span> 4</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="nav-link px-0 align-middle">
+                  <i class="fs-4 bi-people"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M15 14s1 0 1-1s-1-4-5-4s-5 3-5 4s1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276c.593.69.758 1.457.76 1.72l-.008.002l-.014.002zM11 7a2 2 0 1 0 0-4a2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0a3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904c.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724c.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0a3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4a2 2 0 0 0 0-4"
+                      /></svg
+                  ></i>
+                  <span class="ms-1 d-none d-sm-inline">Customers</span>
+                </a>
+              </li>
+            </ul>
+            <hr />
+
+            <!-- **************************************************** DASHBOARD___USER  **************************************************** -->
+            <!-- <div class="dropdown pb-4">
+              <a
+                href="#"
+                class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                id="dropdownUser1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
-                <path
-                  d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
-                ></path>
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                id="pause"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
-                ></path>
-              </svg>
-            </div>
-
-            <a
-              href=""
-              class="playList-item-link"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-            >
-              <div class="playList-item-info">
-                <p class="info-title">nistameton</p>
-                <p class="info-subtitle">shaye</p>
-              </div>
-            </a>
-          </li>
-          <li class="playList-item">
-            <div
-              class="playList-item-div-image"
-              id="2"
-              onClick="togglePlay(this.id)"
-            >
-              <img
-                src="../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg"
-                alt="RoozHaye Abri"
-                class="playList-item-image"
-              />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
-                ></path>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
-                ></path>
-              </svg>
-            </div>
-            <a
-              href=""
-              class="playList-item-link"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-            >
-              <div class="playList-item-info">
-                <p class="info-title">roozaye abri</p>
-                <p class="info-subtitle">babak jahanbakhsh</p>
-              </div>
-              <!-- <button class="btn-add" style="font-size: 18px">
-                <i class="fa fa-plus"></i>
-              </button> -->
-            </a>
-          </li>
-          <li class="playList-item">
-            <div
-              class="playList-item-div-image"
-              id="3"
-              onClick="togglePlay(this.id)"
-            >
-              <img
-                src="../image/music cover/shahin najafi-parvaz.jpg"
-                alt="parvaz"
-                class="playList-item-image"
-              />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
-                ></path>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
-                ></path>
-              </svg>
-            </div>
-            <a
-              href=""
-              class="playList-item-link"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-              id="3"
-              onclick="openModal(this.id)"
-            >
-              <div class="playList-item-info">
-                <p class="info-title">parvaz</p>
-                <p class="info-subtitle">shahin najafi</p>
-              </div>
-            </a>
-          </li>
-          <li class="playList-item">
-            <div
-              class="playList-item-div-image"
-              onClick="togglePlay(this.id)"
-              id="4"
-            >
-              <img
-                src="../image/music cover/shaye-nistameton.png"
-                alt="nistameton"
-                class="playList-item-image"
-              />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
-                ></path>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
-                ></path>
-              </svg>
-            </div>
-
-            <a
-              href=""
-              class="playList-item-link"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-              id="4"
-              onclick="openModal(this.id)"
-            >
-              <div class="playList-item-info">
-                <p class="info-title">nistameton</p>
-                <p class="info-subtitle">shaye</p>
-              </div>
-            </a>
-          </li>
-          <li class="playList-item">
-            <div
-              class="playList-item-div-image"
-              onClick="togglePlay(this.id)"
-              id="5"
-            >
-              <img
-                src="../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg"
-                alt="RoozHaye Abri"
-                class="playList-item-image"
-              />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
-                ></path>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
-                ></path>
-              </svg>
-            </div>
-            <a
-              href=""
-              class="playList-item-link"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-              id="5"
-              onclick="openModal(this.id)"
-            >
-              <div class="playList-item-info">
-                <p class="info-title">roozaye abri</p>
-                <p class="info-subtitle">babak jahanbakhsh</p>
-              </div>
-              <!-- <button class="btn-add" style="font-size: 18px">
-                <i class="fa fa-plus"></i>
-              </button> -->
-            </a>
-          </li>
-          <li class="playList-item">
-            <div
-              class="playList-item-div-image"
-              onClick="togglePlay(this.id)"
-              id="6"
-            >
-              <img
-                src="../image/music cover/shahin najafi-parvaz.jpg"
-                alt="parvaz"
-                class="playList-item-image"
-                onClick="togglePlay()"
-              />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
-                ></path>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
-                ></path>
-              </svg>
-            </div>
-            <a
-              href=""
-              class="playList-item-link"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-              id="6"
-              onclick="openModal(this.id)"
-            >
-              <div class="playList-item-info">
-                <p class="info-title">parvaz</p>
-                <p class="info-subtitle">shahin najafi</p>
-              </div>
-            </a>
-          </li>
-          <li class="playList-item">
-            <div
-              class="playList-item-div-image"
-              onClick="togglePlay(this.id)"
-              id="7"
-            >
-              <img
-                src="../image/music cover/shaye-nistameton.png"
-                alt="nistameton"
-                class="playList-item-image"
-              />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
-                ></path>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
-                ></path>
-              </svg>
-            </div>
-
-            <a
-              href=""
-              class="playList-item-link"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-              id="7"
-              onclick="openModal(this.id)"
-            >
-              <div class="playList-item-info">
-                <p class="info-title">nistameton</p>
-                <p class="info-subtitle">shaye</p>
-              </div>
-            </a>
-          </li>
-          <li class="playList-item">
-            <div
-              class="playList-item-div-image"
-              onClick="togglePlay(this.id)"
-              id="8"
-            >
-              <img
-                src="../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg"
-                alt="RoozHaye Abri"
-                class="playList-item-image"
-              />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
-                ></path>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
-                ></path>
-              </svg>
-            </div>
-            <a
-              href=""
-              class="playList-item-link"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-              id="8"
-              onclick="openModal(this.id)"
-            >
-              <div class="playList-item-info">
-                <p class="info-title">roozaye abri</p>
-                <p class="info-subtitle">babak jahanbakhsh</p>
-              </div>
-              <!-- <button class="btn-add" style="font-size: 18px">
-                <i class="fa fa-plus"></i>
-              </button> -->
-            </a>
-          </li>
-          <li class="playList-item">
-            <div
-              class="playList-item-div-image"
-              id="9"
-              onClick="togglePlay(this.id)"
-            >
-              <img
-                src="../image/music cover/shahin najafi-parvaz.jpg"
-                alt="parvaz"
-                class="playList-item-image"
-                onClick="togglePlay()"
-              />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
-                ></path>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
-                ></path>
-              </svg>
-            </div>
-            <a
-              href=""
-              class="playList-item-link"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-              id="9"
-              onclick="openModal(this.id)"
-            >
-              <div class="playList-item-info">
-                <p class="info-title">parvaz</p>
-                <p class="info-subtitle">shahin najafi</p>
-              </div>
-            </a>
-          </li>
-          <li class="playList-item">
-            <div
-              class="playList-item-div-image"
-              onClick="togglePlay(this.id)"
-              id="10"
-            >
-              <img
-                src="../image/music cover/shaye-nistameton.png"
-                alt="nistameton"
-                class="playList-item-image"
-              />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
-                ></path>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
-                ></path>
-              </svg>
-            </div>
-
-            <a
-              href=""
-              class="playList-item-link"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-              id="10"
-              onclick="openModal(this.id)"
-            >
-              <div class="playList-item-info">
-                <p class="info-title">nistameton</p>
-                <p class="info-subtitle">shaye</p>
-              </div>
-            </a>
-          </li>
-          <li class="playList-item">
-            <div
-              class="playList-item-div-image"
-              onClick="togglePlay(this.id)"
-              id="11"
-            >
-              <img
-                src="../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg"
-                alt="RoozHaye Abri"
-                class="playList-item-image"
-              />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
-                ></path>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
-                ></path>
-              </svg>
-            </div>
-            <a
-              href=""
-              class="playList-item-link"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-              id="11"
-              onclick="openModal(this.id)"
-            >
-              <div class="playList-item-info">
-                <p class="info-title">roozaye abri</p>
-                <p class="info-subtitle">babak jahanbakhsh</p>
-              </div>
-              <!-- <button class="btn-add" style="font-size: 18px">
-                <i class="fa fa-plus"></i>
-              </button> -->
-            </a>
-          </li>
-          <li class="playList-item">
-            <div
-              class="playList-item-div-image"
-              id="12"
-              onClick="togglePlay(this.id)"
-            >
-              <img
-                src="../image/music cover/shahin najafi-parvaz.jpg"
-                alt="parvaz"
-                class="playList-item-image"
-                onClick="togglePlay()"
-              />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
-                ></path>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
-                ></path>
-              </svg>
-            </div>
-            <a
-              href=""
-              class="playList-item-link"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-              id="12"
-              onclick="openModal(this.id)"
-            >
-              <div class="playList-item-info">
-                <p class="info-title">parvaz</p>
-                <p class="info-subtitle">shahin najafi</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- The Modal -->
-    <div class="modal" id="myModal">
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">music name</h4>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-
-          <!-- Modal body -->
-          <div class="modal-body">
-            <div class="modalContent-body">
-              <div class="modalSong-Image">
                 <img
-                  src="../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg"
-                  alt="RoozHaye Abri"
-                  id="single-song-image"
+                  src="https://github.com/mdo.png"
+                  alt="hugenerd"
+                  width="30"
+                  height="30"
+                  class="rounded-circle"
                 />
-              </div>
-              <div class="modalSong-info">
-                <h3 class="modalSong-title" id="modalSong-title"></h3>
-                <p class="modalSong-artistName" id="modalSong-artistName"></p>
-              </div>
-              <audio
-                src="https://dl.rozmusic.com/Music/1396/10/13/Babak%20Jahanbakhsh%20-%20Roozhaye%20Abri%20(128).mp3"
-                controls
-                class="modualSong-audio"
-                id="single-song"
-              >
-                <!-- <source src="https://dl.rozmusic.com/Music/1396/10/13/Babak%20Jahanbakhsh%20-%20Roozhaye%20Abri%20(128).mp3">
-              <source src="https://dl.ritmy.io/Single/Shahin_Najafi/Parvaz-128[ritmy.io].mp3"> -->
-              </audio>
-              <div class="text">
-                <p class="textContent"><em id="englishText"></em></p>
-                <p id="persianText" class="textContent"></p>
+                <span class="d-none d-sm-inline mx-1">loser</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+        <div class="col py-3">
+          <div>
+            <!-- **************************************************** PLAY LIST  **************************************************** -->
+            <div class="music-app">
+              <div class="content">
+                <ul class="playList">
+                  <li class="playList-item">
+                    <div
+                      class="playList-item-div-image"
+                      id="1"
+                      onClick="togglePlay(this.id)"
+                    >
+                      <img
+                        src="../image/music cover/shaye-nistameton.png"
+                        alt="nistameton"
+                        class="playList-item-image"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        id="play"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        id="pause"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
+                        ></path>
+                      </svg>
+                    </div>
+
+                    <a
+                      href=""
+                      class="playList-item-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#myModal"
+                    >
+                      <div class="playList-item-info">
+                        <p class="info-title">nistameton</p>
+                        <p class="info-subtitle">shaye</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="playList-item">
+                    <div
+                      class="playList-item-div-image"
+                      id="2"
+                      onClick="togglePlay(this.id)"
+                    >
+                      <img
+                        src="../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg"
+                        alt="RoozHaye Abri"
+                        class="playList-item-image"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <a
+                      href=""
+                      class="playList-item-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#myModal"
+                    >
+                      <div class="playList-item-info">
+                        <p class="info-title">roozaye abri</p>
+                        <p class="info-subtitle">babak jahanbakhsh</p>
+                      </div>
+                      <!-- <button class="btn-add" style="font-size: 18px">
+                    <i class="fa fa-plus"></i>
+                  </button> -->
+                    </a>
+                  </li>
+                  <li class="playList-item">
+                    <div
+                      class="playList-item-div-image"
+                      id="3"
+                      onClick="togglePlay(this.id)"
+                    >
+                      <img
+                        src="../image/music cover/shahin najafi-parvaz.jpg"
+                        alt="parvaz"
+                        class="playList-item-image"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <a
+                      href=""
+                      class="playList-item-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#myModal"
+                      id="3"
+                      onclick="openModal(this.id)"
+                    >
+                      <div class="playList-item-info">
+                        <p class="info-title">parvaz</p>
+                        <p class="info-subtitle">shahin najafi</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="playList-item">
+                    <div
+                      class="playList-item-div-image"
+                      onClick="togglePlay(this.id)"
+                      id="4"
+                    >
+                      <img
+                        src="../image/music cover/shaye-nistameton.png"
+                        alt="nistameton"
+                        class="playList-item-image"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
+                        ></path>
+                      </svg>
+                    </div>
+
+                    <a
+                      href=""
+                      class="playList-item-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#myModal"
+                      id="4"
+                      onclick="openModal(this.id)"
+                    >
+                      <div class="playList-item-info">
+                        <p class="info-title">nistameton</p>
+                        <p class="info-subtitle">shaye</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="playList-item">
+                    <div
+                      class="playList-item-div-image"
+                      onClick="togglePlay(this.id)"
+                      id="5"
+                    >
+                      <img
+                        src="../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg"
+                        alt="RoozHaye Abri"
+                        class="playList-item-image"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <a
+                      href=""
+                      class="playList-item-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#myModal"
+                      id="5"
+                      onclick="openModal(this.id)"
+                    >
+                      <div class="playList-item-info">
+                        <p class="info-title">roozaye abri</p>
+                        <p class="info-subtitle">babak jahanbakhsh</p>
+                      </div>
+                      <!-- <button class="btn-add" style="font-size: 18px">
+                    <i class="fa fa-plus"></i>
+                  </button> -->
+                    </a>
+                  </li>
+                  <li class="playList-item">
+                    <div
+                      class="playList-item-div-image"
+                      onClick="togglePlay(this.id)"
+                      id="6"
+                    >
+                      <img
+                        src="../image/music cover/shahin najafi-parvaz.jpg"
+                        alt="parvaz"
+                        class="playList-item-image"
+                        onClick="togglePlay()"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <a
+                      href=""
+                      class="playList-item-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#myModal"
+                      id="6"
+                      onclick="openModal(this.id)"
+                    >
+                      <div class="playList-item-info">
+                        <p class="info-title">parvaz</p>
+                        <p class="info-subtitle">shahin najafi</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="playList-item">
+                    <div
+                      class="playList-item-div-image"
+                      onClick="togglePlay(this.id)"
+                      id="7"
+                    >
+                      <img
+                        src="../image/music cover/shaye-nistameton.png"
+                        alt="nistameton"
+                        class="playList-item-image"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
+                        ></path>
+                      </svg>
+                    </div>
+
+                    <a
+                      href=""
+                      class="playList-item-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#myModal"
+                      id="7"
+                      onclick="openModal(this.id)"
+                    >
+                      <div class="playList-item-info">
+                        <p class="info-title">nistameton</p>
+                        <p class="info-subtitle">shaye</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="playList-item">
+                    <div
+                      class="playList-item-div-image"
+                      onClick="togglePlay(this.id)"
+                      id="8"
+                    >
+                      <img
+                        src="../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg"
+                        alt="RoozHaye Abri"
+                        class="playList-item-image"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <a
+                      href=""
+                      class="playList-item-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#myModal"
+                      id="8"
+                      onclick="openModal(this.id)"
+                    >
+                      <div class="playList-item-info">
+                        <p class="info-title">roozaye abri</p>
+                        <p class="info-subtitle">babak jahanbakhsh</p>
+                      </div>
+                      <!-- <button class="btn-add" style="font-size: 18px">
+                    <i class="fa fa-plus"></i>
+                  </button> -->
+                    </a>
+                  </li>
+                  <li class="playList-item">
+                    <div
+                      class="playList-item-div-image"
+                      id="9"
+                      onClick="togglePlay(this.id)"
+                    >
+                      <img
+                        src="../image/music cover/shahin najafi-parvaz.jpg"
+                        alt="parvaz"
+                        class="playList-item-image"
+                        onClick="togglePlay()"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <a
+                      href=""
+                      class="playList-item-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#myModal"
+                      id="9"
+                      onclick="openModal(this.id)"
+                    >
+                      <div class="playList-item-info">
+                        <p class="info-title">parvaz</p>
+                        <p class="info-subtitle">shahin najafi</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="playList-item">
+                    <div
+                      class="playList-item-div-image"
+                      onClick="togglePlay(this.id)"
+                      id="10"
+                    >
+                      <img
+                        src="../image/music cover/shaye-nistameton.png"
+                        alt="nistameton"
+                        class="playList-item-image"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
+                        ></path>
+                      </svg>
+                    </div>
+
+                    <a
+                      href=""
+                      class="playList-item-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#myModal"
+                      id="10"
+                      onclick="openModal(this.id)"
+                    >
+                      <div class="playList-item-info">
+                        <p class="info-title">nistameton</p>
+                        <p class="info-subtitle">shaye</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="playList-item">
+                    <div
+                      class="playList-item-div-image"
+                      onClick="togglePlay(this.id)"
+                      id="11"
+                    >
+                      <img
+                        src="../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg"
+                        alt="RoozHaye Abri"
+                        class="playList-item-image"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <a
+                      href=""
+                      class="playList-item-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#myModal"
+                      id="11"
+                      onclick="openModal(this.id)"
+                    >
+                      <div class="playList-item-info">
+                        <p class="info-title">roozaye abri</p>
+                        <p class="info-subtitle">babak jahanbakhsh</p>
+                      </div>
+                      <!-- <button class="btn-add" style="font-size: 18px">
+                    <i class="fa fa-plus"></i>
+                  </button> -->
+                    </a>
+                  </li>
+                  <li class="playList-item">
+                    <div
+                      class="playList-item-div-image"
+                      id="12"
+                      onClick="togglePlay(this.id)"
+                    >
+                      <img
+                        src="../image/music cover/shahin najafi-parvaz.jpg"
+                        alt="parvaz"
+                        class="playList-item-image"
+                        onClick="togglePlay()"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
+                        ></path>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <a
+                      href=""
+                      class="playList-item-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#myModal"
+                      id="12"
+                      onclick="openModal(this.id)"
+                    >
+                      <div class="playList-item-info">
+                        <p class="info-title">parvaz</p>
+                        <p class="info-subtitle">shahin najafi</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
-          </div>
 
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-danger btnClose"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
+            <!-- **************************************************** MODAL SINGLE MUSIC  **************************************************** -->
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+              <div
+                class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+              >
+                <div class="modal-content">
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">music name</h4>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                    ></button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <div class="modalContent-body">
+                      <div class="modalSong-Image">
+                        <img
+                          src="../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg"
+                          alt="RoozHaye Abri"
+                          id="single-song-image"
+                        />
+                      </div>
+                      <div class="modalSong-info">
+                        <h3 class="modalSong-title" id="modalSong-title"></h3>
+                        <p
+                          class="modalSong-artistName"
+                          id="modalSong-artistName"
+                        ></p>
+                      </div>
+                      <audio
+                        src="https://dl.rozmusic.com/Music/1396/10/13/Babak%20Jahanbakhsh%20-%20Roozhaye%20Abri%20(128).mp3"
+                        controls
+                        class="modualSong-audio"
+                        id="single-song"
+                      >
+                        <!-- <source src="https://dl.rozmusic.com/Music/1396/10/13/Babak%20Jahanbakhsh%20-%20Roozhaye%20Abri%20(128).mp3">
+                  <source src="https://dl.ritmy.io/Single/Shahin_Najafi/Parvaz-128[ritmy.io].mp3"> -->
+                      </audio>
+                      <div class="text">
+                        <p class="textContent"><em id="englishText"></em></p>
+                        <p id="persianText" class="textContent"></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-danger btnClose"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- **************************************************** PAGINATION  **************************************************** -->
+            <div class="pagination-modal">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="pagination-modal">
-      <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item active"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-    </div>
     <script src="../js/magic_sound.js" async defer></script>
     <script src="../js/textSingleSong.js" async defer></script>
   </body>
