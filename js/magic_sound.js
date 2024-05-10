@@ -330,23 +330,36 @@ var songImage = document.getElementById("single-song-image");
 var songTitle = document.getElementById("modalSong-title");
 var songArtistName = document.getElementById("modalSong-artistName");
 
-// function playMusic(clicked) {
-// setSongInformation(clicked);
-// console.log(clicked);
-// }
+function setMusicHasBeenCalled(clickedId) {
+  if (
+    document
+      .querySelector('div[id="' + clickedId + '"]')
+      .getAttribute("setmusicHasBeenCalled") == "false"
+  ) {
+    setSongInformation(clickedId);
+    document
+      .querySelector('div[id="' + clickedId + '"]')
+      .setAttribute("setmusicHasBeenCalled", "true");
+  }
+}
 
 function playAndPuaseSong() {
   document.getElementById("single-song").paused
     ? document.getElementById("single-song").play()
     : document.getElementById("single-song").pause();
-  console.log(document.getElementById("single-song"));
 }
-function togglePlay(clicked) {
-  setSongInformation(clicked);
+function togglePlay(clickedId) {
+  setMusicHasBeenCalled(clickedId);
+  // console.log(
+  //   document
+  //     .querySelector('div[id="' + clicked + '"]')
+  //     .getAttribute("setmusicHasBeenCalled")
+  // );
+  // setSongInformation(clicked);
+
   let contentActiveClass = document.getElementsByClassName("active");
   let contentPlayClass = document.getElementsByClassName("play");
   let contentPauseClass = document.getElementsByClassName("pause");
-
   for (let i = 0; i < contentActiveClass.length; i++) {
     contentActiveClass[i].classList.remove("active");
     // if (contentPlayClass.length > 0)
@@ -356,45 +369,62 @@ function togglePlay(clicked) {
   }
 
   // console.log(document.getElementById("single-song"));
-  // playAndPuaseSong();
-  document.getElementById(clicked).classList.add("active");
-  toggleSvg(clicked);
+  playAndPuaseSong();
+  // console.log(contentPlayClass);
+  document.querySelector('div[id="' + clickedId + '"]').classList.add("active");
+  toggleSvg(clickedId);
 }
 
-function setSongInformation(clicked) {
+function setSongInformation(clickedId) {
+  let hasBeenSet = document.querySelectorAll('[setmusicHasBeenCalled="true"]');
+  for (let i = 0; i < hasBeenSet.length; i++) {
+    hasBeenSet[i].setAttribute("setmusicHasBeenCalled", "false");
+  }
+
+  console.log(document.querySelectorAll('[setmusicHasBeenCalled="true"]'));
   for (let i = 0; i < data_music.length; i++) {
-    if (data_music[i].id == clicked) {
+    if (data_music[i].id == clickedId) {
       document
         .getElementById("single-song")
         .setAttribute("src", data_music[i].audioSrc);
       songImage.setAttribute("src", data_music[i].image);
       songTitle.innerHTML = data_music[i].title;
       songArtistName.innerHTML = data_music[i].artist;
-      setText(clicked);
+      setText(clickedId);
       return;
     }
   }
 }
-function toggleSvg(clicked) {
-  if (document.getElementById(clicked).classList.contains("play")) {
-    document.getElementById(clicked).classList.remove("play");
-    document.getElementById(clicked).classList.add("pause");
+function toggleSvg(clickedId) {
+  if (
+    document
+      .querySelector('div[id="' + clickedId + '"]')
+      .classList.contains("play")
+  ) {
+    document
+      .querySelector('div[id="' + clickedId + '"]')
+      .classList.remove("play");
+    document
+      .querySelector('div[id="' + clickedId + '"]')
+      .classList.add("pause");
   } else {
-    document.getElementById(clicked).classList.remove("pause");
-    document.getElementById(clicked).classList.add("play");
+    document
+      .querySelector('div[id="' + clickedId + '"]')
+      .classList.remove("pause");
+    document.querySelector('div[id="' + clickedId + '"]').classList.add("play");
   }
 }
 
-function openModal(clicked) {
-  setSongInformation(clicked);
+function openModal(clickedId) {
+  setMusicHasBeenCalled(clickedId);
 }
 
-function setText(idClicked) {
+function setText(clickedId) {
   var textSong = document.getElementById("text");
   let textContent = "";
 
-  for (let k = 0; k < data_music[idClicked - 1].textMusic.length; k++) {
-    textContent += data_music[idClicked - 1].textMusic[k] + "<br>";
+  for (let k = 0; k < data_music[clickedId - 1].textMusic.length; k++) {
+    textContent += data_music[clickedId - 1].textMusic[k] + "<br>";
   }
   textSong.innerHTML = textContent;
 }
