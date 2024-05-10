@@ -1,3 +1,4 @@
+//  **************************************************** MUSIC INFORMATION  ****************************************************
 const data_music = [
   {
     title: "roozaye abri",
@@ -325,11 +326,12 @@ const data_music = [
   },
 ];
 
-var myAudio = document.getElementById("single-song");
+//  **************************************************** GLOBAL VARIABLE ****************************************************
 var songImage = document.getElementById("single-song-image");
 var songTitle = document.getElementById("modalSong-title");
 var songArtistName = document.getElementById("modalSong-artistName");
 
+//  **************************************************** GLOBAL FUNCTION  ****************************************************
 function setMusicHasBeenCalled(clickedId) {
   if (
     document
@@ -343,34 +345,17 @@ function setMusicHasBeenCalled(clickedId) {
   }
 }
 
-function playAndPuaseSong() {
-  document.getElementById("single-song").paused
-    ? document.getElementById("single-song").play()
-    : document.getElementById("single-song").pause();
-}
+//  **************************************************** FUNCTION ON THE IMAGE TAG ON PLAY LIST  ****************************************************
 function togglePlay(clickedId) {
   setMusicHasBeenCalled(clickedId);
-  // console.log(
-  //   document
-  //     .querySelector('div[id="' + clicked + '"]')
-  //     .getAttribute("setmusicHasBeenCalled")
-  // );
-  // setSongInformation(clicked);
 
   let contentActiveClass = document.getElementsByClassName("active");
-  let contentPlayClass = document.getElementsByClassName("play");
-  let contentPauseClass = document.getElementsByClassName("pause");
+
   for (let i = 0; i < contentActiveClass.length; i++) {
     contentActiveClass[i].classList.remove("active");
-    // if (contentPlayClass.length > 0)
-    //   contentPlayClass[i].classList.remove("play");
-    // if (contentPauseClass.length > 0)
-    //   contentPauseClass[i].classList.remove("pause");
   }
 
-  // console.log(document.getElementById("single-song"));
   playAndPuaseSong();
-  // console.log(contentPlayClass);
   document.querySelector('div[id="' + clickedId + '"]').classList.add("active");
   toggleSvg(clickedId);
 }
@@ -395,6 +380,23 @@ function setSongInformation(clickedId) {
     }
   }
 }
+
+function setText(clickedId) {
+  var textSong = document.getElementById("text");
+  let textContent = "";
+
+  for (let k = 0; k < data_music[clickedId - 1].textMusic.length; k++) {
+    textContent += data_music[clickedId - 1].textMusic[k] + "<br>";
+  }
+  textSong.innerHTML = textContent;
+}
+
+function playAndPuaseSong() {
+  document.getElementById("single-song").paused
+    ? document.getElementById("single-song").play()
+    : document.getElementById("single-song").pause();
+}
+
 function toggleSvg(clickedId) {
   if (
     document
@@ -415,16 +417,7 @@ function toggleSvg(clickedId) {
   }
 }
 
+//  **************************************************** FUNCTION ON THE TEXT(LINK) TAG ON PLAY LIST  ****************************************************
 function openModal(clickedId) {
   setMusicHasBeenCalled(clickedId);
-}
-
-function setText(clickedId) {
-  var textSong = document.getElementById("text");
-  let textContent = "";
-
-  for (let k = 0; k < data_music[clickedId - 1].textMusic.length; k++) {
-    textContent += data_music[clickedId - 1].textMusic[k] + "<br>";
-  }
-  textSong.innerHTML = textContent;
 }
