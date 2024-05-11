@@ -421,4 +421,5 @@ function toggleSvg(clickedId) {
 function openModal(clickedId) {
   setMusicHasBeenCalled(clickedId);
   document.getElementById("single-song").play();
+  toggleSvg(clickedId);
 }
