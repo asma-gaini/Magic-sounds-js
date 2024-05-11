@@ -398,6 +398,8 @@ function playAndPuaseSong() {
 }
 
 function toggleSvg(clickedId) {
+  removeSvg(clickedId);
+
   if (
     document
       .querySelector('div[id="' + clickedId + '"]')
@@ -417,6 +419,22 @@ function toggleSvg(clickedId) {
   }
 }
 
+function removeSvg(clickedId) {
+  let includesPlayClass = document.querySelectorAll(".play");
+  let includesPauseClass = document.querySelectorAll(".pause");
+  for (let i = 0; i < includesPlayClass.length; i++) {
+    if (includesPlayClass[i].id == clickedId) {
+      continue;
+    }
+    includesPlayClass[i].classList.remove("play");
+  }
+  for (let i = 0; i < includesPauseClass.length; i++) {
+    if (includesPauseClass[i].id == clickedId) {
+      continue;
+    }
+    includesPauseClass[i].classList.remove("pause");
+  }
+}
 //  **************************************************** FUNCTION ON THE TEXT(LINK) TAG ON PLAY LIST  ****************************************************
 function openModal(clickedId) {
   setMusicHasBeenCalled(clickedId);
