@@ -420,4 +420,5 @@ function toggleSvg(clickedId) {
 //  **************************************************** FUNCTION ON THE TEXT(LINK) TAG ON PLAY LIST  ****************************************************
 function openModal(clickedId) {
   setMusicHasBeenCalled(clickedId);
+  document.getElementById("single-song").play();
 }
