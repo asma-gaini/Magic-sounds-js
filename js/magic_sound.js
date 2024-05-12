@@ -326,12 +326,15 @@ const data_music = [
   },
 ];
 
+//  **************************************************** CREATE ELEMENT  ****************************************************
+
 window.onload = createPage();
 function createPage() {
   createPlayList();
+  createModal();
 }
 
-//  **************************************************** CREATE PLAY LIST ELEMENT  ****************************************************
+//  **************************************************** CREATE ELEMENT _ CREATE PLAY LIST ELEMENT  ****************************************************
 function createPlayList() {
   const content = document.querySelector(".content");
   const palyListUl = document.createElement("ul");
@@ -438,6 +441,67 @@ function createItemOfPlaylist(ulTag) {
 
     divLinkInfo.appendChild(subtitleLink);
   }
+}
+
+//  **************************************************** CREATE ELEMENT _ CREATE MODAL  ****************************************************
+function createModal() {
+  const modalContent = document.querySelector(".modal-body");
+  //CREATE div body
+  const modalBodyDiv = document.createElement("div");
+  modalBodyDiv.setAttribute("class", "modalContent-body");
+  modalContent.appendChild(modalBodyDiv);
+
+  //CREATE image div
+  const modalImageDiv = document.createElement("div");
+  modalImageDiv.setAttribute("class", "modalSong-Image");
+  modalBodyDiv.appendChild(modalImageDiv);
+
+  //CREATE image tag
+  const modalImageTag = document.createElement("image");
+
+  modalImageTag.setAttribute("src", "");
+  modalImageTag.setAttribute("alt", "");
+  modalImageTag.setAttribute("id", "single-song-image");
+
+  modalImageDiv.appendChild(modalImageTag);
+
+  //CREATE modal song information
+  //div
+  const modalInfoDiv = document.createElement("div");
+  modalInfoDiv.setAttribute("class", "modalSong-info");
+  modalBodyDiv.appendChild(modalInfoDiv);
+  //h3
+  const modalInfoTitle = document.createElement("h3");
+  modalInfoTitle.setAttribute("class", "modalSong-title");
+  modalInfoTitle.setAttribute("id", "modalSong-title");
+  modalInfoDiv.appendChild(modalInfoTitle);
+  //p
+  const modalInfoArtist = document.createElement("h3");
+  modalInfoArtist.setAttribute("class", "modalSong-artistName");
+  modalInfoArtist.setAttribute("id", "modalSong-artistName");
+  modalInfoDiv.appendChild(modalInfoArtist);
+
+  //CREATE audio
+  const modalAudioTag = document.createElement("audio");
+
+  modalAudioTag.setAttribute("src", "");
+  // modalAudioTag.setAttribute("controls");
+  modalAudioTag.setAttribute("controls", "controls");
+  modalAudioTag.setAttribute("alt", "");
+  modalAudioTag.setAttribute("class", "modualSong-audio");
+  modalAudioTag.setAttribute("id", "single-song");
+
+  modalBodyDiv.appendChild(modalAudioTag);
+
+  //CREATE text poem
+  const modaltextDiv = document.createElement("div");
+  modaltextDiv.setAttribute("class", "text");
+  modalBodyDiv.appendChild(modaltextDiv);
+
+  const modaltext = document.createElement("p");
+  modaltext.setAttribute("class", "textContent");
+  modaltext.setAttribute("id", "text");
+  modaltextDiv.appendChild(modaltext);
 }
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
