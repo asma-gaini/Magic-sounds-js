@@ -129,6 +129,7 @@ img {
   text-decoration: none;
 }
 .playList-item-image {
+  display: inline-block;
   margin: 0;
   border-bottom: 1px solid rgba(198, 178, 250, 0.1);
   cursor: pointer;

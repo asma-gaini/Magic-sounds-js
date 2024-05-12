@@ -326,126 +326,119 @@ const data_music = [
   },
 ];
 
-// window.onload = createPage();
-// function createPage() {
-//   createPlayList();
-// }
+window.onload = createPage();
+function createPage() {
+  createPlayList();
+}
 
-// //  **************************************************** CREATE PLAY LIST ELEMENT  ****************************************************
-// function createPlayList() {
-//   const content = document.querySelector(".content");
-//   const palyListUl = document.createElement("ul");
-//   palyListUl.setAttribute("class", "playList");
-//   content.appendChild(palyListUl);
+//  **************************************************** CREATE PLAY LIST ELEMENT  ****************************************************
+function createPlayList() {
+  const content = document.querySelector(".content");
+  const palyListUl = document.createElement("ul");
+  palyListUl.setAttribute("class", "playList");
+  content.appendChild(palyListUl);
 
-//   createItemOfPlaylist(palyListUl);
-// }
+  createItemOfPlaylist(palyListUl);
+}
 
-// function createItemOfPlaylist(ulTag) {
-//   for (let i = 0; i < data_music.length; i++) {
-//     //CREATE li
-//     const playlistItem = document.createElement("li");
-//     playlistItem.setAttribute("class", "playList-item");
-//     ulTag.appendChild(playlistItem);
+function createItemOfPlaylist(ulTag) {
+  for (let i = 0; i < data_music.length; i++) {
+    //CREATE li
+    const playlistItem = document.createElement("li");
+    playlistItem.setAttribute("class", "playList-item");
+    ulTag.appendChild(playlistItem);
 
-//     //CREATE image div
-//     const imageDiv = document.createElement("div");
+    //CREATE image div
+    const imageDiv = document.createElement("div");
 
-//     imageDiv.setAttribute("class", "playList-item-div-image");
-//     imageDiv.setAttribute("id", data_music[i].id);
-//     imageDiv.setAttribute("onClick", "togglePlay(this.id)");
-//     imageDiv.setAttribute("setmusicHasBeenCalled", "false");
+    imageDiv.setAttribute("class", "playList-item-div-image");
+    imageDiv.setAttribute("id", data_music[i].id);
+    imageDiv.setAttribute("onClick", "togglePlay(this.id)");
+    imageDiv.setAttribute("setmusicHasBeenCalled", "false");
 
-//     playlistItem.appendChild(imageDiv);
+    playlistItem.appendChild(imageDiv);
 
-//     //CREATE image tag
-//     const imageTag = document.createElement("image");
+    //CREATE image tag
+    const imageTag = document.createElement("image");
 
-//     imageTag.setAttribute("src", data_music[i].image);
-//     imageTag.setAttribute("alt", data_music[i].title);
-//     imageTag.setAttribute("class", "playList-item-image");
-//     imageTag.style.width = "45px";
-//     imageTag.style.height = "45px";
+    imageTag.setAttribute("src", data_music[i].image);
+    imageTag.setAttribute("alt", data_music[i].title);
+    imageTag.setAttribute("class", "playList-item-image");
 
-//     imageDiv.appendChild(imageTag);
+    imageDiv.appendChild(imageTag);
 
-//     //CREATE svg play
-//     const playSvg = document.createElement("svg");
+    //CREATE svg play
+    const playSvg = document.createElement("svg");
 
-//     playSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-//     playSvg.setAttribute("id", "play");
-//     playSvg.setAttribute("viewBox", "0 0 24 24");
+    playSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    playSvg.setAttribute("id", "play");
+    playSvg.setAttribute("viewBox", "0 0 24 24");
 
-//     imageDiv.appendChild(playSvg);
+    imageDiv.appendChild(playSvg);
 
-//     const pathPlaySvg = document.createElement("path");
+    const pathPlaySvg = document.createElement("path");
 
-//     pathPlaySvg.setAttribute(
-//       "d",
-//       "M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
-//     );
+    pathPlaySvg.setAttribute(
+      "d",
+      "M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"
+    );
 
-//     playSvg.appendChild(pathPlaySvg);
+    playSvg.appendChild(pathPlaySvg);
 
-//     //CREATE svg pause
-//     const pauseSvg = document.createElement("svg");
+    //CREATE svg pause
+    const pauseSvg = document.createElement("svg");
 
-//     pauseSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-//     pauseSvg.setAttribute("id", "play");
-//     pauseSvg.setAttribute("viewBox", "0 0 24 24");
+    pauseSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    pauseSvg.setAttribute("id", "play");
+    pauseSvg.setAttribute("viewBox", "0 0 24 24");
 
-//     imageDiv.appendChild(pauseSvg);
+    imageDiv.appendChild(pauseSvg);
 
-//     const pathPauseSvg = document.createElement("path");
+    const pathPauseSvg = document.createElement("path");
 
-//     pathPlaySvg.setAttribute(
-//       "d",
-//       "M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
-//     );
+    pathPlaySvg.setAttribute(
+      "d",
+      "M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
+    );
 
-//     pauseSvg.appendChild(pathPauseSvg);
+    pauseSvg.appendChild(pathPauseSvg);
 
-//     //CREATE Link
-//     const link = document.createElement("a");
+    //CREATE Link
+    const link = document.createElement("a");
 
-//     link.setAttribute("href", " ");
-//     link.setAttribute("class", "playList-item-link");
-//     link.setAttribute("data-bs-toggle", "modal");
-//     link.setAttribute("data-bs-target", "#myModal");
-//     link.setAttribute("id", data_music[i].id);
-//     link.setAttribute("onClick", "openModal(this.id))");
+    link.setAttribute("href", "#");
+    link.setAttribute("class", "playList-item-link");
+    link.setAttribute("data-bs-toggle", "modal");
+    link.setAttribute("data-bs-target", "#myModal");
+    link.setAttribute("id", data_music[i].id);
+    link.setAttribute("onClick", "openModal(this.id)");
 
-//     playlistItem.appendChild(link);
+    playlistItem.appendChild(link);
 
-//     //CRETE link information
-//     const divLinkInfo = document.createElement("div");
+    //CRETE link information
+    const divLinkInfo = document.createElement("div");
 
-//     divLinkInfo.setAttribute("class", "playList-item-info");
+    divLinkInfo.setAttribute("class", "playList-item-info");
 
-//     link.appendChild(divLinkInfo);
+    link.appendChild(divLinkInfo);
 
-//     //CREATE link information title
-//     const titleLink = document.createElement("p");
+    //CREATE link information title
+    const titleLink = document.createElement("p");
 
-//     titleLink.setAttribute("class", "info-title");
-//     titleLink.innerHTML = data_music[i].title;
+    titleLink.setAttribute("class", "info-title");
+    titleLink.innerHTML = data_music[i].title;
 
-//     divLinkInfo.appendChild(titleLink);
+    divLinkInfo.appendChild(titleLink);
 
-//     //CREATE link information subtitle
-//     const subtitleLink = document.createElement("p");
+    //CREATE link information subtitle
+    const subtitleLink = document.createElement("p");
 
-//     subtitleLink.setAttribute("class", "info-subtitle");
-//     subtitleLink.innerHTML = data_music[i].artist;
+    subtitleLink.setAttribute("class", "info-subtitle");
+    subtitleLink.innerHTML = data_music[i].artist;
 
-//     divLinkInfo.appendChild(subtitleLink);
-//   }
-// }
-
-
-
-
-
+    divLinkInfo.appendChild(subtitleLink);
+  }
+}
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
 var songImage = document.getElementById("single-song-image");
@@ -562,5 +555,3 @@ function openModal(clickedId) {
   document.getElementById("single-song").play();
   toggleSvg(clickedId);
 }
-
-
