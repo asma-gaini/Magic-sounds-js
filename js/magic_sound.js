@@ -362,7 +362,7 @@ function createItemOfPlaylist(ulTag) {
     playlistItem.appendChild(imageDiv);
 
     //CREATE image tag
-    const imageTag = document.createElement("image");
+    const imageTag = document.createElement("img");
 
     imageTag.setAttribute("src", data_music[i].image);
     imageTag.setAttribute("alt", data_music[i].title);
@@ -374,7 +374,6 @@ function createItemOfPlaylist(ulTag) {
     const playSvg = document.createElement("svg");
 
     playSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    playSvg.setAttribute("id", "play");
     playSvg.setAttribute("viewBox", "0 0 24 24");
 
     imageDiv.appendChild(playSvg);
@@ -392,14 +391,13 @@ function createItemOfPlaylist(ulTag) {
     const pauseSvg = document.createElement("svg");
 
     pauseSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    pauseSvg.setAttribute("id", "play");
     pauseSvg.setAttribute("viewBox", "0 0 24 24");
 
     imageDiv.appendChild(pauseSvg);
 
     const pathPauseSvg = document.createElement("path");
 
-    pathPlaySvg.setAttribute(
+    pathPauseSvg.setAttribute(
       "d",
       "M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"
     );
@@ -457,7 +455,7 @@ function createModal() {
   modalBodyDiv.appendChild(modalImageDiv);
 
   //CREATE image tag
-  const modalImageTag = document.createElement("image");
+  const modalImageTag = document.createElement("img");
 
   modalImageTag.setAttribute("src", "");
   modalImageTag.setAttribute("alt", "");
