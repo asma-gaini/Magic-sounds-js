@@ -216,7 +216,8 @@ img {
 .playList-item-div-image.active .svg {
   fill: #28b140 !important;
 }
-.playList-item-div-image:hover .svg {
+
+.playList-item-div-image:hover #playSvg {
   opacity: 1;
 }
 

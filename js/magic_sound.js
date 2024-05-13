@@ -374,6 +374,7 @@ function createItemOfPlaylist(ulTag) {
     const playSvg = document.createElement("img");
     playSvg.setAttribute("src", "../image/svg/play.svg");
     playSvg.setAttribute("class", "svg");
+    playSvg.setAttribute("id", "playSvg");
 
     imageDiv.appendChild(playSvg);
 
@@ -397,6 +398,7 @@ function createItemOfPlaylist(ulTag) {
     const pauseSvg = document.createElement("img");
     pauseSvg.setAttribute("src", "../image/svg/pause.svg");
     pauseSvg.setAttribute("class", "svg");
+    pauseSvg.setAttribute("id", "pauseSvg");
 
     imageDiv.appendChild(pauseSvg);
 
