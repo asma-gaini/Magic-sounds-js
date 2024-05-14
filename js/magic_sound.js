@@ -1,14 +1,14 @@
 //  **************************************************** MUSIC INFORMATION  ****************************************************
 const data_music = [
   {
-    title: "roozaye abri",
+    title: "roozaye abri-1",
     artist: "jahanbakhsh",
     audioSrc:
       "https://dl.rozmusic.com/Music/1396/10/13/Babak%20Jahanbakhsh%20-%20Roozhaye%20Abri%20(128).mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 1,
     textMusic: [
-      "roozaye abri",
+      "roozaye abri-1",
       "روزای ابری",
 
       "I gave you your dreams",
@@ -28,14 +28,14 @@ const data_music = [
     ],
   },
   {
-    title: "Parvaz",
+    title: "Parvaz-2",
     artist: "shahin najafi",
     audioSrc:
       "https://dl.ritmy.io/Single/Shahin_Najafi/Parvaz-128[ritmy.io].mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 2,
     textMusic: [
-      "parvaz",
+      "parvaz-2",
       "پرواز",
 
       "I gave you your dreams",
@@ -55,14 +55,14 @@ const data_music = [
     ],
   },
   {
-    title: "nistameton",
+    title: "nistameton-3",
     artist: "shaye",
     audioSrc:
       "https://dl.melonmusic.ir/Music/Shayea%20-%20Nistametoon%20(320).mp3",
     image: "../image/music cover/shaye-nistameton.png",
     id: 3,
     textMusic: [
-      "nistametoon",
+      "nistametoon-3",
       "نیستمون",
 
       "I gave you your dreams",
@@ -82,14 +82,14 @@ const data_music = [
     ],
   },
   {
-    title: "roozaye abri",
+    title: "roozaye abri-4",
     artist: "jahanbakhsh",
     audioSrc:
       "https://dl.rozmusic.com/Music/1396/10/13/Babak%20Jahanbakhsh%20-%20Roozhaye%20Abri%20(128).mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 4,
     textMusic: [
-      "roozaye abri",
+      "roozaye abri-4",
       "روزای ابری",
 
       "I gave you your dreams",
@@ -109,14 +109,14 @@ const data_music = [
     ],
   },
   {
-    title: "Parvaz",
+    title: "Parvaz-5",
     artist: "shahin najafi",
     audioSrc:
       "https://dl.ritmy.io/Single/Shahin_Najafi/Parvaz-128[ritmy.io].mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 5,
     textMusic: [
-      "parvaz",
+      "parvaz-5",
       "پرواز",
 
       "I gave you your dreams",
@@ -136,14 +136,14 @@ const data_music = [
     ],
   },
   {
-    title: "nistameton",
+    title: "nistameton-6",
     artist: "shaye",
     audioSrc:
       "https://dl.melonmusic.ir/Music/Shayea%20-%20Nistametoon%20(320).mp3",
     image: "../image/music cover/shaye-nistameton.png",
     id: 6,
     textMusic: [
-      "nistametoon",
+      "nistametoon-6",
       "نیستمون",
 
       "I gave you your dreams",
@@ -163,14 +163,14 @@ const data_music = [
     ],
   },
   {
-    title: "roozaye abri",
+    title: "roozaye abri-7",
     artist: "jahanbakhsh",
     audioSrc:
       "https://dl.rozmusic.com/Music/1396/10/13/Babak%20Jahanbakhsh%20-%20Roozhaye%20Abri%20(128).mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 7,
     textMusic: [
-      "roozaye abri",
+      "roozaye abri-7",
       "روزای ابری",
 
       "I gave you your dreams",
@@ -190,14 +190,14 @@ const data_music = [
     ],
   },
   {
-    title: "Parvaz",
+    title: "Parvaz-8",
     artist: "shahin najafi",
     audioSrc:
       "https://dl.ritmy.io/Single/Shahin_Najafi/Parvaz-128[ritmy.io].mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 8,
     textMusic: [
-      "parvaz",
+      "parvaz-8",
       "پرواز",
 
       "I gave you your dreams",
@@ -217,14 +217,14 @@ const data_music = [
     ],
   },
   {
-    title: "nistameton",
+    title: "nistameton-9",
     artist: "shaye",
     audioSrc:
       "https://dl.melonmusic.ir/Music/Shayea%20-%20Nistametoon%20(320).mp3",
     image: "../image/music cover/shaye-nistameton.png",
     id: 9,
     textMusic: [
-      "nistametoon",
+      "nistametoon-9",
       "نیستمون",
 
       "I gave you your dreams",
@@ -244,14 +244,14 @@ const data_music = [
     ],
   },
   {
-    title: "roozaye abri",
+    title: "roozaye abri-10",
     artist: "jahanbakhsh",
     audioSrc:
       "https://dl.rozmusic.com/Music/1396/10/13/Babak%20Jahanbakhsh%20-%20Roozhaye%20Abri%20(128).mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 10,
     textMusic: [
-      "roozaye abri",
+      "roozaye abri-10",
       "روزای ابری",
 
       "I gave you your dreams",
@@ -271,14 +271,14 @@ const data_music = [
     ],
   },
   {
-    title: "Parvaz",
+    title: "Parvaz-11",
     artist: "shahin najafi",
     audioSrc:
       "https://dl.ritmy.io/Single/Shahin_Najafi/Parvaz-128[ritmy.io].mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 11,
     textMusic: [
-      "parvaz",
+      "parvaz-11",
       "پرواز",
 
       "I gave you your dreams",
@@ -298,14 +298,14 @@ const data_music = [
     ],
   },
   {
-    title: "nistameton",
+    title: "nistameton-12",
     artist: "shaye",
     audioSrc:
       "https://dl.melonmusic.ir/Music/Shayea%20-%20Nistametoon%20(320).mp3",
     image: "../image/music cover/shaye-nistameton.png",
     id: 12,
     textMusic: [
-      "nistametoon",
+      "nistametoon-12",
       "نیستمون",
 
       "I gave you your dreams",
@@ -326,6 +326,14 @@ const data_music = [
   },
 ];
 
+var page_size = 4;
+var page_counter = 1;
+var start_indexSong = page_counter - 1;
+var end_indexSong = start_indexSong + page_size;
+function setStartAndEndIndex(page_counter, page_size) {
+  start_indexSong = end_indexSong;
+  end_indexSong = start_indexSong + page_size;
+}
 //  **************************************************** CREATE ELEMENT  ****************************************************
 
 window.onload = createPage();
@@ -345,7 +353,11 @@ function createPlayList() {
 }
 
 function createItemOfPlaylist(ulTag) {
-  for (let i = 0; i < data_music.length; i++) {
+  console.log("counter" + page_counter);
+  console.log("start" + start_indexSong);
+  console.log("end" + end_indexSong);
+
+  for (let i = start_indexSong; i < end_indexSong; i++) {
     //CREATE li
     const playlistItem = document.createElement("li");
     playlistItem.setAttribute("class", "playList-item");
@@ -605,4 +617,9 @@ function setPagination(paginationIdClicked) {
   document
     .querySelector('li[id="' + paginationIdClicked + '"]')
     .classList.add("active");
+  page_counter = paginationIdClicked;
+  const playList = document.querySelector(".playList");
+  playList.innerHTML = "";
+  setStartAndEndIndex(page_counter, page_size);
+  createItemOfPlaylist(playList);
 }
