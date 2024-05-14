@@ -326,6 +326,7 @@ const data_music = [
   },
 ];
 
+var pagination_size = 3;
 var page_size = 3;
 var page_counter = 1;
 var start_indexSong = page_counter - 1;
@@ -340,6 +341,7 @@ window.onload = createPage();
 function createPage() {
   createPlayList();
   createModal();
+  createPaginationItem();
 }
 
 //  **************************************************** CREATE ELEMENT _ CREATE PLAY LIST ELEMENT  ****************************************************
@@ -493,6 +495,52 @@ function createModal() {
   modaltext.setAttribute("class", "textContent");
   modaltext.setAttribute("id", "text");
   modaltextDiv.appendChild(modaltext);
+}
+
+//  **************************************************** CREATE ELEMENT _ CREATE PAGINATION  ****************************************************
+function createPaginationItem() {
+  const paginationContent = document.querySelector(".pagination");
+
+  //CREATE PAGINATION _ Previous button
+  const PreviousItem = document.createElement("li");
+  PreviousItem.setAttribute("class", "page-item");
+  PreviousItem.setAttribute("onclick", "previousPagination()");
+  paginationContent.appendChild(PreviousItem);
+
+  const PreviousLink = document.createElement("a");
+  PreviousLink.setAttribute("class", "page-link");
+  PreviousLink.setAttribute("href", "#");
+  PreviousLink.innerHTML = "Previous";
+  PreviousItem.appendChild(PreviousLink);
+
+  //CREATE PAGINATION _ item
+  for (let i = 0; i < pagination_size; i++) {
+    const paginationItem = document.createElement("li");
+    paginationItem.setAttribute("class", "page-item");
+    paginationItem.setAttribute("id", i + 1);
+    paginationItem.setAttribute("onclick", "setPagination(this.id)");
+    paginationContent.appendChild(paginationItem);
+
+    const paginationLink = document.createElement("a");
+    paginationLink.setAttribute("class", "page-link");
+    paginationLink.setAttribute("href", "#");
+    paginationLink.innerHTML = i + 1;
+    paginationItem.appendChild(paginationLink);
+  }
+
+  //CREATE PAGINATION _ next button
+  const nextItem = document.createElement("li");
+  nextItem.setAttribute("class", "page-item");
+  nextItem.setAttribute("onclick", "nextPagination(this.id)");
+  paginationContent.appendChild(nextItem);
+
+  const nextLink = document.createElement("a");
+  nextLink.setAttribute("class", "page-link");
+  nextLink.setAttribute("href", "#");
+  nextLink.innerHTML = "Next";
+  nextItem.appendChild(nextLink);
+
+  document.querySelector("li[id='1']").classList.add("active");
 }
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
