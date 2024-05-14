@@ -327,6 +327,7 @@ const data_music = [
 ];
 
 var pagination_size = 3;
+
 var page_size = 3;
 var page_counter = 1;
 var start_indexSong = page_counter - 1;
@@ -523,6 +524,7 @@ function createPaginationItem() {
 
     const paginationLink = document.createElement("a");
     paginationLink.setAttribute("class", "page-link");
+    paginationLink.classList.add("page-link-num");
     paginationLink.setAttribute("href", "#");
     paginationLink.innerHTML = i + 1;
     paginationItem.appendChild(paginationLink);
@@ -531,7 +533,7 @@ function createPaginationItem() {
   //CREATE PAGINATION _ next button
   const nextItem = document.createElement("li");
   nextItem.setAttribute("class", "page-item");
-  nextItem.setAttribute("onclick", "nextPagination(this.id)");
+  nextItem.setAttribute("onclick", "nextPagination()");
   paginationContent.appendChild(nextItem);
 
   const nextLink = document.createElement("a");
@@ -670,4 +672,36 @@ function setPagination(paginationIdClicked) {
   playList.innerHTML = "";
   setStartAndEndIndex(page_counter, page_size);
   createItemOfPlaylist(playList);
+}
+
+function previousPagination() {
+  let getPaginationItem = document.querySelectorAll("li[id]");
+  let getPaginationLink = document.querySelectorAll("a.page-link-num");
+  if (getPaginationItem[0].getAttribute("id") == "1") {
+    return;
+  } else {
+    for (let i = 0; i < getPaginationItem.length; i++) {
+      var id = parseInt(getPaginationItem[i].getAttribute("id"));
+      getPaginationItem[i].setAttribute("id", id - 1);
+    }
+    for (let i = 0; i < getPaginationLink.length; i++) {
+      var id = parseInt(getPaginationItem[i].getAttribute("id"));
+      console.log(id);
+      getPaginationLink[i].innerHTML = id;
+    }
+  }
+}
+function nextPagination() {
+  let getPaginationItem = document.querySelectorAll("li[id]");
+  let getPaginationLink = document.querySelectorAll("a.page-link-num");
+
+  for (let i = 0; i < getPaginationItem.length; i++) {
+    var id = parseInt(getPaginationItem[i].getAttribute("id"));
+    getPaginationItem[i].setAttribute("id", id + 1);
+  }
+  for (let i = 0; i < getPaginationLink.length; i++) {
+    var id = parseInt(getPaginationItem[i].getAttribute("id"));
+    console.log(id);
+    getPaginationLink[i].innerHTML = id;
+  }
 }
