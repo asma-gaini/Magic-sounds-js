@@ -597,3 +597,12 @@ function openModal(clickedId) {
   document.getElementById("single-song").play();
   toggleSvg(clickedId);
 }
+
+//  **************************************************** PAGINATION  ****************************************************
+
+function setPagination(paginationIdClicked) {
+  document.querySelector("li.active").classList.remove("active");
+  document
+    .querySelector('li[id="' + paginationIdClicked + '"]')
+    .classList.add("active");
+}
