@@ -326,12 +326,12 @@ const data_music = [
   },
 ];
 
-var page_size = 4;
+var page_size = 3;
 var page_counter = 1;
 var start_indexSong = page_counter - 1;
 var end_indexSong = start_indexSong + page_size;
 function setStartAndEndIndex(page_counter, page_size) {
-  start_indexSong = end_indexSong;
+  start_indexSong = (page_counter - 1) * page_size;
   end_indexSong = start_indexSong + page_size;
 }
 //  **************************************************** CREATE ELEMENT  ****************************************************
