@@ -1,4 +1,6 @@
-//  **************************************************** MUSIC INFORMATION  ****************************************************
+//  **************************************************** DATA  ****************************************************
+
+//  **************************************************** DATA _ MUSIC INFORMATION  ****************************************************
 const data_music = [
   {
     title: "roozaye abri-1",
@@ -326,6 +328,50 @@ const data_music = [
   },
 ];
 
+//  **************************************************** DATA _ DASHBOARD INFORMATION  ****************************************************
+const vertical_navigation = {
+  header_VNav: {
+    brandName: "menu",
+    logoImage: "",
+  },
+  information_VNav: [
+    {
+      mainId: "1",
+      name: "Home",
+      svg: "../image/svg/house.svg",
+      target: "#",
+      subid: "null",
+      subLink: "null",
+    },
+    // ,
+    // {
+    //   mainId: "2",
+    //   name: "Dashboard",
+    //   svg: "",
+    //   target: "#",
+    //   subid: "sub1",
+    //   subLink: [
+    //     {
+    //       mainId: "3",
+    //       name: "item 1",
+    //     },
+    //     {
+    //       mainId: "4",
+    //       name: "item 2",
+    //     },
+    //   ],
+    // },
+    // {
+    //   mainId: "5",
+    //   name: "Order",
+    //   svg: "",
+    //   target: "#",
+    //   subid: "null",
+    //   subLink: "null",
+    // },
+  ],
+};
+
 var pagination_size = 3;
 
 var page_size = 3;
@@ -343,6 +389,116 @@ function createPage() {
   createPlayList();
   createModal();
   createPaginationItem();
+  createVerticalNavigation();
+}
+
+//  **************************************************** CREATE ELEMENT _ CREATE VERTICAL NAVIGATION(NV)  ****************************************************
+function createVerticalNavigation() {
+  createList_VerticalNavigation();
+}
+
+function createHeader_VerticalNavigation() {}
+
+function createList_VerticalNavigation() {
+  const dashboardUl = document.querySelector("ul[id='menu']");
+  for (let i = 0; i < vertical_navigation.information_VNav.length; i++) {
+    //CREATE list
+    const list_VN = document.createElement("li");
+    dashboardUl.appendChild(list_VN);
+
+    //CREATE link
+    const link_VN = document.createElement("a");
+
+    link_VN.setAttribute(
+      "href",
+      vertical_navigation.information_VNav[i].target
+    );
+    link_VN.setAttribute("class", "nav-link");
+    link_VN.classList.add("align-middle");
+    link_VN.classList.add("px-0");
+    link_VN.setAttribute("id", vertical_navigation.information_VNav[i].mainId);
+
+    list_VN.appendChild(link_VN);
+
+    //CREATE svg
+    const svg = document.createElement("img");
+
+    svg.setAttribute("src", vertical_navigation.information_VNav[i].svg);
+    svg.setAttribute("class", "dashboardSvg");
+
+    link_VN.appendChild(svg);
+
+    //CREATE name item
+    const name = document.createElement("span");
+
+    name.setAttribute("class", "ms-1");
+    name.classList.add("d-none");
+    name.classList.add("d-sm-inline");
+    name.innerHTML = vertical_navigation.information_VNav[i].name;
+
+    link_VN.appendChild(name);
+
+    //CREATE sublink
+    if (vertical_navigation.information_VNav[i].subLink != "null") {
+      const linkContentSub = document.querySelector(
+        'a[id="' + vertical_navigation.information_VNav[i].mainId + '"]'
+      );
+      linkContentSub.setAttribute(
+        "href",
+        "#" + vertical_navigation.information_VNav[i].subid
+      );
+      linkContentSub.setAttribute("data-bs-toggle", "collapse");
+
+      //ul sublink
+      const sublinkUl = document.createElement("ul");
+
+      sublinkUl.setAttribute("class", "collapse");
+      sublinkUl.classList.add("show");
+      sublinkUl.classList.add("nav");
+      sublinkUl.classList.add("flex-column");
+      sublinkUl.classList.add("ms-1");
+      sublinkUl.setAttribute("data-bs-parent", "#menu");
+      sublinkUl.setAttribute(
+        "id",
+        vertical_navigation.information_VNav[i].subid
+      );
+
+      linkContentSub.parentElement.appendChild(sublinkUl);
+
+      for (
+        let j = 0;
+        j < vertical_navigation.information_VNav[i].subLink.length;
+        j++
+      ) {
+        //list sub list
+        const subList_VN = document.createElement("li");
+        sublinkUl.appendChild(subList_VN);
+
+        //CREATE sublink
+        const sublink_VN = document.createElement("a");
+
+        sublink_VN.setAttribute("href", "#");
+        sublink_VN.setAttribute("class", "nav-link");
+        sublink_VN.classList.add("px-0");
+        sublink_VN.setAttribute(
+          "id",
+          vertical_navigation.information_VNav[i].subLink[j].mainId
+        );
+
+        subList_VN.appendChild(sublink_VN);
+
+        //CREATE sub name item
+        const subName = document.createElement("span");
+
+        subName.setAttribute("class", "d-none");
+        subName.classList.add("d-sm-inline");
+        subName.innerHTML =
+          vertical_navigation.information_VNav[i].subLink[j].name;
+
+        sublink_VN.appendChild(subName);
+      }
+    }
+  }
 }
 
 //  **************************************************** CREATE ELEMENT _ CREATE PLAY LIST ELEMENT  ****************************************************

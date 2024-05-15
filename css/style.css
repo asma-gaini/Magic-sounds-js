@@ -234,3 +234,7 @@ img {
 .playList-item-div-image.pause .svg {
   opacity: 1;
 }
+
+.dashboardSvg {
+  width: 30px;
+}
