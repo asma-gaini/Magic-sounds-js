@@ -372,6 +372,7 @@ const vertical_navigation = {
   ],
 };
 
+//  **************************************************** GLOBAL VARIABLE ****************************************************
 var pagination_size = 3;
 
 var page_size = 3;
@@ -382,6 +383,25 @@ function setStartAndEndIndex(page_counter, page_size) {
   start_indexSong = (page_counter - 1) * page_size;
   end_indexSong = start_indexSong + page_size;
 }
+
+var songImage = document.getElementById("single-song-image");
+var songTitle = document.getElementById("modalSong-title");
+var songArtistName = document.getElementById("modalSong-artistName");
+
+//  **************************************************** GLOBAL FUNCTION  ****************************************************
+function setMusicHasBeenCalled(clickedId) {
+  if (
+    document
+      .querySelector('div[id="' + clickedId + '"]')
+      .getAttribute("setmusicHasBeenCalled") == "false"
+  ) {
+    setSongInformation(clickedId);
+    document
+      .querySelector('div[id="' + clickedId + '"]')
+      .setAttribute("setmusicHasBeenCalled", "true");
+  }
+}
+
 //  **************************************************** CREATE ELEMENT  ****************************************************
 
 window.onload = createPage();
@@ -394,10 +414,13 @@ function createPage() {
 
 //  **************************************************** CREATE ELEMENT _ CREATE VERTICAL NAVIGATION(NV)  ****************************************************
 function createVerticalNavigation() {
+  setHeader_VerticalNavigation();
   createList_VerticalNavigation();
 }
 
-function createHeader_VerticalNavigation() {}
+function setHeader_VerticalNavigation() {
+  document.querySelector(".fs-5").innerHTML = "Menu";
+}
 
 function createList_VerticalNavigation() {
   const dashboardUl = document.querySelector("ul[id='menu']");
@@ -700,25 +723,6 @@ function createPaginationItem() {
   nextItem.appendChild(nextLink);
 
   document.querySelector("li[id='1']").classList.add("active");
-}
-
-//  **************************************************** GLOBAL VARIABLE ****************************************************
-var songImage = document.getElementById("single-song-image");
-var songTitle = document.getElementById("modalSong-title");
-var songArtistName = document.getElementById("modalSong-artistName");
-
-//  **************************************************** GLOBAL FUNCTION  ****************************************************
-function setMusicHasBeenCalled(clickedId) {
-  if (
-    document
-      .querySelector('div[id="' + clickedId + '"]')
-      .getAttribute("setmusicHasBeenCalled") == "false"
-  ) {
-    setSongInformation(clickedId);
-    document
-      .querySelector('div[id="' + clickedId + '"]')
-      .setAttribute("setmusicHasBeenCalled", "true");
-  }
 }
 
 //  **************************************************** FUNCTION ON THE IMAGE TAG ON PLAY LIST  ****************************************************
