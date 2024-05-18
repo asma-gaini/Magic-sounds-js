@@ -373,7 +373,6 @@ const vertical_navigation = {
 };
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
-var pagination_size = 3;
 
 var page_size = 3;
 var page_counter = 1;
@@ -383,6 +382,9 @@ function setStartAndEndIndex(page_counter, page_size) {
   start_indexSong = (page_counter - 1) * page_size;
   end_indexSong = start_indexSong + page_size;
 }
+
+var pagination_size = 3;
+const page_lenght = data_music.length / page_size;
 
 var songImage = document.getElementById("single-song-image");
 var songTitle = document.getElementById("modalSong-title");
@@ -821,7 +823,7 @@ function openModal(clickedId) {
   toggleSvg(clickedId);
 }
 
-//  **************************************************** PAGINATION  ****************************************************
+//  **************************************************** FUNCTION OF PAGINATION  ****************************************************
 
 function setPagination(paginationIdClicked) {
   document.querySelector("li.active").classList.remove("active");
@@ -858,11 +860,18 @@ function nextPagination() {
 
   for (let i = 0; i < getPaginationItem.length; i++) {
     var id = parseInt(getPaginationItem[i].getAttribute("id"));
-    getPaginationItem[i].setAttribute("id", id + 1);
+    if (id < page_lenght) {
+      getPaginationItem[i].setAttribute("id", id + 1);
+    } else {
+      return;
+    }
   }
   for (let i = 0; i < getPaginationLink.length; i++) {
     var id = parseInt(getPaginationItem[i].getAttribute("id"));
-    console.log(id);
-    getPaginationLink[i].innerHTML = id;
+    if (id <= page_lenght) {
+      getPaginationLink[i].innerHTML = id;
+    } else {
+      return;
+    }
   }
 }
