@@ -101,7 +101,7 @@ img {
 .playList {
   padding: 0;
   list-style-type: none;
-  height: 100vh !important;
+  height: 85vh !important;
 }
 /* .playList-item-link {
   display: flex;
@@ -145,7 +145,7 @@ img {
 }
 .info-title,
 .info-subtitle {
-  color: #DECDC3;
+  color: #decdc3;
   /* color: var(--font-color); */
 }
 

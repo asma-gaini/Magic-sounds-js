@@ -753,9 +753,13 @@ function setSongInformation(clickedId) {
       document
         .getElementById("single-song")
         .setAttribute("src", data_music[i].audioSrc);
-      songImage.setAttribute("src", data_music[i].image);
-      songTitle.innerHTML = data_music[i].title;
-      songArtistName.innerHTML = data_music[i].artist;
+      document
+        .getElementById("single-song-image")
+        .setAttribute("src", data_music[i].image);
+      document.getElementById("modalSong-title").innerHTML =
+        data_music[i].title;
+      document.getElementById("modalSong-artistName").innerHTML =
+        data_music[i].artist;
       setText(clickedId);
       return;
     }
