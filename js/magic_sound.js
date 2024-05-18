@@ -416,6 +416,7 @@ function createList_VerticalNavigation() {
     link_VN.setAttribute("class", "nav-link");
     link_VN.classList.add("align-middle");
     link_VN.classList.add("px-0");
+    link_VN.classList.add("setColor");
     link_VN.setAttribute("id", vertical_navigation.information_VNav[i].mainId);
 
     list_VN.appendChild(link_VN);

@@ -145,7 +145,8 @@ img {
 }
 .info-title,
 .info-subtitle {
-  color: var(--font-color);
+  color: #DECDC3;
+  /* color: var(--font-color); */
 }
 
 .info-title {

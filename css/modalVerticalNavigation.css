@@ -2,3 +2,11 @@
   border-radius: 10px;
   margin: 18px 0px 0px 10px !important;
 }
+.setColor {
+  color: #5c848e !important;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: #e0e0ec !important;
+}
