@@ -222,6 +222,18 @@ img {
 .playList-item-div-image:hover #playSvg {
   opacity: 1;
 }
+.removePlayHover:hover #playSvg {
+  opacity: 0 !important;
+}
+.addPauseHover:hover .svg:last-child {
+  opacity: 1 !important;
+}
+.addPlayingHover:hover #playSvg {
+  opacity: 1 !important;
+}
+.removePauseHover:hover.svg:last-child {
+  opacity: 0 !important;
+}
 
 .playList-item-div-image.play .svg:last-child {
   opacity: 1;

@@ -739,12 +739,24 @@ function handlePlayPause() {
         getDivContentSvg.classList.remove("pause");
         getDivContentSvg.classList.add("play");
 
+        getDivContentSvg.classList.remove("addPlayingHover");
+        getDivContentSvg.classList.remove("removePauseHover");
+
+        getDivContentSvg.classList.add("removePlayHover");
+        getDivContentSvg.classList.add("addPauseHover");
+
         console.log("playing" + id);
         console.log(getDivContentSvg);
       }
       if (event.type === "pause") {
         getDivContentSvg.classList.remove("play");
         getDivContentSvg.classList.add("pause");
+
+        getDivContentSvg.classList.remove("removePlayHover");
+        getDivContentSvg.classList.remove("addPauseHover");
+
+        getDivContentSvg.classList.add("addPlayingHover");
+        getDivContentSvg.classList.add("removePauseHover");
 
         console.log("paused" + id);
         console.log(getDivContentSvg);
