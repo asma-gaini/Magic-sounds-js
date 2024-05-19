@@ -1,6 +1,6 @@
 .modal-header {
   height: 40px;
-  background-color: #dfdfe4;
+  background-color: #e0e0ec;
 }
 .modal-body {
   background-color: rgb(33, 32, 30);
@@ -22,11 +22,11 @@
   padding-top: 5px;
 }
 .modalSong-title {
-  color: white;
+  color: #e0e0ec;
   font-size: 15px;
 }
 .modalSong-artistName {
-  color: white;
+  color: #e0e0ec;
   font-size: 10px;
 }
 .modualSong-audio {
@@ -34,12 +34,12 @@
 }
 audio::-webkit-media-controls-play-button,
 audio::-webkit-media-controls-panel {
-  background-color: #6f6f76;
+  background-color: #5c848e;
   color: #000000;
 }
 
 .textContent {
-  color: aliceblue;
+  color: #e0e0ec;
   text-align: center;
   text-shadow: 2px 2px #000000;
 }
@@ -53,7 +53,7 @@ audio::-webkit-media-controls-panel {
 }
 .modal-footer {
   height: 40px;
-  background-color: #dfdfe4;
+  background-color: #e0e0ec !important;
   padding: 0px 20px !important;
 }
 .btnClose {
