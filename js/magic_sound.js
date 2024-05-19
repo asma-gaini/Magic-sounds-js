@@ -538,10 +538,6 @@ function createPlayList() {
 }
 
 function createItemOfPlaylist(ulTag) {
-  console.log("counter" + page_counter);
-  console.log("start" + start_indexSong);
-  console.log("end" + end_indexSong);
-
   for (let i = start_indexSong; i < end_indexSong; i++) {
     //CREATE li
     const playlistItem = document.createElement("li");
@@ -823,6 +819,7 @@ function removeSvg(clickedId) {
 //  **************************************************** FUNCTION ON THE TEXT(LINK) TAG ON PLAY LIST  ****************************************************
 function openModal(clickedId) {
   setMusicHasBeenCalled(clickedId);
+  document.querySelector('div[id="' + clickedId + '"]').classList.add("active");
   document.getElementById("single-song").play();
   toggleSvg(clickedId);
 }
@@ -853,7 +850,6 @@ function previousPagination() {
     }
     for (let i = 0; i < getPaginationLink.length; i++) {
       var id = parseInt(getPaginationItem[i].getAttribute("id"));
-      console.log(id);
       getPaginationLink[i].innerHTML = id;
     }
   }
