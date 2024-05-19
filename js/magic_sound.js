@@ -84,15 +84,15 @@ const data_music = [
     ],
   },
   {
-    title: "roozaye abri-4",
-    artist: "jahanbakhsh",
+    title: "nafas",
+    artist: "salar aghili",
     audioSrc:
-      "https://dl.rozmusic.com/Music/1396/10/13/Babak%20Jahanbakhsh%20-%20Roozhaye%20Abri%20(128).mp3",
+      "https://dl.rozmusic.com/Music/1402/10/21/Salar%20Aghili%20-%20Nafas%20%28128%29.mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 4,
     textMusic: [
-      "roozaye abri-4",
-      "روزای ابری",
+      "nafas",
+      " نفس",
 
       "I gave you your dreams",
       "من رویا هات رو بهت دادم",
@@ -111,15 +111,15 @@ const data_music = [
     ],
   },
   {
-    title: "Parvaz-5",
-    artist: "shahin najafi",
+    title: "male mani",
+    artist: "moeen zed",
     audioSrc:
-      "https://dl.ritmy.io/Single/Shahin_Najafi/Parvaz-128[ritmy.io].mp3",
+      "https://dl.rozmusic.com/Music/1401/12/16/Moein%20Z%20-%20Male%20Mani%20%28128%29.mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 5,
     textMusic: [
-      "parvaz-5",
-      "پرواز",
+      "lhg lkd",
+      "مال منی",
 
       "I gave you your dreams",
       "من رویا هات رو بهت دادم",
@@ -138,15 +138,15 @@ const data_music = [
     ],
   },
   {
-    title: "nistameton-6",
-    artist: "shaye",
+    title: "khial khosh",
+    artist: "alireza ghorbani",
     audioSrc:
-      "https://dl.melonmusic.ir/Music/Shayea%20-%20Nistametoon%20(320).mp3",
+      "https://dl.rozmusic.com/Music/1399/04/29/Alireza%20Ghorbani%20-%20Khiale%20Khosh%20%28128%29.mp3",
     image: "../image/music cover/shaye-nistameton.png",
     id: 6,
     textMusic: [
-      "nistametoon-6",
-      "نیستمون",
+      "khial khosh",
+      "خیال خوش",
 
       "I gave you your dreams",
       "من رویا هات رو بهت دادم",
@@ -165,15 +165,15 @@ const data_music = [
     ],
   },
   {
-    title: "roozaye abri-7",
-    artist: "jahanbakhsh",
+    title: "yadam raft",
+    artist: "reza sadeghi",
     audioSrc:
-      "https://dl.rozmusic.com/Music/1396/10/13/Babak%20Jahanbakhsh%20-%20Roozhaye%20Abri%20(128).mp3",
+      "https://dl.rozmusic.com/Music/1400/05/30/Reza%20Sadeghi%20-%20%20Yadam%20Raft%20%28128%29.mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 7,
     textMusic: [
-      "roozaye abri-7",
-      "روزای ابری",
+      "yadam raft",
+      "یادم رفت ",
 
       "I gave you your dreams",
       "من رویا هات رو بهت دادم",
@@ -192,15 +192,15 @@ const data_music = [
     ],
   },
   {
-    title: "Parvaz-8",
-    artist: "shahin najafi",
+    title: "kharabesh kardi",
+    artist: "farzad farzin",
     audioSrc:
-      "https://dl.ritmy.io/Single/Shahin_Najafi/Parvaz-128[ritmy.io].mp3",
+      "https://dl.rozmusic.com/Music/1397/11/09/Farzad%20Farzin%20-%20Kharabesh%20Kardi%20(128).mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 8,
     textMusic: [
-      "parvaz-8",
-      "پرواز",
+      "kharabesh kardi",
+      "خرابش کردی",
 
       "I gave you your dreams",
       "من رویا هات رو بهت دادم",
@@ -219,15 +219,15 @@ const data_music = [
     ],
   },
   {
-    title: "nistameton-9",
-    artist: "shaye",
+    title: "koja rafte boodi",
+    artist: "hoorosh band",
     audioSrc:
-      "https://dl.melonmusic.ir/Music/Shayea%20-%20Nistametoon%20(320).mp3",
+      "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Hoorosh%20Band%20-%20Koja%20Rafte%20Boodi%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
     image: "../image/music cover/shaye-nistameton.png",
     id: 9,
     textMusic: [
-      "nistametoon-9",
-      "نیستمون",
+      "koja rafte boodi",
+      "کجا رفته بودی",
 
       "I gave you your dreams",
       "من رویا هات رو بهت دادم",
@@ -246,15 +246,15 @@ const data_music = [
     ],
   },
   {
-    title: "roozaye abri-10",
-    artist: "jahanbakhsh",
+    title: "var agar",
+    artist: "erfan tahmaseb",
     audioSrc:
-      "https://dl.rozmusic.com/Music/1396/10/13/Babak%20Jahanbakhsh%20-%20Roozhaye%20Abri%20(128).mp3",
+      "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Erfan%20Tahmasbi%20-%20Vay%20Agar%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 10,
     textMusic: [
-      "roozaye abri-10",
-      "روزای ابری",
+      "vay agar",
+      " وای اگر",
 
       "I gave you your dreams",
       "من رویا هات رو بهت دادم",
@@ -273,15 +273,15 @@ const data_music = [
     ],
   },
   {
-    title: "Parvaz-11",
-    artist: "shahin najafi",
+    title: "mane divaneh",
+    artist: "reza bahram",
     audioSrc:
-      "https://dl.ritmy.io/Single/Shahin_Najafi/Parvaz-128[ritmy.io].mp3",
+      "https://dl.rozmusic.com/Music/1402/07/05/Reza%20Bahram%20-%20Mane%20Divaneh%20%28128%29.mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 11,
     textMusic: [
-      "parvaz-11",
-      "پرواز",
+      "mane divaneh",
+      "من دیوانه",
 
       "I gave you your dreams",
       "من رویا هات رو بهت دادم",
@@ -300,15 +300,15 @@ const data_music = [
     ],
   },
   {
-    title: "nistameton-12",
-    artist: "shaye",
+    title: "khastam",
+    artist: "behnam bani",
     audioSrc:
-      "https://dl.melonmusic.ir/Music/Shayea%20-%20Nistametoon%20(320).mp3",
+      "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Behnam%20Bani%20-%20Khastam%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
     image: "../image/music cover/shaye-nistameton.png",
     id: 12,
     textMusic: [
-      "nistametoon-12",
-      "نیستمون",
+      "khastam",
+      "خستم",
 
       "I gave you your dreams",
       "من رویا هات رو بهت دادم",
@@ -657,6 +657,9 @@ function createModal() {
   //CREATE audio
   const modalAudioTag = document.createElement("audio");
 
+  modalAudioTag.addEventListener("play", handlePlayPause);
+  modalAudioTag.addEventListener("pause", handlePlayPause);
+
   modalAudioTag.setAttribute("src", "");
   modalAudioTag.setAttribute("controls", "controls");
   modalAudioTag.setAttribute("alt", "");
@@ -723,6 +726,33 @@ function createPaginationItem() {
   document.querySelector("li[id='1']").classList.add("active");
 }
 
+//  **************************************************** FUNCTION FOR PLAY AND PAUSE AUDIO  ****************************************************
+function handlePlayPause() {
+  const myAudio = document.getElementById("single-song");
+  const myAudioSrc = myAudio.getAttribute("src");
+  for (let i = 0; i < data_music.length; i++) {
+    if (data_music[i].audioSrc == myAudioSrc) {
+      const id = data_music[i].id;
+      const getDivContentSvg = document.querySelector('div[id="' + id + '"]');
+
+      if (event.type === "play") {
+        getDivContentSvg.classList.remove("pause");
+        getDivContentSvg.classList.add("play");
+
+        console.log("playing" + id);
+        console.log(getDivContentSvg);
+      }
+      if (event.type === "pause") {
+        getDivContentSvg.classList.remove("play");
+        getDivContentSvg.classList.add("pause");
+
+        console.log("paused" + id);
+        console.log(getDivContentSvg);
+      }
+    }
+  }
+}
+
 //  **************************************************** FUNCTION ON THE IMAGE TAG ON PLAY LIST  ****************************************************
 function togglePlay(clickedId) {
   setMusicHasBeenCalled(clickedId);
@@ -735,7 +765,7 @@ function togglePlay(clickedId) {
 
   playAndPuaseSong();
   document.querySelector('div[id="' + clickedId + '"]').classList.add("active");
-  toggleSvg(clickedId);
+  removeSvg(clickedId);
 }
 
 function setSongInformation(clickedId) {
@@ -778,28 +808,6 @@ function playAndPuaseSong() {
     : document.getElementById("single-song").pause();
 }
 
-function toggleSvg(clickedId) {
-  removeSvg(clickedId);
-
-  if (
-    document
-      .querySelector('div[id="' + clickedId + '"]')
-      .classList.contains("play")
-  ) {
-    document
-      .querySelector('div[id="' + clickedId + '"]')
-      .classList.remove("play");
-    document
-      .querySelector('div[id="' + clickedId + '"]')
-      .classList.add("pause");
-  } else {
-    document
-      .querySelector('div[id="' + clickedId + '"]')
-      .classList.remove("pause");
-    document.querySelector('div[id="' + clickedId + '"]').classList.add("play");
-  }
-}
-
 function removeSvg(clickedId) {
   let includesPlayClass = document.querySelectorAll(".play");
   let includesPauseClass = document.querySelectorAll(".pause");
@@ -821,9 +829,8 @@ function openModal(clickedId) {
   setMusicHasBeenCalled(clickedId);
   document.querySelector('div[id="' + clickedId + '"]').classList.add("active");
   document.getElementById("single-song").play();
-  toggleSvg(clickedId);
+  removeSvg(clickedId);
 }
-
 //  **************************************************** FUNCTION OF PAGINATION  ****************************************************
 
 function setPagination(paginationIdClicked) {
