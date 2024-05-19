@@ -769,7 +769,7 @@ function handlePlayPause() {
 function togglePlay(clickedId) {
   setMusicHasBeenCalled(clickedId);
 
-  let contentActiveClass = document.getElementsByClassName("active");
+  let contentActiveClass = document.querySelectorAll('div[class="active"]');
 
   for (let i = 0; i < contentActiveClass.length; i++) {
     contentActiveClass[i].classList.remove("active");
