@@ -9,6 +9,7 @@ const data_music = [
       "https://dl.rozmusic.com/Music/1396/10/13/Babak%20Jahanbakhsh%20-%20Roozhaye%20Abri%20(128).mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 1,
+    time: "04:49",
     textMusic: [
       "roozaye abri-1",
       "روزای ابری",
@@ -36,6 +37,7 @@ const data_music = [
       "https://dl.ritmy.io/Single/Shahin_Najafi/Parvaz-128[ritmy.io].mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 2,
+    time: "03:40",
     textMusic: [
       "parvaz-2",
       "پرواز",
@@ -63,6 +65,7 @@ const data_music = [
       "https://dl.melonmusic.ir/Music/Shayea%20-%20Nistametoon%20(320).mp3",
     image: "../image/music cover/shaye-nistameton.png",
     id: 3,
+    time: "03:30",
     textMusic: [
       "nistametoon-3",
       "نیستمون",
@@ -90,6 +93,7 @@ const data_music = [
       "https://dl.rozmusic.com/Music/1402/10/21/Salar%20Aghili%20-%20Nafas%20%28128%29.mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 4,
+    time: "03:30",
     textMusic: [
       "nafas",
       " نفس",
@@ -117,6 +121,7 @@ const data_music = [
       "https://dl.rozmusic.com/Music/1401/12/16/Moein%20Z%20-%20Male%20Mani%20%28128%29.mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 5,
+    time: "04:23",
     textMusic: [
       "lhg lkd",
       "مال منی",
@@ -144,6 +149,7 @@ const data_music = [
       "https://dl.rozmusic.com/Music/1399/04/29/Alireza%20Ghorbani%20-%20Khiale%20Khosh%20%28128%29.mp3",
     image: "../image/music cover/shaye-nistameton.png",
     id: 6,
+    time: "03:49",
     textMusic: [
       "khial khosh",
       "خیال خوش",
@@ -171,6 +177,7 @@ const data_music = [
       "https://dl.rozmusic.com/Music/1400/05/30/Reza%20Sadeghi%20-%20%20Yadam%20Raft%20%28128%29.mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 7,
+    time: "03:24",
     textMusic: [
       "yadam raft",
       "یادم رفت ",
@@ -198,6 +205,7 @@ const data_music = [
       "https://dl.rozmusic.com/Music/1397/11/09/Farzad%20Farzin%20-%20Kharabesh%20Kardi%20(128).mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 8,
+    time: "04:04",
     textMusic: [
       "kharabesh kardi",
       "خرابش کردی",
@@ -225,6 +233,7 @@ const data_music = [
       "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Hoorosh%20Band%20-%20Koja%20Rafte%20Boodi%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
     image: "../image/music cover/shaye-nistameton.png",
     id: 9,
+    time: "03:26",
     textMusic: [
       "koja rafte boodi",
       "کجا رفته بودی",
@@ -252,6 +261,7 @@ const data_music = [
       "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Erfan%20Tahmasbi%20-%20Vay%20Agar%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 10,
+    time: "02:56",
     textMusic: [
       "vay agar",
       " وای اگر",
@@ -279,6 +289,7 @@ const data_music = [
       "https://dl.rozmusic.com/Music/1402/07/05/Reza%20Bahram%20-%20Mane%20Divaneh%20%28128%29.mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 11,
+    time: "02:53",
     textMusic: [
       "mane divaneh",
       "من دیوانه",
@@ -306,6 +317,7 @@ const data_music = [
       "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Behnam%20Bani%20-%20Khastam%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
     image: "../image/music cover/shaye-nistameton.png",
     id: 12,
+    time: "03:32",
     textMusic: [
       "khastam",
       "خستم",
@@ -906,6 +918,7 @@ function togglePlay(clickedId) {
   playAndPuaseSong();
   document.querySelector('div[id="' + clickedId + '"]').classList.add("active");
   removeSvg(clickedId);
+  setSliderPlayerInformation(clickedId);
 }
 
 function setSongInformation(clickedId) {
@@ -970,9 +983,37 @@ function openModal(clickedId) {
   document.querySelector('div[id="' + clickedId + '"]').classList.add("active");
   document.getElementById("single-song").play();
   removeSvg(clickedId);
+  setSliderPlayerInformation(clickedId);
 }
-//  **************************************************** FUNCTION OF PAGINATION  ****************************************************
 
+//  **************************************************** FUNCTION OF SLIDER PLAYER UP  ****************************************************
+function setSliderPlayerInformation(clickedId) {
+  for (let i = 0; i < data_music.length; i++) {
+    if (data_music[i].id == clickedId) {
+      //set image
+      const imagePlayer = document.querySelector(".sliderPlayer_image");
+      imagePlayer.setAttribute("src", data_music[i].image);
+      imagePlayer.setAttribute("alt", "");
+      //set information _title
+      const titleSongPlayer = document.querySelector(".sliderPlayer_title");
+      titleSongPlayer.innerHTML = data_music[i].title;
+      //set information _subtitle
+      const subtitleSongPlayer = document.querySelector(
+        ".sliderPlayer_subtitle"
+      );
+      subtitleSongPlayer.innerHTML = data_music[i].artist;
+      //set progressPart
+      //set progressPart _current time
+      const currentTime = document.querySelector("#current_Time");
+      currentTime.innerHTML = "01:24";
+      //set progressPart _time
+      const time = document.querySelector("#time");
+      time.innerHTML = data_music[i].time;
+    }
+  }
+}
+
+//  **************************************************** FUNCTION OF PAGINATION  ****************************************************
 function setPagination(paginationIdClicked) {
   document.querySelector("li.active").classList.remove("active");
   document
