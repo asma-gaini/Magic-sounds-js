@@ -410,6 +410,7 @@ window.onload = createPage();
 function createPage() {
   createPlayList();
   createModal();
+  createSliderPlayerUp();
   createPaginationItem();
   createVerticalNavigation();
 }
@@ -677,6 +678,133 @@ function createModal() {
   modaltext.setAttribute("class", "textContent");
   modaltext.setAttribute("id", "text");
   modaltextDiv.appendChild(modaltext);
+}
+
+//  **************************************************** CREATE ELEMENT _ CREATE SLIDER PLAYER UP  ****************************************************
+function createSliderPlayerUp() {
+  const sliderPlayerContent = document.querySelector(".sliderPlayer");
+
+  // CREATE SLIDER PLAYER UP _ button extend
+  const btnExtend = document.createElement("button");
+
+  btnExtend.setAttribute("class", "btn-extend");
+  btnExtend.setAttribute("onclick", "extendSliderPlayer()");
+
+  sliderPlayerContent.appendChild(btnExtend);
+
+  // CREATE SLIDER PLAYER UP _ extend svg
+  const extendSvg = document.createElement("img");
+
+  extendSvg.setAttribute("src", "../image/svg/caret-up.svg");
+  extendSvg.setAttribute("alt", "sliderSvg");
+  extendSvg.setAttribute("class", "slider_up");
+
+  btnExtend.appendChild(extendSvg);
+
+  // CREATE SLIDER PLAYER UP _ div content
+  const contentDiv = document.createElement("div");
+
+  contentDiv.setAttribute("class", "sliderPlayer_content");
+
+  sliderPlayerContent.appendChild(contentDiv);
+
+  // CREATE SLIDER PLAYER UP _ slider player image
+  const playerImage = document.createElement("img");
+
+  playerImage.setAttribute(
+    "src",
+    "https://raisingchildren.net.au/__data/assets/image/0024/47742/baby-behaviour-and-awareness.jpg"
+  );
+  playerImage.setAttribute("alt", "song");
+  playerImage.setAttribute("class", "sliderPlayer_image");
+
+  contentDiv.appendChild(playerImage);
+
+  // CREATE SLIDER PLAYER UP _ div information
+  const divInformation = document.createElement("div");
+
+  divInformation.setAttribute("class", "sliderPlayer_info");
+
+  contentDiv.appendChild(divInformation);
+
+  // CREATE SLIDER PLAYER UP _ div title of player
+  const divTitle = document.createElement("div");
+
+  divTitle.setAttribute("class", "sliderPlayer_title");
+  divTitle.innerHTML = "Let It Happen";
+
+  divInformation.appendChild(divTitle);
+
+  // CREATE SLIDER PLAYER UP _ div subtitle of player
+  const divSubtitle = document.createElement("div");
+
+  divSubtitle.setAttribute("class", "sliderPlayer_subtitle");
+  divSubtitle.innerHTML = "Tame Impala";
+
+  divInformation.appendChild(divSubtitle);
+
+  // CREATE SLIDER PLAYER UP _ div play button
+  const divPlayButton = document.createElement("div");
+
+  divPlayButton.setAttribute("class", "sliderPlayer_playButton");
+
+  contentDiv.appendChild(divPlayButton);
+
+  // CREATE SLIDER PLAYER UP _ button play svg
+  const playButton = document.createElement("button");
+
+  playButton.setAttribute("class", "btn");
+  playButton.classList.add("sliderPlayer_playSvg");
+
+  divPlayButton.appendChild(playButton);
+
+  // CREATE SLIDER PLAYER UP _ play svg
+  const playSvg = document.createElement("img");
+
+  playSvg.setAttribute("src", "../image/svg/play.svg");
+  playSvg.setAttribute("alt", "playSvg");
+
+  playButton.appendChild(playSvg);
+
+  // CREATE SLIDER PLAYER UP _ div progress part
+  const divProgressPart = document.createElement("div");
+
+  divProgressPart.setAttribute("class", "sliderPlayer_proggressPart");
+
+  sliderPlayerContent.appendChild(divProgressPart);
+
+  // CREATE SLIDER PLAYER UP _ span for current time
+  const currentTime = document.createElement("span");
+
+  currentTime.setAttribute("class", "sliderPlayer_time");
+  currentTime.setAttribute("id", "current_Time");
+  currentTime.innerHTML = "01:24";
+
+  divProgressPart.appendChild(currentTime);
+
+  // CREATE SLIDER PLAYER UP _ Progress content div
+  const progressContentDiv = document.createElement("div");
+
+  progressContentDiv.setAttribute("class", "sliderPlayer_proggresBar");
+
+  divProgressPart.appendChild(progressContentDiv);
+
+  // CREATE SLIDER PLAYER UP _  progress span
+  const progressSpan = document.createElement("span");
+
+  progressSpan.setAttribute("class", "sliderPlayer_progress");
+
+  progressContentDiv.appendChild(progressSpan);
+
+  // CREATE SLIDER PLAYER UP _ song time span
+  const songTime = document.createElement("div");
+
+  songTime.setAttribute("class", "sliderPlayer_time");
+  songTime.setAttribute("id", "time");
+
+  songTime.innerHTML = "03:44";
+
+  divProgressPart.appendChild(songTime);
 }
 
 //  **************************************************** CREATE ELEMENT _ CREATE PAGINATION  ****************************************************
