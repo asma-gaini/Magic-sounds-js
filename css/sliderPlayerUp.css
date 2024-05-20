@@ -93,6 +93,13 @@
   position: relative;
   width: 40%;
   height: 100%;
-  background-color: #F7CCAC;
+  background-color: #f7ccac;
   border-radius: 6px;
+}
+
+.playSvg {
+  display: none;
+}
+.pauseSvg {
+  display: none;
 }

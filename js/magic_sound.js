@@ -775,8 +775,19 @@ function createSliderPlayerUp() {
 
   playSvg.setAttribute("src", "../image/svg/play.svg");
   playSvg.setAttribute("alt", "playSvg");
+  playSvg.setAttribute("id", "playSvgPlayer");
+  playSvg.setAttribute("class", "playSvg");
 
   playButton.appendChild(playSvg);
+
+  // CREATE SLIDER PLAYER UP _ pause svg
+  const pauseSvg = document.createElement("img");
+  pauseSvg.setAttribute("src", "../image/svg/pause.svg");
+  pauseSvg.setAttribute("alt", "pauseSvg");
+  pauseSvg.setAttribute("id", "pauseSvgPlayer");
+  pauseSvg.setAttribute("class", "pauseSvg");
+
+  playButton.appendChild(pauseSvg);
 
   // CREATE SLIDER PLAYER UP _ div progress part
   const divProgressPart = document.createElement("div");
@@ -885,6 +896,9 @@ function handlePlayPause() {
         getDivContentSvg.classList.add("removePlayHover");
         getDivContentSvg.classList.add("addPauseHover");
 
+        document.getElementById("pauseSvgPlayer").classList.remove("pauseSvg");
+        document.getElementById("playSvgPlayer").classList.add("playSvg");
+
         console.log("playing" + id);
         console.log(getDivContentSvg);
       }
@@ -897,6 +911,9 @@ function handlePlayPause() {
 
         getDivContentSvg.classList.add("addPlayingHover");
         getDivContentSvg.classList.add("removePauseHover");
+
+        document.getElementById("playSvgPlayer").classList.remove("playSvg");
+        document.getElementById("pauseSvgPlayer").classList.add("pauseSvg");
 
         console.log("paused" + id);
         console.log(getDivContentSvg);
