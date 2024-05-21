@@ -767,6 +767,7 @@ function createSliderPlayerUp() {
 
   playButton.setAttribute("class", "btn");
   playButton.classList.add("sliderPlayer_playSvg");
+  playButton.setAttribute("onclick", "playerPlayPause");
 
   divPlayButton.appendChild(playButton);
 
@@ -1028,6 +1029,10 @@ function setSliderPlayerInformation(clickedId) {
       time.innerHTML = data_music[i].time;
     }
   }
+}
+
+function playerPlayPause() {
+  playAndPuaseSong();
 }
 
 //  **************************************************** FUNCTION OF PAGINATION  ****************************************************
