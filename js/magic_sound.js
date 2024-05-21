@@ -84,7 +84,7 @@ const data_music = [
     ],
   },
   {
-    title: "nafas",
+    title: "nafas-4",
     artist: "salar aghili",
     audioSrc:
       "https://dl.rozmusic.com/Music/1402/10/21/Salar%20Aghili%20-%20Nafas%20%28128%29.mp3",
@@ -111,7 +111,7 @@ const data_music = [
     ],
   },
   {
-    title: "male mani",
+    title: "male mani-5",
     artist: "moeen zed",
     audioSrc:
       "https://dl.rozmusic.com/Music/1401/12/16/Moein%20Z%20-%20Male%20Mani%20%28128%29.mp3",
@@ -138,7 +138,7 @@ const data_music = [
     ],
   },
   {
-    title: "khial khosh",
+    title: "khial khosh-6",
     artist: "alireza ghorbani",
     audioSrc:
       "https://dl.rozmusic.com/Music/1399/04/29/Alireza%20Ghorbani%20-%20Khiale%20Khosh%20%28128%29.mp3",
@@ -165,7 +165,7 @@ const data_music = [
     ],
   },
   {
-    title: "yadam raft",
+    title: "yadam raft-7",
     artist: "reza sadeghi",
     audioSrc:
       "https://dl.rozmusic.com/Music/1400/05/30/Reza%20Sadeghi%20-%20%20Yadam%20Raft%20%28128%29.mp3",
@@ -192,7 +192,7 @@ const data_music = [
     ],
   },
   {
-    title: "kharabesh kardi",
+    title: "kharabesh kardi-8",
     artist: "farzad farzin",
     audioSrc:
       "https://dl.rozmusic.com/Music/1397/11/09/Farzad%20Farzin%20-%20Kharabesh%20Kardi%20(128).mp3",
@@ -219,7 +219,7 @@ const data_music = [
     ],
   },
   {
-    title: "koja rafte boodi",
+    title: "koja rafte boodi-9",
     artist: "hoorosh band",
     audioSrc:
       "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Hoorosh%20Band%20-%20Koja%20Rafte%20Boodi%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
@@ -246,7 +246,7 @@ const data_music = [
     ],
   },
   {
-    title: "var agar",
+    title: "var agar-10",
     artist: "erfan tahmaseb",
     audioSrc:
       "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Erfan%20Tahmasbi%20-%20Vay%20Agar%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
@@ -273,7 +273,7 @@ const data_music = [
     ],
   },
   {
-    title: "mane divaneh",
+    title: "mane divaneh-11",
     artist: "reza bahram",
     audioSrc:
       "https://dl.rozmusic.com/Music/1402/07/05/Reza%20Bahram%20-%20Mane%20Divaneh%20%28128%29.mp3",
@@ -300,7 +300,7 @@ const data_music = [
     ],
   },
   {
-    title: "khastam",
+    title: "khastam-12",
     artist: "behnam bani",
     audioSrc:
       "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Behnam%20Bani%20-%20Khastam%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
@@ -858,39 +858,65 @@ function setPagination(paginationIdClicked) {
 }
 
 function previousPagination() {
+  let activePagination = document.querySelector("li.active");
+  let activeId = activePagination.getAttribute("id");
+
   let getPaginationItem = document.querySelectorAll("li[id]");
   let getPaginationLink = document.querySelectorAll("a.page-link-num");
-  if (getPaginationItem[0].getAttribute("id") == "1") {
-    return;
-  } else {
-    for (let i = 0; i < getPaginationItem.length; i++) {
-      var id = parseInt(getPaginationItem[i].getAttribute("id"));
-      getPaginationItem[i].setAttribute("id", id - 1);
+  let getFirstLiId = getPaginationItem[0].getAttribute("id");
+
+  if (getFirstLiId != 1) {
+    if (getFirstLiId == activeId) {
+      for (let i = 0; i < getPaginationItem.length; i++) {
+        var id = parseInt(getPaginationItem[i].getAttribute("id"));
+        getPaginationItem[i].setAttribute("id", id - 1);
+      }
+      for (let i = 0; i < getPaginationLink.length; i++) {
+        var id = parseInt(getPaginationItem[i].getAttribute("id"));
+        getPaginationLink[i].innerHTML = id;
+      }
+      setPagination(activeId - 1);
     }
-    for (let i = 0; i < getPaginationLink.length; i++) {
-      var id = parseInt(getPaginationItem[i].getAttribute("id"));
-      getPaginationLink[i].innerHTML = id;
-    }
+    activePagination.classList.remove("active");
+    activeId = parseInt(activeId) - 1;
+    document.querySelector("li[id='" + activeId + "']").classList.add("active");
+    setPagination(activeId);
   }
 }
 function nextPagination() {
+  let activePagination = document.querySelector("li.active");
+  let activeId = activePagination.getAttribute("id");
+
   let getPaginationItem = document.querySelectorAll("li[id]");
   let getPaginationLink = document.querySelectorAll("a.page-link-num");
+  let getLastestLiId =
+    getPaginationItem[getPaginationItem.length - 1].getAttribute("id");
 
-  for (let i = 0; i < getPaginationItem.length; i++) {
-    var id = parseInt(getPaginationItem[i].getAttribute("id"));
-    if (id < page_lenght) {
-      getPaginationItem[i].setAttribute("id", id + 1);
-    } else {
-      return;
+  if (getLastestLiId != page_lenght) {
+    if (activeId == getLastestLiId) {
+      for (let i = 0; i < getPaginationItem.length; i++) {
+        var id = parseInt(getPaginationItem[i].getAttribute("id"));
+        if (id < page_lenght) {
+          getPaginationItem[i].setAttribute("id", id + 1);
+        } else {
+          return;
+        }
+      }
+      for (let i = 0; i < getPaginationLink.length; i++) {
+        var id = parseInt(getPaginationItem[i].getAttribute("id"));
+        if (id <= page_lenght) {
+          getPaginationLink[i].innerHTML = id;
+        } else {
+          return;
+        }
+      }
+      setPagination(activeId);
     }
-  }
-  for (let i = 0; i < getPaginationLink.length; i++) {
-    var id = parseInt(getPaginationItem[i].getAttribute("id"));
-    if (id <= page_lenght) {
-      getPaginationLink[i].innerHTML = id;
-    } else {
-      return;
-    }
+
+    activePagination.classList.remove("active");
+    activeId = parseInt(activeId) + 1;
+
+    document.querySelector("li[id='" + activeId + "']").classList.add("active");
+    setPagination(activeId);
   }
 }
