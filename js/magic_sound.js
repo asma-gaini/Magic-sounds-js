@@ -374,7 +374,7 @@ const vertical_navigation = {
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
 
-var page_size = 4;
+var page_size = 2;
 var page_counter = 1;
 var start_indexSong = page_counter - 1;
 var end_indexSong = start_indexSong + page_size;
@@ -890,14 +890,49 @@ function nextPagination() {
   let activePagination = document.querySelector("li.active");
   let activeId = activePagination.getAttribute("id");
 
-  if (page_lenght > pagination_size) {
-    console.log("bozorgtar");
-  } else {
-    let getPaginationItem = document.querySelectorAll("li[id]");
-    let getPaginationLink = document.querySelectorAll("a.page-link-num");
-    let getLastestLiId =
-      getPaginationItem[getPaginationItem.length - 1].getAttribute("id");
+  let getPaginationItem = document.querySelectorAll("li[id]");
+  let getPaginationLink = document.querySelectorAll("a.page-link-num");
+  let getLastestLiId =
+    getPaginationItem[getPaginationItem.length - 1].getAttribute("id");
 
+  //If the length of the pagination pages was larger than the size of the pagination display numbers
+  if (page_lenght > pagination_size) {
+    if (
+      getPaginationItem[getPaginationItem.length - 2].getAttribute("id") !=
+      page_lenght
+    ) {
+      if (
+        activeId ==
+        getPaginationItem[getPaginationItem.length - 2].getAttribute("id")
+      ) {
+        for (let i = 0; i < getPaginationItem.length - 1; i++) {
+          var id = parseInt(getPaginationItem[i].getAttribute("id"));
+          if (id < page_lenght) {
+            getPaginationItem[i].setAttribute("id", id + 1);
+          } else {
+            return;
+          }
+        }
+        for (let i = 0; i < getPaginationLink.length - 1; i++) {
+          var id = parseInt(getPaginationItem[i].getAttribute("id"));
+          if (id <= page_lenght) {
+            getPaginationLink[i].innerHTML = id;
+          } else {
+            return;
+          }
+        }
+        setPagination(activeId);
+      }
+    }
+
+    activePagination.classList.remove("active");
+    activeId = parseInt(activeId) + 1;
+
+    document.querySelector("li[id='" + activeId + "']").classList.add("active");
+    setPagination(activeId);
+  }
+  //If the length of the pagination pages was equal or smaler than the size of the pagination display numbers
+  else {
     if (getLastestLiId != page_lenght) {
       if (activeId == getLastestLiId) {
         for (let i = 0; i < getPaginationItem.length; i++) {
@@ -938,13 +973,14 @@ function createLastPageOfPagination() {
     //CREATE PAGINATION _ pagination size
     const paginationLastPageItem = document.createElement("li");
     paginationLastPageItem.setAttribute("class", "page-item");
-    // paginationLastPageItem.classList.add("displayPaginationLenght");
+    paginationLastPageItem.classList.add("PaginationLenght");
     paginationLastPageItem.setAttribute("id", page_lenght);
     paginationLastPageItem.setAttribute("onclick", "setPagination(this.id)");
     paginationContent.insertBefore(paginationLastPageItem, nextBtnPagination);
 
     const paginationLastPageLink = document.createElement("a");
     paginationLastPageLink.setAttribute("class", "page-link");
+    paginationLastPageLink.classList.add("PaginationLenght");
     paginationLastPageLink.classList.add("page-link-num");
     paginationLastPageLink.setAttribute("href", "#");
     paginationLastPageLink.innerHTML = page_lenght;
@@ -952,7 +988,7 @@ function createLastPageOfPagination() {
 
     const paginationDot = document.createElement("li");
     paginationDot.setAttribute("class", "page-item");
-    // paginationDot.classList.add("displayPaginationLenght");
+    paginationDot.classList.add("PaginationLenght");
     paginationDot.innerHTML = "...";
     paginationContent.insertBefore(paginationDot, paginationLastPageItem);
   } else {
