@@ -859,30 +859,83 @@ function setPagination(paginationIdClicked) {
 }
 
 function previousPagination() {
+  //get current active pagination
   let activePagination = document.querySelector("li.active");
   let activeId = activePagination.getAttribute("id");
-  console.log(activeId);
+
   let getPaginationItem = document.querySelectorAll("li[id]");
   let getPaginationLink = document.querySelectorAll("a.page-link-num");
   let getFirstLiId = getPaginationItem[0].getAttribute("id");
-  if (activeId == 1) {
-    return;
-  }
-  if (getFirstLiId != 1) {
-    for (let i = 0; i < getPaginationItem.length; i++) {
-      var id = parseInt(getPaginationItem[i].getAttribute("id"));
-      getPaginationItem[i].setAttribute("id", id - 1);
+
+  //If the length of the pagination pages was equal the size of the pagination display numbers
+  if (activeId == page_lenght) {
+    createLastPageOfPagination();
+    activeId = page_lenght - 1;
+    console.log(getPaginationItem.length);
+
+    if (activeId == 1) {
+      return;
     }
-    for (let i = 0; i < getPaginationLink.length; i++) {
-      var id = parseInt(getPaginationItem[i].getAttribute("id"));
-      getPaginationLink[i].innerHTML = id;
+    if (getFirstLiId != 1) {
+      for (let i = 0; i < getPaginationItem.length; i++) {
+        var id = parseInt(getPaginationItem[i].getAttribute("id"));
+        getPaginationItem[i].setAttribute("id", id - 1);
+      }
+      for (let i = 0; i < getPaginationLink.length; i++) {
+        var id = parseInt(getPaginationItem[i].getAttribute("id"));
+        getPaginationLink[i].innerHTML = id;
+      }
+      setPagination(activeId);
     }
-    setPagination(activeId - 1);
+  } else {
+    //If the length of the pagination pages was larger than the size of the pagination display numbers
+    if (page_lenght > pagination_size) {
+      if (activeId == 1) {
+        return;
+      }
+      if (getFirstLiId != 1) {
+        for (let i = 0; i < getPaginationItem.length - 1; i++) {
+          var id = parseInt(getPaginationItem[i].getAttribute("id"));
+          getPaginationItem[i].setAttribute("id", id - 1);
+        }
+        for (let i = 0; i < getPaginationLink.length - 1; i++) {
+          var id = parseInt(getPaginationItem[i].getAttribute("id"));
+          getPaginationLink[i].innerHTML = id;
+        }
+        setPagination(activeId - 1);
+      }
+      activePagination.classList.remove("active");
+      activeId = parseInt(activeId) - 1;
+      document
+        .querySelector("li[id='" + activeId + "']")
+        .classList.add("active");
+      setPagination(activeId);
+    }
+
+    //If the length of the pagination pages was smaler than the size of the pagination display numbers
+    else {
+      if (activeId == 1) {
+        return;
+      }
+      if (getFirstLiId != 1) {
+        for (let i = 0; i < getPaginationItem.length; i++) {
+          var id = parseInt(getPaginationItem[i].getAttribute("id"));
+          getPaginationItem[i].setAttribute("id", id - 1);
+        }
+        for (let i = 0; i < getPaginationLink.length; i++) {
+          var id = parseInt(getPaginationItem[i].getAttribute("id"));
+          getPaginationLink[i].innerHTML = id;
+        }
+        setPagination(activeId - 1);
+      }
+      activePagination.classList.remove("active");
+      activeId = parseInt(activeId) - 1;
+      document
+        .querySelector("li[id='" + activeId + "']")
+        .classList.add("active");
+      setPagination(activeId);
+    }
   }
-  activePagination.classList.remove("active");
-  activeId = parseInt(activeId) - 1;
-  document.querySelector("li[id='" + activeId + "']").classList.add("active");
-  setPagination(activeId);
 }
 
 function nextPagination() {
