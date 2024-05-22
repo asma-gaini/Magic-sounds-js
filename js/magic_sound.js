@@ -922,6 +922,14 @@ function nextPagination() {
           }
         }
         setPagination(activeId);
+        //If the display pagination number is the same as the pagination length, delete the dots and the last page
+        if (activeId == page_lenght - 1) {
+          let getDotAndLastpage =
+            document.querySelectorAll(".PaginationLenght");
+          for (let i = 0; i < getDotAndLastpage.length; i++) {
+            getDotAndLastpage[i].remove();
+          }
+        }
       }
     }
 
