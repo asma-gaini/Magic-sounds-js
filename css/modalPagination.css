@@ -19,6 +19,9 @@
   --bs-pagination-active-bg: #e0e0ec !important;
   --bs-pagination-active-border-color: #1f2128 !important;
 }
+.displayPaginationLenght{
+  display: none;
+}
 /* text-align: center !important;
 --bs-pagination-bg: #6dba7e !important;
 --bs-pagination-color: #161616 !important;

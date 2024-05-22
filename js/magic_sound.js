@@ -374,7 +374,7 @@ const vertical_navigation = {
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
 
-var page_size = 3;
+var page_size = 4;
 var page_counter = 1;
 var start_indexSong = page_counter - 1;
 var end_indexSong = start_indexSong + page_size;
@@ -724,6 +724,7 @@ function createPaginationItem() {
   nextItem.appendChild(nextLink);
 
   document.querySelector("li[id='1']").classList.add("active");
+  createLastPageOfPagination();
 }
 
 //  **************************************************** FUNCTION FOR PLAY AND PAUSE AUDIO  ****************************************************
@@ -883,34 +884,40 @@ function previousPagination() {
   document.querySelector("li[id='" + activeId + "']").classList.add("active");
   setPagination(activeId);
 }
+
 function nextPagination() {
+  //get current active pagination
   let activePagination = document.querySelector("li.active");
   let activeId = activePagination.getAttribute("id");
 
-  let getPaginationItem = document.querySelectorAll("li[id]");
-  let getPaginationLink = document.querySelectorAll("a.page-link-num");
-  let getLastestLiId =
-    getPaginationItem[getPaginationItem.length - 1].getAttribute("id");
+  if (page_lenght > pagination_size) {
+    console.log("bozorgtar");
+  } else {
+    let getPaginationItem = document.querySelectorAll("li[id]");
+    let getPaginationLink = document.querySelectorAll("a.page-link-num");
+    let getLastestLiId =
+      getPaginationItem[getPaginationItem.length - 1].getAttribute("id");
 
-  if (getLastestLiId != page_lenght) {
-    if (activeId == getLastestLiId) {
-      for (let i = 0; i < getPaginationItem.length; i++) {
-        var id = parseInt(getPaginationItem[i].getAttribute("id"));
-        if (id < page_lenght) {
-          getPaginationItem[i].setAttribute("id", id + 1);
-        } else {
-          return;
+    if (getLastestLiId != page_lenght) {
+      if (activeId == getLastestLiId) {
+        for (let i = 0; i < getPaginationItem.length; i++) {
+          var id = parseInt(getPaginationItem[i].getAttribute("id"));
+          if (id < page_lenght) {
+            getPaginationItem[i].setAttribute("id", id + 1);
+          } else {
+            return;
+          }
         }
-      }
-      for (let i = 0; i < getPaginationLink.length; i++) {
-        var id = parseInt(getPaginationItem[i].getAttribute("id"));
-        if (id <= page_lenght) {
-          getPaginationLink[i].innerHTML = id;
-        } else {
-          return;
+        for (let i = 0; i < getPaginationLink.length; i++) {
+          var id = parseInt(getPaginationItem[i].getAttribute("id"));
+          if (id <= page_lenght) {
+            getPaginationLink[i].innerHTML = id;
+          } else {
+            return;
+          }
         }
+        setPagination(activeId);
       }
-      setPagination(activeId);
     }
 
     activePagination.classList.remove("active");
@@ -918,5 +925,37 @@ function nextPagination() {
 
     document.querySelector("li[id='" + activeId + "']").classList.add("active");
     setPagination(activeId);
+  }
+}
+
+function createLastPageOfPagination() {
+  let paginationContent = document.querySelector(".pagination");
+  let nextBtnPagination = document.querySelector(
+    "li[onclick='nextPagination()']"
+  );
+
+  if (page_lenght > pagination_size) {
+    //CREATE PAGINATION _ pagination size
+    const paginationLastPageItem = document.createElement("li");
+    paginationLastPageItem.setAttribute("class", "page-item");
+    // paginationLastPageItem.classList.add("displayPaginationLenght");
+    paginationLastPageItem.setAttribute("id", page_lenght);
+    paginationLastPageItem.setAttribute("onclick", "setPagination(this.id)");
+    paginationContent.insertBefore(paginationLastPageItem, nextBtnPagination);
+
+    const paginationLastPageLink = document.createElement("a");
+    paginationLastPageLink.setAttribute("class", "page-link");
+    paginationLastPageLink.classList.add("page-link-num");
+    paginationLastPageLink.setAttribute("href", "#");
+    paginationLastPageLink.innerHTML = page_lenght;
+    paginationLastPageItem.appendChild(paginationLastPageLink);
+
+    const paginationDot = document.createElement("li");
+    paginationDot.setAttribute("class", "page-item");
+    // paginationDot.classList.add("displayPaginationLenght");
+    paginationDot.innerHTML = "...";
+    paginationContent.insertBefore(paginationDot, paginationLastPageItem);
+  } else {
+    return;
   }
 }
