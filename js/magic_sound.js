@@ -374,7 +374,7 @@ const vertical_navigation = {
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
 
-var page_size = 2;
+var page_size = 1;
 var page_counter = 1;
 var start_indexSong = page_counter - 1;
 var end_indexSong = start_indexSong + page_size;
@@ -958,23 +958,6 @@ function nextPagination() {
         activeId ==
         getPaginationItem[getPaginationItem.length - 2].getAttribute("id")
       ) {
-        for (let i = 0; i < getPaginationItem.length - 1; i++) {
-          var id = parseInt(getPaginationItem[i].getAttribute("id"));
-          if (id < page_lenght) {
-            getPaginationItem[i].setAttribute("id", id + 1);
-          } else {
-            return;
-          }
-        }
-        for (let i = 0; i < getPaginationLink.length - 1; i++) {
-          var id = parseInt(getPaginationItem[i].getAttribute("id"));
-          if (id <= page_lenght) {
-            getPaginationLink[i].innerHTML = id;
-          } else {
-            return;
-          }
-        }
-        setPagination(activeId);
         //If the display pagination number is the same as the pagination length, delete the dots and the last page
         if (activeId == page_lenght - 1) {
           let getDotAndLastpage =
@@ -982,6 +965,42 @@ function nextPagination() {
           for (let i = 0; i < getDotAndLastpage.length; i++) {
             getDotAndLastpage[i].remove();
           }
+          for (let i = 0; i < getPaginationItem.length - 1; i++) {
+            var id = parseInt(getPaginationItem[i].getAttribute("id"));
+            if (id < page_lenght) {
+              getPaginationItem[i].setAttribute("id", id + 1);
+            } else {
+              return;
+            }
+
+            for (let i = 0; i < getPaginationLink.length - 1; i++) {
+              var id = parseInt(getPaginationItem[i].getAttribute("id"));
+              if (id <= page_lenght) {
+                getPaginationLink[i].innerHTML = id;
+              } else {
+                return;
+              }
+            }
+            setPagination(activeId);
+          }
+        } else {
+          for (let i = 0; i < getPaginationItem.length - 1; i++) {
+            var id = parseInt(getPaginationItem[i].getAttribute("id"));
+            if (id < page_lenght) {
+              getPaginationItem[i].setAttribute("id", id + 2);
+            } else {
+              return;
+            }
+          }
+          for (let i = 0; i < getPaginationLink.length - 1; i++) {
+            var id = parseInt(getPaginationItem[i].getAttribute("id"));
+            if (id <= page_lenght) {
+              getPaginationLink[i].innerHTML = id;
+            } else {
+              return;
+            }
+          }
+          setPagination(activeId);
         }
       }
     }
