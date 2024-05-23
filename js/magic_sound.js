@@ -373,9 +373,6 @@ const vertical_navigation = {
 };
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
-
-var isPlaying = false;
-
 var page_size = 2;
 var page_counter = 1;
 var start_indexSong = page_counter - 1;
@@ -583,24 +580,12 @@ function createItemOfPlaylist(ulTag) {
 
     imageDiv.appendChild(pauseSvg);
 
-    //CREATE Link
-    const link = document.createElement("a");
-
-    link.setAttribute("href", "#");
-    link.setAttribute("class", "playList-item-link");
-    // link.setAttribute("data-bs-toggle", "modal");
-    // link.setAttribute("data-bs-target", "#myModal");
-    // link.setAttribute("id", data_music[i].id);
-    // link.setAttribute("onClick", "openModal(this.id)");
-
-    playlistItem.appendChild(link);
-
     //CRETE link information
     const divLinkInfo = document.createElement("div");
 
     divLinkInfo.setAttribute("class", "playList-item-info");
 
-    link.appendChild(divLinkInfo);
+    playlistItem.appendChild(divLinkInfo);
 
     //CREATE link information title
     const titleLink = document.createElement("p");
@@ -741,6 +726,8 @@ function handlePlayPause() {
       const getDivContentSvg = document.querySelector('div[id="' + id + '"]');
 
       if (event.type === "play") {
+        getDivContentSvg.removeAttribute("data-bs-toggle");
+
         getDivContentSvg.classList.remove("pause");
         getDivContentSvg.classList.add("play");
 
@@ -750,12 +737,10 @@ function handlePlayPause() {
         getDivContentSvg.classList.add("removePlayHover");
         getDivContentSvg.classList.add("addPauseHover");
 
-        isPlaying = true;
-        // console.log("playing" + id);
-        // console.log(getDivContentSvg);
-        console.log(isPlaying);
       }
       if (event.type === "pause") {
+        getDivContentSvg.setAttribute("data-bs-toggle", "modal");
+
         getDivContentSvg.classList.remove("play");
         getDivContentSvg.classList.add("pause");
 
@@ -765,11 +750,6 @@ function handlePlayPause() {
         getDivContentSvg.classList.add("addPlayingHover");
         getDivContentSvg.classList.add("removePauseHover");
 
-        isPlaying = false;
-
-        // console.log("paused" + id);
-        // console.log(getDivContentSvg);
-        console.log(isPlaying);
       }
     }
   }
@@ -788,14 +768,6 @@ function togglePlay(clickedId) {
   playAndPuaseSong();
   document.querySelector('div[id="' + clickedId + '"]').classList.add("active");
   removeSvg(clickedId);
-  // if (isPlaying == false) {
-
-  // console.log(document.querySelector("#myModal"));
-  // }
-  // if (isPlaying == true) {
-
-  //   console.log(getModal.classList);
-  // }
 }
 
 function setSongInformation(clickedId) {
