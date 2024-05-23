@@ -374,6 +374,8 @@ const vertical_navigation = {
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
 
+var isPlaying = false;
+
 var page_size = 2;
 var page_counter = 1;
 var start_indexSong = page_counter - 1;
@@ -550,6 +552,8 @@ function createItemOfPlaylist(ulTag) {
     imageDiv.setAttribute("class", "playList-item-div-image");
     imageDiv.setAttribute("id", data_music[i].id);
     imageDiv.setAttribute("onClick", "togglePlay(this.id)");
+    imageDiv.setAttribute("data-bs-toggle", "modal");
+    imageDiv.setAttribute("data-bs-target", "#myModal");
     imageDiv.setAttribute("setmusicHasBeenCalled", "false");
 
     playlistItem.appendChild(imageDiv);
@@ -584,10 +588,10 @@ function createItemOfPlaylist(ulTag) {
 
     link.setAttribute("href", "#");
     link.setAttribute("class", "playList-item-link");
-    link.setAttribute("data-bs-toggle", "modal");
-    link.setAttribute("data-bs-target", "#myModal");
-    link.setAttribute("id", data_music[i].id);
-    link.setAttribute("onClick", "openModal(this.id)");
+    // link.setAttribute("data-bs-toggle", "modal");
+    // link.setAttribute("data-bs-target", "#myModal");
+    // link.setAttribute("id", data_music[i].id);
+    // link.setAttribute("onClick", "openModal(this.id)");
 
     playlistItem.appendChild(link);
 
@@ -746,8 +750,10 @@ function handlePlayPause() {
         getDivContentSvg.classList.add("removePlayHover");
         getDivContentSvg.classList.add("addPauseHover");
 
-        console.log("playing" + id);
-        console.log(getDivContentSvg);
+        isPlaying = true;
+        // console.log("playing" + id);
+        // console.log(getDivContentSvg);
+        console.log(isPlaying);
       }
       if (event.type === "pause") {
         getDivContentSvg.classList.remove("play");
@@ -759,8 +765,11 @@ function handlePlayPause() {
         getDivContentSvg.classList.add("addPlayingHover");
         getDivContentSvg.classList.add("removePauseHover");
 
-        console.log("paused" + id);
-        console.log(getDivContentSvg);
+        isPlaying = false;
+
+        // console.log("paused" + id);
+        // console.log(getDivContentSvg);
+        console.log(isPlaying);
       }
     }
   }
@@ -779,6 +788,14 @@ function togglePlay(clickedId) {
   playAndPuaseSong();
   document.querySelector('div[id="' + clickedId + '"]').classList.add("active");
   removeSvg(clickedId);
+  // if (isPlaying == false) {
+
+  // console.log(document.querySelector("#myModal"));
+  // }
+  // if (isPlaying == true) {
+
+  //   console.log(getModal.classList);
+  // }
 }
 
 function setSongInformation(clickedId) {
