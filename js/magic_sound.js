@@ -725,6 +725,7 @@ function createPaginationItem() {
 
   document.querySelector("li[id='1']").classList.add("active");
   createLastPageOfPagination();
+  // createFirstPageOfPagination();
 }
 
 //  **************************************************** FUNCTION FOR PLAY AND PAUSE AUDIO  ****************************************************
@@ -856,6 +857,89 @@ function setPagination(paginationIdClicked) {
   playList.innerHTML = "";
   setStartAndEndIndex(page_counter, page_size);
   createItemOfPlaylist(playList);
+
+  //if click on page 1
+  if (paginationIdClicked == "1") {
+    let listHasId = document.querySelectorAll("li[id]");
+
+    //if active pagination > pagination number --->az adad 3 gozashte bashim k 2 ta dot dashte bashim
+    if (listHasId.length > pagination_size + 1) {
+      let getDotAndFirstpage = document.querySelectorAll(".PaginationFirst");
+      for (let i = 0; i < getDotAndFirstpage.length; i++) {
+        getDotAndFirstpage[i].remove();
+      }
+
+      let getPaginationItem = document.querySelectorAll("li[id]");
+      let getPaginationLink = document.querySelectorAll("a.page-link-num");
+      let id = 1;
+      for (let i = 0; i < getPaginationItem.length - 1; i++) {
+        getPaginationItem[i].setAttribute("id", id);
+        getPaginationLink[i].innerHTML = id;
+        id++;
+      }
+      document.querySelector('li[id="1"]').classList.add("active");
+    }
+
+    //If the last page was part of pagination and click page one --->b 1...10,11,12 residim va 1 dot darim
+    if (listHasId.length == pagination_size + 1) {
+      let getDotAndFirstpage = document.querySelectorAll(".PaginationFirst");
+
+      let getPaginationItem = document.querySelectorAll("li[id]");
+      let getPaginationLink = document.querySelectorAll("a.page-link-num");
+      let lastItem =
+        getPaginationItem[getPaginationItem.length - 1].getAttribute("id");
+      if (parseInt(lastItem) == page_lenght) {
+        for (let i = 0; i < getDotAndFirstpage.length; i++) {
+          getDotAndFirstpage[i].remove();
+        }
+
+        createLastPageOfPagination();
+        let id = 1;
+        for (let i = 1; i < getPaginationItem.length; i++) {
+          getPaginationItem[i].setAttribute("id", id);
+          getPaginationLink[i].innerHTML = id;
+          id++;
+        }
+        document.querySelector('li[id="1"]').classList.add("active");
+      }
+    }
+  }
+  if (paginationIdClicked >= pagination_size) {
+    if (paginationIdClicked > page_lenght - (pagination_size - 1)) {
+      //if click on page 11
+      if (paginationIdClicked == page_lenght - 1) {
+        let getPaginationItem = document.querySelectorAll("li[id]");
+        let getPaginationLink = document.querySelectorAll("a.page-link-num");
+        //If the last page was part of pagination
+        if (
+          getPaginationItem[1].getAttribute("id") ==
+          parseInt(page_lenght - (pagination_size - 1))
+        ) {
+          return;
+        } else {
+          let getDotAndLastpage =
+            document.querySelectorAll(".PaginationLenght");
+          for (let i = 0; i < getDotAndLastpage.length; i++) {
+            getDotAndLastpage[i].remove();
+          }
+
+          for (let i = 1; i < getPaginationItem.length; i++) {
+            let id = parseInt(getPaginationItem[i].getAttribute("id"));
+            getPaginationItem[i].setAttribute("id", id + 1);
+            getPaginationLink[i].innerHTML = id + 1;
+          }
+          document.querySelector("li.active").classList.remove("active");
+          let activeId = parseInt(page_lenght) - 1;
+          document
+            .querySelector('li[id="' + activeId + '"]')
+            .classList.add("active");
+        }
+      }
+    } else {
+      displayNextPages();
+    }
+    createFirstPageOfPagination();
+  }
 }
 
 function previousPagination() {
@@ -950,60 +1034,7 @@ function nextPagination() {
 
   //If the length of the pagination pages was larger than the size of the pagination display numbers
   if (page_lenght > pagination_size) {
-    if (
-      getPaginationItem[getPaginationItem.length - 2].getAttribute("id") !=
-      page_lenght
-    ) {
-      if (
-        activeId ==
-        getPaginationItem[getPaginationItem.length - 2].getAttribute("id")
-      ) {
-        //If the display pagination number is the same as the pagination length, delete the dots and the last page
-        if (activeId == page_lenght - 1) {
-          let getDotAndLastpage =
-            document.querySelectorAll(".PaginationLenght");
-          for (let i = 0; i < getDotAndLastpage.length; i++) {
-            getDotAndLastpage[i].remove();
-          }
-          for (let i = 0; i < getPaginationItem.length - 1; i++) {
-            var id = parseInt(getPaginationItem[i].getAttribute("id"));
-            if (id < page_lenght) {
-              getPaginationItem[i].setAttribute("id", id + 1);
-            } else {
-              return;
-            }
-
-            for (let i = 0; i < getPaginationLink.length - 1; i++) {
-              var id = parseInt(getPaginationItem[i].getAttribute("id"));
-              if (id <= page_lenght) {
-                getPaginationLink[i].innerHTML = id;
-              } else {
-                return;
-              }
-            }
-            setPagination(activeId);
-          }
-        } else {
-          for (let i = 0; i < getPaginationItem.length - 1; i++) {
-            var id = parseInt(getPaginationItem[i].getAttribute("id"));
-            if (id < page_lenght) {
-              getPaginationItem[i].setAttribute("id", id + 2);
-            } else {
-              return;
-            }
-          }
-          for (let i = 0; i < getPaginationLink.length - 1; i++) {
-            var id = parseInt(getPaginationItem[i].getAttribute("id"));
-            if (id <= page_lenght) {
-              getPaginationLink[i].innerHTML = id;
-            } else {
-              return;
-            }
-          }
-          setPagination(activeId);
-        }
-      }
-    }
+    let idCounter = parseInt(activeId) + 1;
 
     activePagination.classList.remove("active");
     activeId = parseInt(activeId) + 1;
@@ -1013,34 +1044,34 @@ function nextPagination() {
   }
   //If the length of the pagination pages was equal or smaler than the size of the pagination display numbers
   else {
-    if (getLastestLiId != page_lenght) {
-      if (activeId == getLastestLiId) {
-        for (let i = 0; i < getPaginationItem.length; i++) {
-          var id = parseInt(getPaginationItem[i].getAttribute("id"));
-          if (id < page_lenght) {
-            getPaginationItem[i].setAttribute("id", id + 1);
-          } else {
-            return;
-          }
-        }
-        for (let i = 0; i < getPaginationLink.length; i++) {
-          var id = parseInt(getPaginationItem[i].getAttribute("id"));
-          if (id <= page_lenght) {
-            getPaginationLink[i].innerHTML = id;
-          } else {
-            return;
-          }
-        }
-        setPagination(activeId);
-      }
-    }
-
-    activePagination.classList.remove("active");
-    activeId = parseInt(activeId) + 1;
-
-    document.querySelector("li[id='" + activeId + "']").classList.add("active");
-    setPagination(activeId);
+    // if (getLastestLiId != page_lenght) {
+    //   if (activeId == getLastestLiId) {
+    //     for (let i = 0; i < getPaginationItem.length; i++) {
+    //       var id = parseInt(getPaginationItem[i].getAttribute("id"));
+    //       if (id < page_lenght) {
+    //         getPaginationItem[i].setAttribute("id", id + 1);
+    //       } else {
+    //         return;
+    //       }
+    //     }
+    //     for (let i = 0; i < getPaginationLink.length; i++) {
+    //       var id = parseInt(getPaginationItem[i].getAttribute("id"));
+    //       if (id <= page_lenght) {
+    //         getPaginationLink[i].innerHTML = id;
+    //       } else {
+    //         return;
+    //       }
+    //     }
+    //     setPagination(activeId);
+    //   }
   }
+
+  // activePagination.classList.remove("active");
+  // activeId = parseInt(activeId) + 1;
+
+  // document.querySelector("li[id='" + activeId + "']").classList.add("active");
+  // setPagination(activeId);
+  // }
 }
 
 function createLastPageOfPagination() {
@@ -1073,5 +1104,75 @@ function createLastPageOfPagination() {
     paginationContent.insertBefore(paginationDot, paginationLastPageItem);
   } else {
     return;
+  }
+}
+function createFirstPageOfPagination() {
+  let paginationContent = document.querySelector(".pagination");
+  let prevBtnPagination = document.querySelector(
+    "li[onclick='previousPagination()']"
+  );
+
+  if (page_lenght > pagination_size) {
+    let activePagination = document.querySelector("li.active");
+    let activeId = activePagination.getAttribute("id");
+    if (activeId == pagination_size) {
+      const paginationFirstPageItem = document.createElement("li");
+      paginationFirstPageItem.setAttribute("class", "page-item");
+      paginationFirstPageItem.classList.add("PaginationFirst");
+      paginationFirstPageItem.setAttribute("id", "1");
+      paginationFirstPageItem.setAttribute("onclick", "setPagination(this.id)");
+      prevBtnPagination.after(paginationFirstPageItem);
+
+      const paginationFirstPageLink = document.createElement("a");
+      paginationFirstPageLink.setAttribute("class", "page-link");
+      paginationFirstPageLink.classList.add("PaginationFirst");
+      paginationFirstPageLink.classList.add("page-link-num");
+      paginationFirstPageLink.setAttribute("href", "#");
+      paginationFirstPageLink.innerHTML = 1;
+      paginationFirstPageItem.appendChild(paginationFirstPageLink);
+
+      const paginationDot = document.createElement("li");
+      paginationDot.setAttribute("class", "page-item");
+      paginationDot.classList.add("PaginationFirst");
+      paginationDot.innerHTML = "...";
+      paginationFirstPageItem.after(paginationDot);
+    }
+  } else {
+    return;
+  }
+}
+
+function displayNextPages() {
+  //get current active pagination
+  let activePagination = document.querySelector("li.active");
+  let activeId = activePagination.getAttribute("id");
+
+  let getPaginationItem = document.querySelectorAll("li[id]");
+  let getPaginationLink = document.querySelectorAll("a.page-link-num");
+  let getLastestLiId =
+    getPaginationItem[getPaginationItem.length - 1].getAttribute("id");
+
+  //If the length of the pagination pages was larger than the size of the pagination display numbers
+  if (page_lenght > pagination_size) {
+    if (activeId >= pagination_size && activeId <= page_lenght) {
+      let idCounter = parseInt(activeId) - 1;
+      let counter = 0;
+      if (activeId == 3) {
+        counter = 0;
+      } else {
+        counter = 1;
+      }
+      for (let i = counter; i < getPaginationItem.length - 1; i++) {
+        getPaginationItem[i].setAttribute("id", idCounter);
+        getPaginationLink[i].innerHTML = idCounter;
+        idCounter++;
+      }
+      activePagination.classList.remove("active");
+      activeId = parseInt(activeId);
+
+      document
+        .querySelector("li[id='" + activeId + "']")
+        .classList.add("active");
+    }
   }
 }
