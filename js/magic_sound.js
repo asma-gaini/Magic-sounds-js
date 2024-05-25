@@ -374,7 +374,7 @@ const vertical_navigation = {
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
 
-var page_size = 1;
+var page_size = 4;
 var page_counter = 1;
 var start_indexSong = page_counter - 1;
 var end_indexSong = start_indexSong + page_size;
@@ -1097,34 +1097,34 @@ function nextPagination() {
   }
   //If the length of the pagination pages was equal or smaler than the size of the pagination display numbers
   else {
-    // if (getLastestLiId != page_lenght) {
-    //   if (activeId == getLastestLiId) {
-    //     for (let i = 0; i < getPaginationItem.length; i++) {
-    //       var id = parseInt(getPaginationItem[i].getAttribute("id"));
-    //       if (id < page_lenght) {
-    //         getPaginationItem[i].setAttribute("id", id + 1);
-    //       } else {
-    //         return;
-    //       }
-    //     }
-    //     for (let i = 0; i < getPaginationLink.length; i++) {
-    //       var id = parseInt(getPaginationItem[i].getAttribute("id"));
-    //       if (id <= page_lenght) {
-    //         getPaginationLink[i].innerHTML = id;
-    //       } else {
-    //         return;
-    //       }
-    //     }
-    //     setPagination(activeId);
-    //   }
+    if (getLastestLiId != page_lenght) {
+      if (activeId == getLastestLiId) {
+        for (let i = 0; i < getPaginationItem.length; i++) {
+          var id = parseInt(getPaginationItem[i].getAttribute("id"));
+          if (id < page_lenght) {
+            getPaginationItem[i].setAttribute("id", id + 1);
+          } else {
+            return;
+          }
+        }
+        for (let i = 0; i < getPaginationLink.length; i++) {
+          var id = parseInt(getPaginationItem[i].getAttribute("id"));
+          if (id <= page_lenght) {
+            getPaginationLink[i].innerHTML = id;
+          } else {
+            return;
+          }
+        }
+        setPagination(activeId);
+      }
+    }
+
+    activePagination.classList.remove("active");
+    activeId = parseInt(activeId) + 1;
+
+    document.querySelector("li[id='" + activeId + "']").classList.add("active");
+    setPagination(activeId);
   }
-
-  // activePagination.classList.remove("active");
-  // activeId = parseInt(activeId) + 1;
-
-  // document.querySelector("li[id='" + activeId + "']").classList.add("active");
-  // setPagination(activeId);
-  // }
 }
 
 function createLastPageOfPagination() {
