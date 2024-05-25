@@ -904,6 +904,59 @@ function setPagination(paginationIdClicked) {
       }
     }
   }
+
+  //if click on last page
+  if (paginationIdClicked == page_lenght) {
+    let listHasId = document.querySelectorAll("li[id]");
+
+    //if active pagination > pagination number --->az adad 3 gozashte bashim k 2 ta dot dashte bashim
+    if (listHasId.length > pagination_size + 1) {
+      let getDotAndLastpage = document.querySelectorAll(".PaginationLenght");
+      for (let i = 0; i < getDotAndLastpage.length; i++) {
+        getDotAndLastpage[i].remove();
+      }
+
+      let getPaginationItem = document.querySelectorAll("li[id]");
+      let getPaginationLink = document.querySelectorAll("a.page-link-num");
+      let id = page_lenght - (pagination_size - 1);
+      for (let i = 1; i < getPaginationItem.length; i++) {
+        getPaginationItem[i].setAttribute("id", id);
+        getPaginationLink[i].innerHTML = id;
+        id++;
+      }
+      document
+        .querySelector('li[id="' + page_lenght + '"]')
+        .classList.add("active");
+    }
+
+    //If the first page was part of pagination and click page one --->b 1,2,3..12 residim va 1 dot darim
+    if (listHasId.length == pagination_size + 1) {
+      let getDotAndLastpage = document.querySelectorAll(".PaginationLenght");
+
+      let getPaginationItem = document.querySelectorAll("li[id]");
+      let getPaginationLink = document.querySelectorAll("a.page-link-num");
+      let secondItem = getPaginationItem[1].getAttribute("id");
+      console.log(getDotAndLastpage);
+      if (parseInt(secondItem) == 2) {
+        // for (let i = 0; i < getDotAndLastpage.length; i++) {
+        getDotAndLastpage[0].remove();
+        // }
+
+        let id = page_lenght - (pagination_size - 1);
+        for (let i = 1; i < getPaginationItem.length; i++) {
+          getPaginationItem[i].setAttribute("id", id);
+          getPaginationLink[i].innerHTML = id;
+          id++;
+        }
+        document
+          .querySelector('li[id="' + page_lenght + '"]')
+          .classList.add("active");
+
+        createFirstPageOfPagination();
+      }
+    }
+  }
+
   if (paginationIdClicked >= pagination_size) {
     if (paginationIdClicked > page_lenght - (pagination_size - 1)) {
       //if click on page 11
@@ -1136,6 +1189,14 @@ function createFirstPageOfPagination() {
       paginationDot.classList.add("PaginationFirst");
       paginationDot.innerHTML = "...";
       paginationFirstPageItem.after(paginationDot);
+    } else if (activeId == page_lenght) {
+      console.log("id" + activeId);
+      let getFirstElement = document.querySelector('li[id="1"]');
+      let paginationDot = document.createElement("li");
+      paginationDot.setAttribute("class", "page-item");
+      paginationDot.classList.add("PaginationFirst");
+      paginationDot.innerHTML = "...";
+      getFirstElement.after(paginationDot);
     }
   } else {
     return;
