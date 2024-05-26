@@ -217,6 +217,19 @@ img {
   top: 10px;
 }
 
+.playList-item-main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.favoritSvg {
+  width: 24px;
+  height: auto;
+  margin: 1px 0 0 1px;
+  transition: 0.5s ease;
+}
+
 .playList-item-div-image.active .svg {
   fill: #28b140 !important;
 }

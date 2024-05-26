@@ -374,7 +374,7 @@ const vertical_navigation = {
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
 
-var page_size = 1;
+var page_size = 4;
 var page_counter = 1;
 var start_indexSong = page_counter - 1;
 var end_indexSong = start_indexSong + page_size;
@@ -581,12 +581,19 @@ function createItemOfPlaylist(ulTag) {
 
     imageDiv.appendChild(pauseSvg);
 
+    //CREATE div for favarit and informarion
+    const divSong = document.createElement("div");
+
+    divSong.setAttribute("class", "playList-item-main");
+
+    playlistItem.appendChild(divSong);
+
     //CRETE link information
     const divLinkInfo = document.createElement("div");
 
     divLinkInfo.setAttribute("class", "playList-item-info");
 
-    playlistItem.appendChild(divLinkInfo);
+    divSong.appendChild(divLinkInfo);
 
     //CREATE link information title
     const titleLink = document.createElement("p");
@@ -603,6 +610,15 @@ function createItemOfPlaylist(ulTag) {
     subtitleLink.innerHTML = data_music[i].artist;
 
     divLinkInfo.appendChild(subtitleLink);
+
+    //CREATE favorit svg
+    const favoritSvg = document.createElement("img");
+    favoritSvg.setAttribute("src", "../image/svg/heart-empty.svg");
+    favoritSvg.setAttribute("class", "favoritSvg");
+    favoritSvg.setAttribute("id", data_music[i].id);
+    favoritSvg.setAttribute("onClick", "favoritSvg(this.id)");
+
+    divSong.appendChild(favoritSvg);
   }
 }
 
@@ -824,6 +840,22 @@ function removeSvg(clickedId) {
       continue;
     }
     includesPauseClass[i].classList.remove("pause");
+  }
+}
+
+function favoritSvg(clickedId) {
+  let getFavorit = document.querySelector(
+    ".favoritSvg[id='" + clickedId + "']"
+  );
+  let getSvgFavoritSrc = getFavorit.getAttribute("src");
+  let emptyHeart = "../image/svg/heart-empty.svg";
+  let fullHeart = "../image/svg/heart-full.svg";
+
+  if (getSvgFavoritSrc == emptyHeart) {
+    getFavorit.setAttribute("src", fullHeart);
+  }
+  if (getSvgFavoritSrc == fullHeart) {
+    getFavorit.setAttribute("src", emptyHeart);
   }
 }
 //  **************************************************** FUNCTION ON THE TEXT(LINK) TAG ON PLAY LIST  ****************************************************
