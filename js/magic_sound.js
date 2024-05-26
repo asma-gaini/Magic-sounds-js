@@ -736,7 +736,6 @@ function handlePlayPause() {
 
         getDivContentSvg.classList.add("removePlayHover");
         getDivContentSvg.classList.add("addPauseHover");
-
       }
       if (event.type === "pause") {
         getDivContentSvg.setAttribute("data-bs-toggle", "modal");
@@ -749,7 +748,6 @@ function handlePlayPause() {
 
         getDivContentSvg.classList.add("addPlayingHover");
         getDivContentSvg.classList.add("removePauseHover");
-
       }
     }
   }
