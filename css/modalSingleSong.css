@@ -51,6 +51,12 @@ audio::-webkit-media-controls-panel {
   padding: 5px;
   margin: 5px;
 }
+.englishFont {
+  font-style: italic;
+}
+.persionFont {
+  font-style: normal;
+}
 .modal-footer {
   height: 40px;
   background-color: #e0e0ec !important;

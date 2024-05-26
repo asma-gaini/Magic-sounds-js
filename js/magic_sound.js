@@ -9,25 +9,28 @@ const data_music = [
       "https://dl.rozmusic.com/Music/1396/10/13/Babak%20Jahanbakhsh%20-%20Roozhaye%20Abri%20(128).mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 1,
-    textMusic: [
-      "roozaye abri-1",
-      "روزای ابری",
+    textMusic:
+      "roozaye abri-1/ روزای ابری/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
 
-      "I gave you your dreams",
-      "من رویا هات رو بهت دادم",
+    // [
+    //   "roozaye abri-1",
+    //   "روزای ابری",
 
-      "Cause you ment the world",
-      "چون تو دنیای من بودی",
+    //   "I gave you your dreams",
+    //   "من رویا هات رو بهت دادم",
 
-      "So did I deserve to be left in hurt",
-      "پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری",
+    //   "Cause you ment the world",
+    //   "چون تو دنیای من بودی",
 
-      "So you think I don’t know",
-      "فکر می کنی نمیدونم",
+    //   "So did I deserve to be left in hurt",
+    //   "پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری",
 
-      "You’re out of control",
-      "که تو غیر قابل کنترلی",
-    ],
+    //   "So you think I don’t know",
+    //   "فکر می کنی نمیدونم",
+
+    //   "You’re out of control",
+    //   "که تو غیر قابل کنترلی",
+    // ],
   },
   {
     title: "Parvaz-2",
@@ -36,25 +39,8 @@ const data_music = [
       "https://dl.ritmy.io/Single/Shahin_Najafi/Parvaz-128[ritmy.io].mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 2,
-    textMusic: [
-      "parvaz-2",
-      "پرواز",
-
-      "I gave you your dreams",
-      "من رویا هات رو بهت دادم",
-
-      "Cause you ment the world",
-      "چون تو دنیای من بودی",
-
-      "So did I deserve to be left in hurt",
-      "پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری",
-
-      "So you think I don’t know",
-      "فکر می کنی نمیدونم",
-
-      "You’re out of control",
-      "که تو غیر قابل کنترلی",
-    ],
+    textMusic:
+      "parvaz-2/پرواز/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
   },
   {
     title: "nistameton-3",
@@ -63,25 +49,8 @@ const data_music = [
       "https://dl.melonmusic.ir/Music/Shayea%20-%20Nistametoon%20(320).mp3",
     image: "../image/music cover/shaye-nistameton.png",
     id: 3,
-    textMusic: [
-      "nistametoon-3",
-      "نیستمون",
-
-      "I gave you your dreams",
-      "من رویا هات رو بهت دادم",
-
-      "Cause you ment the world",
-      "چون تو دنیای من بودی",
-
-      "So did I deserve to be left in hurt",
-      "پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری",
-
-      "So you think I don’t know",
-      "فکر می کنی نمیدونم",
-
-      "You’re out of control",
-      "که تو غیر قابل کنترلی",
-    ],
+    textMusic:
+      "nistametoon-3/نیستمتون/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
   },
   {
     title: "nafas-4",
@@ -90,25 +59,8 @@ const data_music = [
       "https://dl.rozmusic.com/Music/1402/10/21/Salar%20Aghili%20-%20Nafas%20%28128%29.mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 4,
-    textMusic: [
-      "nafas",
-      " نفس",
-
-      "I gave you your dreams",
-      "من رویا هات رو بهت دادم",
-
-      "Cause you ment the world",
-      "چون تو دنیای من بودی",
-
-      "So did I deserve to be left in hurt",
-      "پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری",
-
-      "So you think I don’t know",
-      "فکر می کنی نمیدونم",
-
-      "You’re out of control",
-      "که تو غیر قابل کنترلی",
-    ],
+    textMusic:
+      "nafas/نفس/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
   },
   {
     title: "male mani-5",
@@ -117,25 +69,8 @@ const data_music = [
       "https://dl.rozmusic.com/Music/1401/12/16/Moein%20Z%20-%20Male%20Mani%20%28128%29.mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 5,
-    textMusic: [
-      "lhg lkd",
-      "مال منی",
-
-      "I gave you your dreams",
-      "من رویا هات رو بهت دادم",
-
-      "Cause you ment the world",
-      "چون تو دنیای من بودی",
-
-      "So did I deserve to be left in hurt",
-      "پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری",
-
-      "So you think I don’t know",
-      "فکر می کنی نمیدونم",
-
-      "You’re out of control",
-      "که تو غیر قابل کنترلی",
-    ],
+    textMusic:
+      "mal mani/مال منی/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
   },
   {
     title: "khial khosh-6",
@@ -144,25 +79,8 @@ const data_music = [
       "https://dl.rozmusic.com/Music/1399/04/29/Alireza%20Ghorbani%20-%20Khiale%20Khosh%20%28128%29.mp3",
     image: "../image/music cover/shaye-nistameton.png",
     id: 6,
-    textMusic: [
-      "khial khosh",
-      "خیال خوش",
-
-      "I gave you your dreams",
-      "من رویا هات رو بهت دادم",
-
-      "Cause you ment the world",
-      "چون تو دنیای من بودی",
-
-      "So did I deserve to be left in hurt",
-      "پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری",
-
-      "So you think I don’t know",
-      "فکر می کنی نمیدونم",
-
-      "You’re out of control",
-      "که تو غیر قابل کنترلی",
-    ],
+    textMusic:
+      "khial khosh/خیال خوش/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
   },
   {
     title: "yadam raft-7",
@@ -171,25 +89,8 @@ const data_music = [
       "https://dl.rozmusic.com/Music/1400/05/30/Reza%20Sadeghi%20-%20%20Yadam%20Raft%20%28128%29.mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 7,
-    textMusic: [
-      "yadam raft",
-      "یادم رفت ",
-
-      "I gave you your dreams",
-      "من رویا هات رو بهت دادم",
-
-      "Cause you ment the world",
-      "چون تو دنیای من بودی",
-
-      "So did I deserve to be left in hurt",
-      "پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری",
-
-      "So you think I don’t know",
-      "فکر می کنی نمیدونم",
-
-      "You’re out of control",
-      "که تو غیر قابل کنترلی",
-    ],
+    textMusic:
+      "yadam raft/یادم رفت/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
   },
   {
     title: "kharabesh kardi-8",
@@ -198,25 +99,8 @@ const data_music = [
       "https://dl.rozmusic.com/Music/1397/11/09/Farzad%20Farzin%20-%20Kharabesh%20Kardi%20(128).mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 8,
-    textMusic: [
-      "kharabesh kardi",
-      "خرابش کردی",
-
-      "I gave you your dreams",
-      "من رویا هات رو بهت دادم",
-
-      "Cause you ment the world",
-      "چون تو دنیای من بودی",
-
-      "So did I deserve to be left in hurt",
-      "پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری",
-
-      "So you think I don’t know",
-      "فکر می کنی نمیدونم",
-
-      "You’re out of control",
-      "که تو غیر قابل کنترلی",
-    ],
+    textMusic:
+      "kharabesh kardi/خرابش کردی/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
   },
   {
     title: "koja rafte boodi-9",
@@ -225,25 +109,8 @@ const data_music = [
       "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Hoorosh%20Band%20-%20Koja%20Rafte%20Boodi%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
     image: "../image/music cover/shaye-nistameton.png",
     id: 9,
-    textMusic: [
-      "koja rafte boodi",
-      "کجا رفته بودی",
-
-      "I gave you your dreams",
-      "من رویا هات رو بهت دادم",
-
-      "Cause you ment the world",
-      "چون تو دنیای من بودی",
-
-      "So did I deserve to be left in hurt",
-      "پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری",
-
-      "So you think I don’t know",
-      "فکر می کنی نمیدونم",
-
-      "You’re out of control",
-      "که تو غیر قابل کنترلی",
-    ],
+    textMusic:
+      "koja rafte boodi/کجا رفته بودی/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
   },
   {
     title: "var agar-10",
@@ -252,25 +119,8 @@ const data_music = [
       "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Erfan%20Tahmasbi%20-%20Vay%20Agar%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 10,
-    textMusic: [
-      "vay agar",
-      " وای اگر",
-
-      "I gave you your dreams",
-      "من رویا هات رو بهت دادم",
-
-      "Cause you ment the world",
-      "چون تو دنیای من بودی",
-
-      "So did I deserve to be left in hurt",
-      "پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری",
-
-      "So you think I don’t know",
-      "فکر می کنی نمیدونم",
-
-      "You’re out of control",
-      "که تو غیر قابل کنترلی",
-    ],
+    textMusic:
+      "vay agar/وای اگر/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
   },
   {
     title: "mane divaneh-11",
@@ -279,25 +129,8 @@ const data_music = [
       "https://dl.rozmusic.com/Music/1402/07/05/Reza%20Bahram%20-%20Mane%20Divaneh%20%28128%29.mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 11,
-    textMusic: [
-      "mane divaneh",
-      "من دیوانه",
-
-      "I gave you your dreams",
-      "من رویا هات رو بهت دادم",
-
-      "Cause you ment the world",
-      "چون تو دنیای من بودی",
-
-      "So did I deserve to be left in hurt",
-      "پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری",
-
-      "So you think I don’t know",
-      "فکر می کنی نمیدونم",
-
-      "You’re out of control",
-      "که تو غیر قابل کنترلی",
-    ],
+    textMusic:
+      "mane divaneh/منه دیوانه/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
   },
   {
     title: "khastam-12",
@@ -306,25 +139,8 @@ const data_music = [
       "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Behnam%20Bani%20-%20Khastam%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
     image: "../image/music cover/shaye-nistameton.png",
     id: 12,
-    textMusic: [
-      "khastam",
-      "خستم",
-
-      "I gave you your dreams",
-      "من رویا هات رو بهت دادم",
-
-      "Cause you ment the world",
-      "چون تو دنیای من بودی",
-
-      "So did I deserve to be left in hurt",
-      "پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری",
-
-      "So you think I don’t know",
-      "فکر می کنی نمیدونم",
-
-      "You’re out of control",
-      "که تو غیر قابل کنترلی",
-    ],
+    textMusic:
+      "khastam/خستم/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
   },
 ];
 
@@ -663,10 +479,10 @@ function createModal() {
   modaltextDiv.setAttribute("class", "text");
   modalBodyDiv.appendChild(modaltextDiv);
 
-  const modaltext = document.createElement("p");
-  modaltext.setAttribute("class", "textContent");
-  modaltext.setAttribute("id", "text");
-  modaltextDiv.appendChild(modaltext);
+  // const modaltext = document.createElement("p");
+  // modaltext.setAttribute("class", "textContent");
+  // modaltext.setAttribute("id", "text");
+  // modaltextDiv.appendChild(modaltext);
 }
 
 //  **************************************************** CREATE ELEMENT _ CREATE PAGINATION  ****************************************************
@@ -795,13 +611,36 @@ function setSongInformation(clickedId) {
 }
 
 function setText(clickedId) {
-  var textSong = document.getElementById("text");
-  let textContent = "";
-
-  for (let k = 0; k < data_music[clickedId - 1].textMusic.length; k++) {
-    textContent += data_music[clickedId - 1].textMusic[k] + "<br>";
+  let textSong = document.querySelector(".text");
+  //remove all p tag (child text div)
+  //e.firstElementChild can be used.
+  let child = textSong.lastElementChild;
+  while (child) {
+    textSong.removeChild(child);
+    child = textSong.lastElementChild;
   }
-  textSong.innerHTML = textContent;
+
+  let textPoemArray = data_music[clickedId - 1].textMusic.split("/");
+  console.log(textPoemArray);
+  console.log(textSong);
+  for (let k = 0; k < textPoemArray.length; k++) {
+    let createTextLine = document.createElement("p");
+    createTextLine.setAttribute("class", "textContent");
+    textSong.appendChild(createTextLine);
+
+    if (k % 2 == 0) {
+      createTextLine.classList.remove("persionFont");
+      createTextLine.classList.add("englishFont");
+
+      createTextLine.innerHTML = textPoemArray[k];
+    }
+    if (k % 2 == 1) {
+      createTextLine.classList.remove("englishFont");
+      createTextLine.classList.add("persionFont");
+
+      createTextLine.innerHTML = textPoemArray[k];
+    }
+  }
 }
 
 function playAndPuaseSong() {
