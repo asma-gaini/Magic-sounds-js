@@ -390,6 +390,8 @@ var songImage = document.getElementById("single-song-image");
 var songTitle = document.getElementById("modalSong-title");
 var songArtistName = document.getElementById("modalSong-artistName");
 
+var favoritHeart = "../image/svg/heart-empty.svg";
+var favoritHeartArray = [];
 //  **************************************************** GLOBAL FUNCTION  ****************************************************
 function setMusicHasBeenCalled(clickedId) {
   if (
@@ -613,7 +615,7 @@ function createItemOfPlaylist(ulTag) {
 
     //CREATE favorit svg
     const favoritSvg = document.createElement("img");
-    favoritSvg.setAttribute("src", "../image/svg/heart-empty.svg");
+    favoritSvg.setAttribute("src", favoritHeart);
     favoritSvg.setAttribute("class", "favoritSvg");
     favoritSvg.setAttribute("id", data_music[i].id);
     favoritSvg.setAttribute("onClick", "favoritSvg(this.id)");
@@ -857,6 +859,29 @@ function favoritSvg(clickedId) {
   if (getSvgFavoritSrc == fullHeart) {
     getFavorit.setAttribute("src", emptyHeart);
   }
+
+  let heart = getFavorit.getAttribute("src");
+  window.localStorage.setItem(clickedId, heart);
+  let getHeart = window.localStorage.getItem(clickedId);
+  let heartActiveSong = [clickedId, getHeart];
+
+  // if (favoritHeartArray.length >= 1) {
+  //   for (let i = 0; i < favoritHeartArray.length; i++) {
+  //     console.log(favoritHeartArray[i][0]);
+  //     // for (let j = 0; j < favoritHeartArray[i].length; j++) {
+  //     if (favoritHeartArray[i][0] == clickedId) {
+  //       console.log("yes  " + favoritHeartArray[i][0]);
+  //       return;
+  //     } else {
+  //       favoritHeartArray.push(heartActiveSong);
+  //     }
+  //     // }
+  //   }
+  // } else {
+  //   favoritHeartArray.push(heartActiveSong);
+  // }
+
+  // console.log(favoritHeartArray);
 }
 //  **************************************************** FUNCTION ON THE TEXT(LINK) TAG ON PLAY LIST  ****************************************************
 function openModal(clickedId) {
