@@ -13,13 +13,14 @@
   --bs-pagination-hover-color: #1f2128 !important;
   --bs-pagination-hover-bg: #e0e0ec !important;
   --bs-pagination-hover-border-color: #1f2128 !important;
-  --bs-pagination-focus-color: #1f2128 !important;
-  --bs-pagination-focus-bg: #e0e0ec !important;
+  --bs-pagination-focus-color: #decdc3 !important;
+  --bs-pagination-focus-bg: #5c848e !important;
+  --bs-pagination-focus-box-shadow: none !important;
   --bs-pagination-active-color: #1f2128 !important;
   --bs-pagination-active-bg: #e0e0ec !important;
   --bs-pagination-active-border-color: #1f2128 !important;
 }
-.displayPaginationLenght{
+.displayPaginationLenght {
   display: none;
 }
 /* text-align: center !important;
