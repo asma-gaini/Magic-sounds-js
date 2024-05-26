@@ -1002,7 +1002,6 @@ function setPagination(paginationIdClicked) {
       createLastPageOfPagination();
     }
 
-
     if (paginationIdClicked > page_lenght - (pagination_size - 1)) {
       //if click on page 11
       if (paginationIdClicked == page_lenght - 1) {
@@ -1049,13 +1048,11 @@ function previousPagination() {
   let getPaginationLink = document.querySelectorAll("a.page-link-num");
   let getFirstLiId = getPaginationItem[0].getAttribute("id");
 
- 
-    activePagination.classList.remove("active");
-    activeId = parseInt(activeId) - 1;
+  activePagination.classList.remove("active");
+  activeId = parseInt(activeId) - 1;
 
-    document.querySelector("li[id='" + activeId + "']").classList.add("active");
-    setPagination(activeId);
- 
+  document.querySelector("li[id='" + activeId + "']").classList.add("active");
+  setPagination(activeId);
 }
 
 function nextPagination() {
