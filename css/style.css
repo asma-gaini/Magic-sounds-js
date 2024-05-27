@@ -269,3 +269,13 @@ img {
 .dashboardSvg {
   width: 30px;
 }
+
+.LeftItemesPlayList {
+  display: flex;
+}
+.songTime {
+  /* color: #28b140; */
+  color: #d6cc99;
+  margin-right: 15px;
+  margin-top: 5px;
+}
