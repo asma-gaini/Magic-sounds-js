@@ -478,11 +478,6 @@ function createModal() {
   const modaltextDiv = document.createElement("div");
   modaltextDiv.setAttribute("class", "text");
   modalBodyDiv.appendChild(modaltextDiv);
-
-  // const modaltext = document.createElement("p");
-  // modaltext.setAttribute("class", "textContent");
-  // modaltext.setAttribute("id", "text");
-  // modaltextDiv.appendChild(modaltext);
 }
 
 //  **************************************************** CREATE ELEMENT _ CREATE PAGINATION  ****************************************************
@@ -621,8 +616,6 @@ function setText(clickedId) {
   }
 
   let textPoemArray = data_music[clickedId - 1].textMusic.split("/");
-  console.log(textPoemArray);
-  console.log(textSong);
   for (let k = 0; k < textPoemArray.length; k++) {
     let createTextLine = document.createElement("p");
     createTextLine.setAttribute("class", "textContent");

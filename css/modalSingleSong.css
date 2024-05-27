@@ -52,10 +52,15 @@ audio::-webkit-media-controls-panel {
   margin: 5px;
 }
 .englishFont {
-  font-style: italic;
+  font-weight: bold;
+  text-shadow: 2px 2px #000000;
+  color: #f0e8a9;
 }
 .persionFont {
-  font-style: normal;
+  font-style: italic;
+  color: #e0e0ec;
+  font-size: 13px;
+  text-shadow: none;
 }
 .modal-footer {
   height: 40px;
