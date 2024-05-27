@@ -118,7 +118,7 @@ const data_music = [
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 5,
     textMusic: [
-      "lhg lkd",
+      "mal mani",
       "مال منی",
 
       "I gave you your dreams",
@@ -374,7 +374,7 @@ const vertical_navigation = {
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
 
-var page_size = 4;
+var page_size = 1;
 var page_counter = 1;
 var start_indexSong = page_counter - 1;
 var end_indexSong = start_indexSong + page_size;
@@ -613,14 +613,23 @@ function createItemOfPlaylist(ulTag) {
 
     divLinkInfo.appendChild(subtitleLink);
 
+    //CREATE favorit svg link
+    const favoritLink = document.createElement("a");
+
+    favoritLink.setAttribute("class", "favoritLink");
+    favoritLink.setAttribute("href", "#");
+
+    divSong.appendChild(favoritLink);
+
     //CREATE favorit svg
     const favoritSvg = document.createElement("img");
+
     favoritSvg.setAttribute("src", favoritHeart);
     favoritSvg.setAttribute("class", "favoritSvg");
     favoritSvg.setAttribute("id", data_music[i].id);
     favoritSvg.setAttribute("onClick", "favoritSvg(this.id)");
 
-    divSong.appendChild(favoritSvg);
+    favoritLink.appendChild(favoritSvg);
   }
 }
 
@@ -859,29 +868,6 @@ function favoritSvg(clickedId) {
   if (getSvgFavoritSrc == fullHeart) {
     getFavorit.setAttribute("src", emptyHeart);
   }
-
-  let heart = getFavorit.getAttribute("src");
-  window.localStorage.setItem(clickedId, heart);
-  let getHeart = window.localStorage.getItem(clickedId);
-  let heartActiveSong = [clickedId, getHeart];
-
-  // if (favoritHeartArray.length >= 1) {
-  //   for (let i = 0; i < favoritHeartArray.length; i++) {
-  //     console.log(favoritHeartArray[i][0]);
-  //     // for (let j = 0; j < favoritHeartArray[i].length; j++) {
-  //     if (favoritHeartArray[i][0] == clickedId) {
-  //       console.log("yes  " + favoritHeartArray[i][0]);
-  //       return;
-  //     } else {
-  //       favoritHeartArray.push(heartActiveSong);
-  //     }
-  //     // }
-  //   }
-  // } else {
-  //   favoritHeartArray.push(heartActiveSong);
-  // }
-
-  // console.log(favoritHeartArray);
 }
 //  **************************************************** FUNCTION ON THE TEXT(LINK) TAG ON PLAY LIST  ****************************************************
 function openModal(clickedId) {
