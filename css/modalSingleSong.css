@@ -54,12 +54,12 @@ audio::-webkit-media-controls-panel {
 .englishFont {
   font-weight: bold;
   text-shadow: 2px 2px #000000;
-  color: #f0e8a9;
+  color: #e0e0ec;
 }
 .persionFont {
   font-style: italic;
-  color: #e0e0ec;
-  font-size: 13px;
+  color: #6f6f76;
+  font-size: 15px;
   text-shadow: none;
 }
 .modal-footer {
