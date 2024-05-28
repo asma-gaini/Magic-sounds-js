@@ -125,7 +125,7 @@ img {
   border-bottom: 1px solid rgba(198, 178, 250, 0.1);
   background-color: var(--main-color);
   transition: all 0.2s ease-in;
-  overflow: auto;
+  /* overflow: auto; */
 }
 .playList-item-link {
   text-decoration: none;
@@ -279,4 +279,3 @@ img {
   margin-right: 15px;
   margin-top: 5px;
 }
-

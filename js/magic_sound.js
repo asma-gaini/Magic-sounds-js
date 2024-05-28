@@ -186,21 +186,25 @@ const optionSong = [
     optionName: "Add to favorite",
     optionSvgSrc: "../image/svg/heart-empty.svg",
     optionTarget: "#",
+    number: "1",
   },
   {
     optionName: " Download",
     optionSvgSrc: "../image/svg/download-minimalistic-svgrepo-com.svg",
     optionTarget: "#",
+    number: "2",
   },
   {
     optionName: " Share",
     optionSvgSrc: "../image/svg/share-svgrepo-com.svg",
     optionTarget: "#",
+    number: "3",
   },
   {
     optionName: "More details",
     optionSvgSrc: "../image/svg/details-symbolic-svgrepo-com.svg",
     optionTarget: "#",
+    number: "4",
   },
 ];
 
@@ -525,14 +529,10 @@ function createOption() {
       let optionItem = document.createElement("li");
       optionUl.appendChild(optionItem);
 
-      //CREATE link
-      const optionLink = document.createElement("a");
-
-      optionLink.setAttribute("class", "dropdown-item");
-      optionLink.setAttribute("href", optionSong[i].optionTarget);
-      optionLink.innerHTML = optionSong[i].optionName;
-
-      optionItem.appendChild(optionLink);
+      //CREATE link div
+      let linkDiv = document.createElement("div");
+      linkDiv.setAttribute("class", "linkOptionDiv");
+      optionItem.appendChild(linkDiv);
 
       //CREATE image tag
       const imageTag = document.createElement("img");
@@ -541,7 +541,17 @@ function createOption() {
       imageTag.setAttribute("alt", optionSong[i].optionName);
       imageTag.setAttribute("class", "optionSongSvg");
 
-      optionLink.appendChild(imageTag);
+      linkDiv.appendChild(imageTag);
+
+      //CREATE link
+      const optionLink = document.createElement("a");
+
+      optionLink.setAttribute("class", "dropdown-item");
+      optionLink.setAttribute("href", optionSong[i].optionTarget);
+      optionLink.setAttribute("number", optionSong[i].number);
+      optionLink.innerHTML = optionSong[i].optionName;
+
+      linkDiv.appendChild(optionLink);
     }
     // createItemOfPlaylist(optionUl);
   }

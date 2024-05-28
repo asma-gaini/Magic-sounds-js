@@ -10,3 +10,15 @@
   /* position: relative; */
   /* z-index: 10; */
 }
+
+.linkOptionDiv {
+  display: flex;
+  margin: 5px;
+  padding: 1px 10px;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+  border-radius: 5px;
+  margin: 0px 2px;
+}
