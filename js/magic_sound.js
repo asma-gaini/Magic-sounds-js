@@ -245,6 +245,7 @@ function createPage() {
   createPlayList();
   createModal();
   createPaginationItem();
+  setPagination(1);
   createVerticalNavigation();
 }
 
@@ -452,8 +453,6 @@ function createItemOfPlaylist(ulTag) {
 
     divSong.appendChild(divLeftItemes);
 
-    createOption();
-
     //CREATE song time
     const songTime = document.createElement("p");
 
@@ -485,11 +484,7 @@ function createItemOfPlaylist(ulTag) {
 //  **************************************************** CREATE ELEMENT _ CREATE PLAY LIST ELEMENT _ OPTION  ****************************************************
 function createOption() {
   let contentOption = document.querySelectorAll(".LeftItemesPlayList");
-  console.log(document.querySelectorAll(".LeftItemesPlayList"));
   for (let evrySong = 0; evrySong < contentOption.length; evrySong++) {
-    // if(){
-    //   return
-    // }
     // CREATE main div
     let optionDiv = document.createElement("div");
     optionDiv.setAttribute("class", "dropdown");
@@ -548,15 +543,14 @@ function createOption() {
 
       optionLink.appendChild(imageTag);
     }
+    // createItemOfPlaylist(optionUl);
   }
-
-  // createItemOfPlaylist(optionUl);
 }
-// function createItemOfPlaylist(optionUlTag) {
+// function createItemOfPlaylist(optionUl) {
 //   for (let i = 0; i < optionSong.length; i++) {
-// CREATE li
-// let optionItem = document.createElement("li");
-// optionUlTag.appendChild(optionItem);
+//     // CREATE li
+//     let optionItem = document.createElement("li");
+//     optionUl.appendChild(optionItem);
 
 //     //CREATE link
 //     const optionLink = document.createElement("a");
@@ -575,7 +569,7 @@ function createOption() {
 //     imageTag.setAttribute("class", "optionSongSvg");
 
 //     optionLink.appendChild(imageTag);
-// }
+//   }
 // }
 
 //  **************************************************** CREATE ELEMENT _ CREATE MODAL  ****************************************************
@@ -849,6 +843,7 @@ function setPagination(paginationIdClicked) {
   playList.innerHTML = "";
   setStartAndEndIndex(page_counter, page_size);
   createItemOfPlaylist(playList);
+  createOption();
 
   //if click on page 1
   if (paginationIdClicked == "1") {
