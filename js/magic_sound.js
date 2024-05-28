@@ -180,9 +180,33 @@ const vertical_navigation = {
   ],
 };
 
+//  **************************************************** DATA _ PLALIST OPTION  ****************************************************
+const optionSong = [
+  {
+    optionName: "Add to favorite",
+    optionSvgSrc: "../image/svg/heart-empty.svg",
+    optionTarget: "#",
+  },
+  {
+    optionName: " Download",
+    optionSvgSrc: "../image/svg/download-minimalistic-svgrepo-com.svg",
+    optionTarget: "#",
+  },
+  {
+    optionName: " Share",
+    optionSvgSrc: "../image/svg/share-svgrepo-com.svg",
+    optionTarget: "#",
+  },
+  {
+    optionName: "More details",
+    optionSvgSrc: "../image/svg/details-symbolic-svgrepo-com.svg",
+    optionTarget: "#",
+  },
+];
+
 //  **************************************************** GLOBAL VARIABLE ****************************************************
 
-var page_size = 1;
+var page_size = 2;
 var page_counter = 1;
 var start_indexSong = page_counter - 1;
 var end_indexSong = start_indexSong + page_size;
@@ -428,6 +452,8 @@ function createItemOfPlaylist(ulTag) {
 
     divSong.appendChild(divLeftItemes);
 
+    createOption();
+
     //CREATE song time
     const songTime = document.createElement("p");
 
@@ -455,6 +481,102 @@ function createItemOfPlaylist(ulTag) {
     favoritLink.appendChild(favoritSvg);
   }
 }
+
+//  **************************************************** CREATE ELEMENT _ CREATE PLAY LIST ELEMENT _ OPTION  ****************************************************
+function createOption() {
+  let contentOption = document.querySelectorAll(".LeftItemesPlayList");
+  console.log(document.querySelectorAll(".LeftItemesPlayList"));
+  for (let evrySong = 0; evrySong < contentOption.length; evrySong++) {
+    // if(){
+    //   return
+    // }
+    // CREATE main div
+    let optionDiv = document.createElement("div");
+    optionDiv.setAttribute("class", "dropdown");
+    contentOption[evrySong].appendChild(optionDiv);
+
+    // CREATE button for option
+    let optionbutton = document.createElement("ul");
+
+    optionbutton.setAttribute("class", "btn");
+    optionbutton.classList.add("btn-secondary");
+    optionbutton.classList.add("displayOption");
+    optionbutton.setAttribute("type", "button");
+    optionbutton.setAttribute("data-bs-toggle", "dropdown");
+    optionbutton.setAttribute("aria-expanded", "false");
+
+    optionDiv.appendChild(optionbutton);
+
+    //CREATE image tag for button
+    const buttonSvg = document.createElement("img");
+
+    buttonSvg.setAttribute(
+      "src",
+      "../image/svg/dots-three-outline-vertical.svg"
+    );
+    buttonSvg.setAttribute("alt", "3-vertical-dots");
+    buttonSvg.setAttribute("class", "optionSongSvg");
+
+    optionbutton.appendChild(buttonSvg);
+
+    // CREATE ul
+    let optionUl = document.createElement("ul");
+    optionUl.setAttribute("class", "dropdown-menu");
+    optionUl.classList.add("dropdown-menu-dark");
+    optionDiv.appendChild(optionUl);
+
+    for (let i = 0; i < optionSong.length; i++) {
+      // CREATE li
+      let optionItem = document.createElement("li");
+      optionUl.appendChild(optionItem);
+
+      //CREATE link
+      const optionLink = document.createElement("a");
+
+      optionLink.setAttribute("class", "dropdown-item");
+      optionLink.setAttribute("href", optionSong[i].optionTarget);
+      optionLink.innerHTML = optionSong[i].optionName;
+
+      optionItem.appendChild(optionLink);
+
+      //CREATE image tag
+      const imageTag = document.createElement("img");
+
+      imageTag.setAttribute("src", optionSong[i].optionSvgSrc);
+      imageTag.setAttribute("alt", optionSong[i].optionName);
+      imageTag.setAttribute("class", "optionSongSvg");
+
+      optionLink.appendChild(imageTag);
+    }
+  }
+
+  // createItemOfPlaylist(optionUl);
+}
+// function createItemOfPlaylist(optionUlTag) {
+//   for (let i = 0; i < optionSong.length; i++) {
+// CREATE li
+// let optionItem = document.createElement("li");
+// optionUlTag.appendChild(optionItem);
+
+//     //CREATE link
+//     const optionLink = document.createElement("a");
+
+//     optionLink.setAttribute("class", "dropdown-item");
+//     optionLink.setAttribute("href", optionSong[i].optionTarget);
+//     optionLink.innerHTML = optionSong[i].optionName;
+
+//     optionItem.appendChild(optionLink);
+
+//     //CREATE image tag
+//     const imageTag = document.createElement("img");
+
+//     imageTag.setAttribute("src", optionSong[i].optionSvgSrc);
+//     imageTag.setAttribute("alt", optionSong[i].optionName);
+//     imageTag.setAttribute("class", "optionSongSvg");
+
+//     optionLink.appendChild(imageTag);
+// }
+// }
 
 //  **************************************************** CREATE ELEMENT _ CREATE MODAL  ****************************************************
 function createModal() {
