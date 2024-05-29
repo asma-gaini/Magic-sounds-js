@@ -48,28 +48,28 @@ function createVerticalNavigationTemplate() {
 
   template.innerHTML = createVerticalNavigation();
 
-  var verticalNavigation = document.getElementById("verticalNavigation");
-  template.content.appendChild(verticalNavigation);
+  //   var verticalNavigation = document.getElementById("verticalNavigation");
+  //   verticalNavigation.appendChild(template.content);
 }
 
 //  **************************************************** CREATE ELEMENT _ CREATE VERTICAL NAVIGATION(NV)  ****************************************************
 function createVerticalNavigation() {
   let verticalNavigationId = document.querySelector("#verticalNavigation");
 
-  const divBox = document.createElement("div");
+  //   const divBox = document.createElement("div");
 
-  divBox.setAttribute("class", "col-auto");
-  divBox.classList.add("col-md-3");
-  divBox.classList.add("col-xl-2");
-  divBox.classList.add("px-sm-2");
-  divBox.classList.add("px-0");
-  divBox.classList.add("bg-dark");
+  verticalNavigationId.setAttribute("class", "col-auto");
+  verticalNavigationId.classList.add("col-md-3");
+  verticalNavigationId.classList.add("col-xl-2");
+  verticalNavigationId.classList.add("px-sm-2");
+  verticalNavigationId.classList.add("px-0");
+  verticalNavigationId.classList.add("bg-dark");
 
-  verticalNavigationId.appendChild(divBox);
+  //   verticalNavigationId.appendChild(divBox);
 
-  createBox_VerticalNavigation(divBox);
+  createBox_VerticalNavigation(verticalNavigationId);
 }
-function createBox_VerticalNavigation(divBox) {
+function createBox_VerticalNavigation(verticalNavigationId) {
   const divContentNav = document.createElement("div");
 
   divContentNav.setAttribute("class", "d-flex");
@@ -81,7 +81,7 @@ function createBox_VerticalNavigation(divBox) {
   divContentNav.classList.add("text-white");
   divContentNav.classList.add("min-vh-100");
 
-  divBox.appendChild(divContentNav);
+  verticalNavigationId.appendChild(divContentNav);
   setHeader_VerticalNavigation(divContentNav);
   createList_VerticalNavigation(divContentNav);
 }
