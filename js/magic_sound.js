@@ -137,47 +137,47 @@ const data_music = [
 ];
 
 //  **************************************************** DATA _ DASHBOARD INFORMATION  ****************************************************
-const vertical_navigation = {
-  header_VNav: {
-    brandName: "menu",
-    logoImage: "",
-  },
-  information_VNav: [
-    {
-      mainId: "1",
-      name: "Home",
-      svg: "../image/svg/home-svgrepo-com.svg",
-      target: "#",
-      subid: "null",
-      subLink: "null",
-    },
-    {
-      mainId: "2",
-      name: "Dashboard",
-      svg: "../image/svg/dashboard.svg",
-      target: "#",
-      subid: "sub1",
-      subLink: [
-        {
-          mainId: "3",
-          name: "item 1",
-        },
-        {
-          mainId: "4",
-          name: "item 2",
-        },
-      ],
-    },
-    {
-      mainId: "5",
-      name: "Order",
-      svg: "../image/svg/cart-check-svgrepo-com.svg",
-      target: "#",
-      subid: "null",
-      subLink: "null",
-    },
-  ],
-};
+// const vertical_navigation = {
+//   header_VNav: {
+//     brandName: "menu",
+//     logoImage: "",
+//   },
+//   information_VNav: [
+//     {
+//       mainId: "1",
+//       name: "Home",
+//       svg: "../image/svg/home-svgrepo-com.svg",
+//       target: "#",
+//       subid: "null",
+//       subLink: "null",
+//     },
+//     {
+//       mainId: "2",
+//       name: "Dashboard",
+//       svg: "../image/svg/dashboard.svg",
+//       target: "#",
+//       subid: "sub1",
+//       subLink: [
+//         {
+//           mainId: "3",
+//           name: "item 1",
+//         },
+//         {
+//           mainId: "4",
+//           name: "item 2",
+//         },
+//       ],
+//     },
+//     {
+//       mainId: "5",
+//       name: "Order",
+//       svg: "../image/svg/cart-check-svgrepo-com.svg",
+//       target: "#",
+//       subid: "null",
+//       subLink: "null",
+//     },
+//   ],
+// };
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
 
@@ -220,7 +220,7 @@ function createPage() {
   createPlayList();
   createModal();
   createPaginationItem();
-  createVerticalNavigation();
+  // createVerticalNavigation();
 }
 
 //  **************************************************** CREATE ELEMENT _ CREATE VERTICAL NAVIGATION(NV)  ****************************************************
@@ -259,7 +259,8 @@ function createList_VerticalNavigation() {
     const svg = document.createElement("img");
 
     svg.setAttribute("src", vertical_navigation.information_VNav[i].svg);
-    svg.setAttribute("class", "dashboardSvg");console
+    svg.setAttribute("class", "dashboardSvg");
+    console;
 
     link_VN.appendChild(svg);
 
