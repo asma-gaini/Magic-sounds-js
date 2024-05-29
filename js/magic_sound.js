@@ -146,37 +146,36 @@ const vertical_navigation = {
     {
       mainId: "1",
       name: "Home",
-      svg: "../image/svg/house.svg",
+      svg: "../image/svg/home-svgrepo-com.svg",
       target: "#",
       subid: "null",
       subLink: "null",
     },
-    // ,
-    // {
-    //   mainId: "2",
-    //   name: "Dashboard",
-    //   svg: "",
-    //   target: "#",
-    //   subid: "sub1",
-    //   subLink: [
-    //     {
-    //       mainId: "3",
-    //       name: "item 1",
-    //     },
-    //     {
-    //       mainId: "4",
-    //       name: "item 2",
-    //     },
-    //   ],
-    // },
-    // {
-    //   mainId: "5",
-    //   name: "Order",
-    //   svg: "",
-    //   target: "#",
-    //   subid: "null",
-    //   subLink: "null",
-    // },
+    {
+      mainId: "2",
+      name: "Dashboard",
+      svg: "../image/svg/dashboard.svg",
+      target: "#",
+      subid: "sub1",
+      subLink: [
+        {
+          mainId: "3",
+          name: "item 1",
+        },
+        {
+          mainId: "4",
+          name: "item 2",
+        },
+      ],
+    },
+    {
+      mainId: "5",
+      name: "Order",
+      svg: "../image/svg/cart-check-svgrepo-com.svg",
+      target: "#",
+      subid: "null",
+      subLink: "null",
+    },
   ],
 };
 
@@ -260,7 +259,7 @@ function createList_VerticalNavigation() {
     const svg = document.createElement("img");
 
     svg.setAttribute("src", vertical_navigation.information_VNav[i].svg);
-    svg.setAttribute("class", "dashboardSvg");
+    svg.setAttribute("class", "dashboardSvg");console
 
     link_VN.appendChild(svg);
 
@@ -292,7 +291,8 @@ function createList_VerticalNavigation() {
       sublinkUl.classList.add("show");
       sublinkUl.classList.add("nav");
       sublinkUl.classList.add("flex-column");
-      sublinkUl.classList.add("ms-1");
+      // sublinkUl.classList.add("ms-1");
+      sublinkUl.classList.add("subLinkContent");
       sublinkUl.setAttribute("data-bs-parent", "#menu");
       sublinkUl.setAttribute(
         "id",
