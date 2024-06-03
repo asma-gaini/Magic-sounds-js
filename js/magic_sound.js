@@ -713,17 +713,20 @@ function favoritSvg(clickedId) {
 
 function autoPlayNextSong() {
   let aud = document.getElementById("single-song");
+  //event listener : function for ended song
   aud.onended = function () {
-    alert("The audio has ended");
     audioSrc = aud.getAttribute("src");
+    let numberOfSongOnScreen = page_size * page_counter;
     for (let i = 0; i < data_music.length; i++) {
       if (data_music[i].audioSrc == audioSrc) {
         let currntSongId = parseInt(data_music[i].id);
         let nextSongId = currntSongId + 1;
-        console.log("id = " + data_music[i].id);
-        console.log("id+1 = " + nextSongId);
-        setSongInformation(nextSongId);
-        togglePlay(nextSongId);
+        if (nextSongId > numberOfSongOnScreen) {
+          return;
+        } else {
+          setSongInformation(nextSongId);
+          togglePlay(nextSongId);
+        }
       }
     }
   };
