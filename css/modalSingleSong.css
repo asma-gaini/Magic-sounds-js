@@ -72,7 +72,7 @@ audio::-webkit-media-controls-panel {
   height: 20px;
   font-size: 15px;
 }
-.btn {
+.singleSong {
   --bs-btn-padding-x: 0 !important;
   --bs-btn-padding-y: 0 !important;
   color: #000000 !important ;
