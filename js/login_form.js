@@ -25,7 +25,35 @@ const otherAppInfo = [
   },
 ];
 
+const loginFormInfo = {
+  lineInfo: [
+    {
+      loginForm_type: "email",
+      loginForm_name: "email",
+      loginForm_placeholder: "name@example.com",
+      loginForm_innerText: "Email",
+    },
+    {
+      loginForm_type: "password",
+      loginForm_name: "password",
+      loginForm_placeholder: "Password",
+      loginForm_innerText: "Password",
+    },
+  ],
+  checkboxInfo: {
+    checkbox_type: "checkbox",
+    checkbox_name: "remember_me",
+    checkbox_innerText: "Keep me logged in",
+  },
+  submitInfo: {
+    submit_type: "submit",
+    submit_innerText: "Log in now",
+  },
+};
+
 function createLogin() {
+  let getLoginId = document.querySelector("#login");
+
   //
   let loginSection = document.createElement("section");
 
@@ -34,7 +62,7 @@ function createLogin() {
   loginSection.classList.add("p-md-4");
   loginSection.classList.add("p-xl-5");
 
-  paginationItem.appendChild(loginSection);
+  getLoginId.appendChild(loginSection);
 
   //
   let containerDiv = document.createElement("div");
@@ -153,12 +181,109 @@ function createLoginForm(contentDiv) {
 
   form.appendChild(row);
 
-  //bootstrap classes
-  let bootstrapDiv = document.createElement("div");
+  //form input lines
+  for (let i = 0; i < loginFormInfo.lineInfo.length; i++) {
+    //bootstrap classes
+    let bootstrapDiv = document.createElement("div");
 
-  bootstrapDiv.setAttribute("class", "col-12");
+    bootstrapDiv.setAttribute("class", "col-12");
 
-  row.appendChild(bootstrapDiv);
+    row.appendChild(bootstrapDiv);
+
+    //content div input
+    let contentInput = document.createElement("div");
+
+    contentInput.setAttribute("class", "form-floating");
+    contentInput.classList.add("mb-3");
+
+    bootstrapDiv.appendChild(contentInput);
+
+    //input line html
+    let inputLine = document.createElement("input");
+
+    inputLine.setAttribute("type", loginFormInfo.lineInfo[i].loginForm_type);
+    inputLine.setAttribute("class", "form-control");
+    inputLine.setAttribute("name", loginFormInfo.lineInfo[i].loginForm_name);
+    inputLine.setAttribute("id", loginFormInfo.lineInfo[i].loginForm_name);
+    inputLine.setAttribute("value", "");
+    inputLine.setAttribute(
+      "placeholder",
+      loginFormInfo.lineInfo[i].loginForm_placeholder
+    );
+    inputLine.setAttribute("required", "required");
+
+    contentInput.appendChild(inputLine);
+
+    //label line html
+    let labelLine = document.createElement("label");
+
+    labelLine.setAttribute("for", loginFormInfo.lineInfo[i].loginForm_name);
+    labelLine.setAttribute("class", "form-label");
+    labelLine.innerHTML = loginFormInfo.lineInfo[i].loginForm_innerText;
+
+    contentInput.appendChild(labelLine);
+  }
+
+  //bootstrap classes checkbox
+  let bootstrapDivCheckbox = document.createElement("div");
+
+  bootstrapDivCheckbox.setAttribute("class", "col-12");
+
+  row.appendChild(bootstrapDivCheckbox);
+
+  //content div input checkbox
+  let contentInputCheckbox = document.createElement("div");
+
+  contentInputCheckbox.setAttribute("class", "form-check");
+  contentInputCheckbox.classList.add("mb-3");
+
+  bootstrapDivCheckbox.appendChild(contentInputCheckbox);
+
+  //input checkbox html
+  let inputCheckbox = document.createElement("input");
+
+  inputCheckbox.setAttribute("type", loginFormInfo.checkboxInfo.checkbox_type);
+  inputCheckbox.setAttribute("class", "form-check-input");
+  inputCheckbox.setAttribute("name", loginFormInfo.checkboxInfo.checkbox_name);
+  inputCheckbox.setAttribute("id", loginFormInfo.checkboxInfo.checkbox_name);
+  inputCheckbox.setAttribute("value", "");
+
+  contentInputCheckbox.appendChild(inputCheckbox);
+
+  //label checkbox html
+  let labelCheckbox = document.createElement("label");
+
+  labelCheckbox.setAttribute("for", loginFormInfo.checkboxInfo.checkbox_name);
+  labelCheckbox.setAttribute("class", "form-label");
+  labelCheckbox.classList.add("text-secondary");
+  labelCheckbox.innerHTML = loginFormInfo.checkboxInfo.checkbox_innerText;
+
+  contentInput.appendChild(labelCheckbox);
+
+  //bootstrap classes submit
+  let bootstrapDivSubmit = document.createElement("div");
+
+  bootstrapDivSubmit.setAttribute("class", "col-12");
+
+  row.appendChild(bootstrapDivSubmit);
+
+  //content div button submit
+  let contentSubmitButton = document.createElement("div");
+
+  contentSubmitButton.setAttribute("class", "d-grid");
+
+  bootstrapDivSubmit.appendChild(contentSubmitButton);
+
+  //submit button
+  let loginButton = document.createElement("button");
+
+  loginButton.setAttribute("type", loginFormInfo.submitInfo.submit_type);
+  loginButton.setAttribute("class", "form-check-input");
+  loginButton.classList.add("");
+  loginButton.classList.add("");
+  loginButton.innerHTML = loginFormInfo.submitInfo.submit_innerText;
+
+  contentSubmitButton.appendChild(loginButton);
 }
 
 function createLoginOption(contentDiv) {
