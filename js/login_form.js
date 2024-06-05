@@ -1,3 +1,4 @@
+//  **************************************************** DATA _ LOGIN INFORMATION  ****************************************************
 const otherAppInfo = [
   {
     otherApp_name: "google",
@@ -51,6 +52,15 @@ const loginFormInfo = {
   },
 };
 
+window.onload = createLoginTemplate();
+//  **************************************************** CREATE TEMPLATE _ CREATE LOGIN FORM    ****************************************************
+function createLoginTemplate() {
+  const template = document.createElement("template");
+
+  template.innerHTML = createLogin();
+}
+
+//  **************************************************** CREATE ELEMENT _ CREATE LOGIN FORM  ****************************************************
 function createLogin() {
   let getLoginId = document.querySelector("#login");
 
@@ -149,7 +159,7 @@ function createLoginHeader(contentDiv) {
   //logo of header --> image
   const logo = document.createElement("img");
 
-  logo.setAttribute("src");
+  logo.setAttribute("src", "../image/logo.webp");
   logo.setAttribute("class", "loginLogo");
   logo.setAttribute("alt", "logo");
 
@@ -258,7 +268,7 @@ function createLoginForm(contentDiv) {
   labelCheckbox.classList.add("text-secondary");
   labelCheckbox.innerHTML = loginFormInfo.checkboxInfo.checkbox_innerText;
 
-  contentInput.appendChild(labelCheckbox);
+  contentInputCheckbox.appendChild(labelCheckbox);
 
   //bootstrap classes submit
   let bootstrapDivSubmit = document.createElement("div");
@@ -278,9 +288,9 @@ function createLoginForm(contentDiv) {
   let loginButton = document.createElement("button");
 
   loginButton.setAttribute("type", loginFormInfo.submitInfo.submit_type);
-  loginButton.setAttribute("class", "form-check-input");
-  loginButton.classList.add("");
-  loginButton.classList.add("");
+  loginButton.setAttribute("class", "btn");
+  loginButton.classList.add("bsb-btn-xl");
+  loginButton.classList.add("btn-primary");
   loginButton.innerHTML = loginFormInfo.submitInfo.submit_innerText;
 
   contentSubmitButton.appendChild(loginButton);
@@ -343,7 +353,7 @@ function createLoginOption(contentDiv) {
   divContentLink.appendChild(forgetPassLink);
 }
 
-function createLoginWithOtherApp() {
+function createLoginWithOtherApp(contentDiv) {
   //row
   let row = document.createElement("div");
 
@@ -394,7 +404,6 @@ function createLoginWithOtherApp() {
     const svg = document.createElement("img");
 
     svg.setAttribute("src", otherAppInfo[i].otherApp_svgSrc);
-    svg.setAttribute("class", "loginLogo");
     svg.setAttribute("alt", otherAppInfo[i].otherApp_name);
 
     otherLink.appendChild(svg);
