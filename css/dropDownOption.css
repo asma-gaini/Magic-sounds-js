@@ -22,3 +22,7 @@
   border-radius: 5px;
   margin: 0px 2px;
 }
+.btn-secondary {
+  --bs-btn-border-color: inherit !important;
+  --bs-btn-hover-border-color: inherit !important;
+}
