@@ -136,49 +136,33 @@ const data_music = [
   },
 ];
 
-//  **************************************************** DATA _ DASHBOARD INFORMATION  ****************************************************
-const vertical_navigation = {
-  header_VNav: {
-    brandName: "menu",
-    logoImage: "",
+//  **************************************************** DATA _ PLALIST OPTION  ****************************************************
+const optionSong = [
+  {
+    optionName: "Add to favorite",
+    optionSvgSrc: "../image/svg/heart-empty.svg",
+    optionTarget: "#",
+    number: "1",
   },
-  information_VNav: [
-    {
-      mainId: "1",
-      name: "Home",
-      svg: "../image/svg/house.svg",
-      target: "#",
-      subid: "null",
-      subLink: "null",
-    },
-    // ,
-    // {
-    //   mainId: "2",
-    //   name: "Dashboard",
-    //   svg: "",
-    //   target: "#",
-    //   subid: "sub1",
-    //   subLink: [
-    //     {
-    //       mainId: "3",
-    //       name: "item 1",
-    //     },
-    //     {
-    //       mainId: "4",
-    //       name: "item 2",
-    //     },
-    //   ],
-    // },
-    // {
-    //   mainId: "5",
-    //   name: "Order",
-    //   svg: "",
-    //   target: "#",
-    //   subid: "null",
-    //   subLink: "null",
-    // },
-  ],
-};
+  {
+    optionName: " Download",
+    optionSvgSrc: "../image/svg/download-minimalistic-svgrepo-com.svg",
+    optionTarget: "#",
+    number: "2",
+  },
+  {
+    optionName: " Share",
+    optionSvgSrc: "../image/svg/share-svgrepo-com.svg",
+    optionTarget: "#",
+    number: "3",
+  },
+  {
+    optionName: "More details",
+    optionSvgSrc: "../image/svg/details-symbolic-svgrepo-com.svg",
+    optionTarget: "#",
+    number: "4",
+  },
+];
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
 
@@ -221,7 +205,7 @@ function createPage() {
   createPlayList();
   createModal();
   createPaginationItem();
-  createVerticalNavigation();
+  setPagination(1);
 }
 
 //  **************************************************** CREATE ELEMENT _ CREATE PLAY LIST ELEMENT  ****************************************************
@@ -411,34 +395,8 @@ function createOption() {
 
       linkDiv.appendChild(optionLink);
     }
-    // createItemOfPlaylist(optionUl);
   }
 }
-// function createItemOfPlaylist(optionUl) {
-//   for (let i = 0; i < optionSong.length; i++) {
-//     // CREATE li
-//     let optionItem = document.createElement("li");
-//     optionUl.appendChild(optionItem);
-
-//     //CREATE link
-//     const optionLink = document.createElement("a");
-
-//     optionLink.setAttribute("class", "dropdown-item");
-//     optionLink.setAttribute("href", optionSong[i].optionTarget);
-//     optionLink.innerHTML = optionSong[i].optionName;
-
-//     optionItem.appendChild(optionLink);
-
-//     //CREATE image tag
-//     const imageTag = document.createElement("img");
-
-//     imageTag.setAttribute("src", optionSong[i].optionSvgSrc);
-//     imageTag.setAttribute("alt", optionSong[i].optionName);
-//     imageTag.setAttribute("class", "optionSongSvg");
-
-//     optionLink.appendChild(imageTag);
-//   }
-// }
 
 //  **************************************************** CREATE ELEMENT _ CREATE MODAL  ****************************************************
 function createModal() {
