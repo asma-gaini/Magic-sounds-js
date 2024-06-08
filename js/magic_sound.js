@@ -166,7 +166,7 @@ const optionSong = [
 
 //  **************************************************** GLOBAL VARIABLE ****************************************************
 
-var page_size = 2;
+var page_size = 4;
 var page_counter = 1;
 var start_indexSong = page_counter - 1;
 var end_indexSong = start_indexSong + page_size;
@@ -525,6 +525,8 @@ function handlePlayPause() {
 
         getDivContentSvg.classList.add("removePlayHover");
         getDivContentSvg.classList.add("addPauseHover");
+
+        autoPlayNextSong();
       }
       if (event.type === "pause") {
         getDivContentSvg.setAttribute("data-bs-toggle", "modal");
@@ -649,6 +651,27 @@ function favoritSvg(clickedId) {
   if (getSvgFavoritSrc == fullHeart) {
     getFavorit.setAttribute("src", emptyHeart);
   }
+}
+
+function autoPlayNextSong() {
+  let aud = document.getElementById("single-song");
+  //event listener : function for ended song
+  aud.onended = function () {
+    audioSrc = aud.getAttribute("src");
+    let numberOfSongOnScreen = page_size * page_counter;
+    for (let i = 0; i < data_music.length; i++) {
+      if (data_music[i].audioSrc == audioSrc) {
+        let currntSongId = parseInt(data_music[i].id);
+        let nextSongId = currntSongId + 1;
+        if (nextSongId > numberOfSongOnScreen) {
+          return;
+        } else {
+          setSongInformation(nextSongId);
+          togglePlay(nextSongId);
+        }
+      }
+    }
+  };
 }
 //  **************************************************** FUNCTION ON THE TEXT(LINK) TAG ON PLAY LIST  ****************************************************
 function openModal(clickedId) {
