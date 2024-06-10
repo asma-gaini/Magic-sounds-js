@@ -149,7 +149,7 @@ function createUploaderForm() {
   inputImageUpload.setAttribute("class", "form-control");
   inputImageUpload.setAttribute("id", "imageUplode");
 
-  cloImageUploadDiv.appendChild(inputMusicAddress);
+  cloImageUploadDiv.appendChild(inputImageUpload);
 
   //language section
   let cloLanguageDiv = document.createElement("div");
@@ -189,7 +189,6 @@ function createUploaderForm() {
 
     selectLanguage.appendChild(optinLanguage);
   }
-
 
   // checkBox information section
   let cloCheckboxDiv = document.createElement("div");
