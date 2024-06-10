@@ -1,7 +1,7 @@
 //  **************************************************** DATA  ****************************************************
 
 //  **************************************************** DATA _ MUSIC INFORMATION  ****************************************************
-const data_music = [
+const data_music_playList = [
   {
     title: "roozaye abri-1",
     artist: "jahanbakhsh",
@@ -176,7 +176,7 @@ function setStartAndEndIndex(page_counter, page_size) {
 }
 
 var pagination_size = 3;
-const page_lenght = data_music.length / page_size;
+const page_lenght = data_music_playList.length / page_size;
 
 var songImage = document.getElementById("single-song-image");
 var songTitle = document.getElementById("modalSong-title");
@@ -191,7 +191,7 @@ function setMusicHasBeenCalled(clickedId) {
       .querySelector('div[id="' + clickedId + '"]')
       .getAttribute("setmusicHasBeenCalled") == "false"
   ) {
-    setSongInformation(clickedId);
+    setSongInformation(clickedId, data_music_playList);
     document
       .querySelector('div[id="' + clickedId + '"]')
       .setAttribute("setmusicHasBeenCalled", "true");
@@ -250,10 +250,10 @@ function createPlayList() {
   palyListUl.setAttribute("class", "playList");
   content.appendChild(palyListUl);
 
-  createItemOfPlaylist(palyListUl);
+  createItemOfPlaylist(palyListUl, data_music_playList);
 }
 
-function createItemOfPlaylist(ulTag) {
+function createItemOfPlaylist(ulTag, data_music) {
   for (let i = start_indexSong; i < end_indexSong; i++) {
     //CREATE li
     const playlistItem = document.createElement("li");
@@ -605,7 +605,7 @@ function createPaginationItem() {
 }
 
 //  **************************************************** FUNCTION FOR PLAY AND PAUSE AUDIO  ****************************************************
-function handlePlayPause() {
+function handlePlayPause(data_music) {
   const myAudio = document.getElementById("single-song");
   const myAudioSrc = myAudio.getAttribute("src");
   for (let i = 0; i < data_music.length; i++) {
@@ -625,7 +625,7 @@ function handlePlayPause() {
         getDivContentSvg.classList.add("removePlayHover");
         getDivContentSvg.classList.add("addPauseHover");
 
-        autoPlayNextSong();
+        autoPlayNextSong(data_music_playList);
       }
       if (event.type === "pause") {
         getDivContentSvg.setAttribute("data-bs-toggle", "modal");
@@ -658,7 +658,7 @@ function togglePlay(clickedId) {
   removeSvg(clickedId);
 }
 
-function setSongInformation(clickedId) {
+function setSongInformation(clickedId, data_music) {
   let hasBeenSet = document.querySelectorAll('[setmusicHasBeenCalled="true"]');
   for (let i = 0; i < hasBeenSet.length; i++) {
     hasBeenSet[i].setAttribute("setmusicHasBeenCalled", "false");
@@ -676,13 +676,13 @@ function setSongInformation(clickedId) {
         data_music[i].title;
       document.getElementById("modalSong-artistName").innerHTML =
         data_music[i].artist;
-      setText(clickedId);
+      setText(clickedId, data_music_playList);
       return;
     }
   }
 }
 
-function setText(clickedId) {
+function setText(clickedId, data_music) {
   let textSong = document.querySelector(".text");
   //remove all p tag (child text div)
   //e.firstElementChild can be used.
@@ -752,7 +752,7 @@ function favoritSvg(clickedId) {
   }
 }
 
-function autoPlayNextSong() {
+function autoPlayNextSong(data_music) {
   let aud = document.getElementById("single-song");
   //event listener : function for ended song
   aud.onended = function () {
@@ -765,7 +765,7 @@ function autoPlayNextSong() {
         if (nextSongId > numberOfSongOnScreen) {
           return;
         } else {
-          setSongInformation(nextSongId);
+          setSongInformation(nextSongId, data_music_playList);
           togglePlay(nextSongId);
         }
       }
@@ -790,7 +790,7 @@ function setPagination(paginationIdClicked) {
   const playList = document.querySelector(".playList");
   playList.innerHTML = "";
   setStartAndEndIndex(page_counter, page_size);
-  createItemOfPlaylist(playList);
+  createItemOfPlaylist(playList, data_music_playList);
   createOption();
 
   //if click on page 1
