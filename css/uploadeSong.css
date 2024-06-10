@@ -8,6 +8,7 @@
 .col-10 {
   margin: auto;
   margin-bottom: 30px;
+  padding-top: 30px;
 }
 label {
   display: inline-block;
