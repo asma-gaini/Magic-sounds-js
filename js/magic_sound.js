@@ -202,8 +202,43 @@ function setMusicHasBeenCalled(clickedId) {
 
 window.onload = createPage();
 function createPage() {
+  createPlayerTemplate();
+}
+
+//  **************************************************** CREATE SECTION _ PLAYER  ****************************************************
+function createPlayerTemplate() {
+  const template = document.createElement("template");
+
+  template.innerHTML = createPlayer();
+}
+
+function createPlayer() {
+  let getPlayerId = document.querySelector("#playerList");
+
+  let musicAppDiv = document.createElement("div");
+  musicAppDiv.setAttribute("class", "music-app");
+  getPlayerId.appendChild(musicAppDiv);
+
+  let containerPlayListDiv = document.createElement("div");
+  containerPlayListDiv.setAttribute("class", "content");
+  musicAppDiv.appendChild(containerPlayListDiv);
+
   createPlayList();
   createModal();
+  createPagination();
+}
+
+function createPagination() {
+  let getPlayerId = document.querySelector("#playerList");
+
+  let paginationModalDiv = document.createElement("div");
+  paginationModalDiv.setAttribute("class", "pagination-modal");
+  getPlayerId.appendChild(paginationModalDiv);
+
+  let paginationList = document.createElement("ul");
+  paginationList.setAttribute("class", "pagination");
+  paginationModalDiv.appendChild(paginationList);
+
   createPaginationItem();
   setPagination(1);
 }
@@ -400,6 +435,41 @@ function createOption() {
 
 //  **************************************************** CREATE ELEMENT _ CREATE MODAL  ****************************************************
 function createModal() {
+  let getModalId = document.querySelector("#playerList");
+
+  let modalDiv = document.createElement("div");
+  modalDiv.setAttribute("class", "modal");
+  modalDiv.setAttribute("id", "myModal");
+  getModalId.appendChild(modalDiv);
+
+  let modalBootstrapClass = document.createElement("div");
+  modalBootstrapClass.setAttribute("class", "modal-dialog");
+  modalBootstrapClass.classList.add("modal-dialog-centered");
+  modalBootstrapClass.classList.add("modal-dialog-scrollable");
+  modalDiv.appendChild(modalBootstrapClass);
+
+  let modalcontent = document.createElement("div");
+  modalcontent.setAttribute("class", "modal-content");
+  modalBootstrapClass.appendChild(modalcontent);
+
+  let modalHeaderDiv = document.createElement("div");
+  modalHeaderDiv.setAttribute("class", "modal-header");
+  modalcontent.appendChild(modalHeaderDiv);
+
+  let modalBodyDiv = document.createElement("div");
+  modalBodyDiv.setAttribute("class", "modal-body");
+  modalcontent.appendChild(modalBodyDiv);
+
+  let modalFooterDiv = document.createElement("div");
+  modalFooterDiv.setAttribute("class", "modal-footer");
+  modalcontent.appendChild(modalFooterDiv);
+
+  createModalHeader();
+  createModalBody();
+  createModalFooter();
+}
+
+function createModalBody() {
   const modalContent = document.querySelector(".modal-body");
   //CREATE div body
   const modalBodyDiv = document.createElement("div");
@@ -456,6 +526,35 @@ function createModal() {
   modalBodyDiv.appendChild(modaltextDiv);
 }
 
+function createModalHeader() {
+  const modalHeader = document.querySelector(".modal-header");
+  //CREATE title
+  const modalTitleHeader = document.createElement("h4");
+  modalTitleHeader.setAttribute("class", "modal-title");
+  modalTitleHeader.innerHTML = "music name";
+  modalHeader.appendChild(modalTitleHeader);
+
+  //CREATE closeShape
+  const modalcloseHeader = document.createElement("button");
+  modalcloseHeader.setAttribute("class", "btn-close");
+  modalcloseHeader.setAttribute("type", "button");
+  modalcloseHeader.setAttribute("data-bs-dismiss", "modal");
+  modalHeader.appendChild(modalcloseHeader);
+}
+
+function createModalFooter() {
+  const modalFooter = document.querySelector(".modal-footer");
+  //CREATE close button
+  const modalcloseFooter = document.createElement("button");
+  modalcloseFooter.setAttribute("type", "button");
+  modalcloseFooter.setAttribute("class", "btn");
+  modalcloseFooter.classList.add("btn-danger");
+  modalcloseFooter.classList.add("btnClose");
+  modalcloseFooter.classList.add("singleSong");
+  modalcloseFooter.setAttribute("data-bs-dismiss", "modal");
+  modalcloseFooter.innerHTML = "Close";
+  modalFooter.appendChild(modalcloseFooter);
+}
 //  **************************************************** CREATE ELEMENT _ CREATE PAGINATION  ****************************************************
 function createPaginationItem() {
   const paginationContent = document.querySelector(".pagination");
