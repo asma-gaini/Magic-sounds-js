@@ -30,6 +30,7 @@ function createUploaderForm() {
 
   containerDiv.setAttribute("class", "container");
   containerDiv.classList.add("mt-5");
+  containerDiv.classList.add("mt-bg");
 
   getUploaderId.appendChild(containerDiv);
   //
@@ -72,6 +73,7 @@ function createUploaderForm() {
 
   inputSongName.setAttribute("type", "text");
   inputSongName.setAttribute("class", "form-control");
+  inputSongName.classList.add("inputUploader")
   inputSongName.setAttribute("id", "songName");
   inputSongName.setAttribute("placeholder", "Enter Song Name");
 

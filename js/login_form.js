@@ -213,6 +213,7 @@ function createLoginForm(contentDiv) {
 
     inputLine.setAttribute("type", loginFormInfo.lineInfo[i].loginForm_type);
     inputLine.setAttribute("class", "form-control");
+    inputLine.classList.add("inputLogin");
     inputLine.setAttribute("name", loginFormInfo.lineInfo[i].loginForm_name);
     inputLine.setAttribute("id", loginFormInfo.lineInfo[i].loginForm_name);
     inputLine.setAttribute("value", "");
