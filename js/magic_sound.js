@@ -164,34 +164,6 @@ const optionSong = [
   },
 ];
 
-//  **************************************************** DATA _ ALBUMS INFORMATION  ****************************************************
-const albumsInfo = [
-  {
-    albumsName: "babak jahanbakhsh",
-    albumsImageSrc: "../image/albums cover/babak jahanbakhsh.jpg",
-    albumsTarget: "#",
-    albumsId: "1",
-  },
-  {
-    albumsName: "farzad farzin",
-    albumsImageSrc: "../image/albums cover/farzadfarzin.jpg",
-    albumsTarget: "#",
-    albumsId: "2",
-  },
-  {
-    albumsName: "shahin najafi",
-    albumsImageSrc: "../image/albums cover/shahin najafi.jpg",
-    albumsTarget: "#",
-    albumsId: "3",
-  },
-  {
-    albumsName: "salar aghili",
-    albumsImageSrc: "../image/albums cover/salar aghili.webp",
-    albumsTarget: "#",
-    albumsId: "4",
-  },
-];
-
 //  **************************************************** GLOBAL VARIABLE ****************************************************
 
 var page_size = 4;
