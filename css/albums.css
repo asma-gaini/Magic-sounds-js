@@ -1,0 +1,49 @@
+.albumsContent {
+  border: 1px solid #26272b;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.albumsHeader {
+  background-color: #1f2128;
+  height: 45px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.headerText {
+  color: #5c848e;
+  text-align: center;
+}
+
+.albums {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.albumLink {
+  text-decoration: none;
+}
+.albumCart {
+  width: 200px;
+  padding: 15px;
+  background-color: #1f2128;
+  border-radius: 10px;
+  margin: 8px;
+}
+.imageAlbum {
+  border-radius: 15px;
+}
+.artistAlbum {
+  color: #decdc3;
+  text-align: center;
+}
+.numberOfSong {
+  color: #e0e0ec;
+  text-align: center;
+}
+.albumsInfo {
+  margin: auto;
+  margin-top: 10px;
+  height: 100px;
+}
