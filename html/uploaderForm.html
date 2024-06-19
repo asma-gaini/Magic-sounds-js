@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/base.css" />
+    <title>Magic Sound_uploade music</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/modalSingleSong.css" />
     <link rel="stylesheet" href="../css/modalPagination.css" />
     <link rel="stylesheet" href="../css/modalVerticalNavigation.css" />
     <link rel="stylesheet" href="../css/dropDownOption.css" />
     <link rel="stylesheet" href="../css/uploadeSong.css" />
+    <link rel="stylesheet" href="../css/loginBootstrap.css" />
+    <link rel="stylesheet" href="../css//albums.css" />
 
     <link
       rel="stylesheet"
@@ -27,92 +35,25 @@
       href="https://unpkg.com/bs-brain@2.0.4/components/logins/login-7/assets/css/login-7.css"
     />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
-    <div id="uploader"></div>
-    <!-- <div class="container mt-5">
-      <div class="row">
-        <div class="col-10">
-          <form class="row g-3">
-            <div class="col-md-6">
-              <label for="songName" class="form-label">Song name:</label>
-              <input
-                type="text"
-                class="form-control"
-                id="songName"
-                placeholder="Enter Song Name"
-              />
-            </div>
-
-            <div class="col-md-6">
-              <label for="artistName" class="form-label">Artist name:</label>
-              <input
-                type="text"
-                class="form-control"
-                id="artistName"
-                placeholder="Enter Artist Name"
-              />
-            </div>
-
-            <div class="col-12">
-              <label for="musicAddress" class="form-label"
-                >Music address:</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="musicAddress"
-                placeholder="Link Address"
-              />
-            </div>
-
-            <div class="col-md-6">
-              <label for="imageUplode" class="form-label">image:</label>
-              <input type="file" class="form-control" id="imageUplode" />
-            </div>
-            <div class="col-md-4">
-              <label for="state" class="form-label">Language</label>
-              <select id="state" class="form-select">
-                <option selected>Choose...</option>
-                <option class="Tamilnadu">English</option>
-                <option class="Andhra Pradesh">Persian</option>
-                <option class="Kerala">China</option>
-              </select>
-            </div>
-            <div class="col-md-2">
-              <label for="songTime" class="form-label">Song time:</label>
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Time"
-                id="songTime"
-              />
-            </div>
-
-            <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="agree" />
-                <label class="form-check-label" for="agree">
-                  I Agree all the information is correct
-                </label>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <button type="submit" class="btn btn-primary">
-                Uploade music
-              </button>
-            </div>
-          </form>
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+        <!-- **************************************************** DASHBOARD___MENU  **************************************************** -->
+        <div id="verticalNavigation"></div>
+        <div
+          class="col py-3"
+          style="margin-left: 0px; padding-left: 3px"
+          id="contentMusicPlaylist"
+        >
+          <!-- **************************************************** UPLOADER  **************************************************** -->
+          <div id="uploader"></div>
         </div>
       </div>
-    </div> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+
     <script src="../js/uploaderForm.js" async defer></script>
+    <script src="../js/verticalNavigation.js" async defer></script>
   </body>
 </html>

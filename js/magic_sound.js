@@ -1333,14 +1333,24 @@ function setPlayerList() {
   let playerId = document
     .getElementById("contentMusicPlaylist")
     .children[0].getAttribute("id");
+  let playerIdChildren = document.getElementById(
+    "contentMusicPlaylist"
+  ).children;
 
-  if (playerId == "playerList") {
-    data_music = data_music_player;
-    optionSong = optionSong_player;
-    favoritHeart = "../image/svg/heart-empty.svg";
-  } else if (playerId == "favoritPlayList") {
-    data_music = data_music_favorit;
-    optionSong = optionSong_favorit;
-    favoritHeart = "../image/svg/heart-full.svg";
+  for (let i = 0; i < playerIdChildren.length; i++) {
+    let playerId = document
+      .getElementById("contentMusicPlaylist")
+      .children[i].getAttribute("id");
+    console.log(playerId);
+
+    if (playerId == "playerList") {
+      data_music = data_music_player;
+      optionSong = optionSong_player;
+      favoritHeart = "../image/svg/heart-empty.svg";
+    } else if (playerId == "favoritPlayList") {
+      data_music = data_music_favorit;
+      optionSong = optionSong_favorit;
+      favoritHeart = "../image/svg/heart-full.svg";
+    }
   }
 }
