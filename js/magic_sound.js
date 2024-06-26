@@ -146,22 +146,28 @@ const optionSong_player = [
     number: "1",
   },
   {
+    optionName: "Add difficult words",
+    optionSvgSrc: "../image/svg/keyboard.svg",
+    optionTarget: "#",
+    number: "2",
+  },
+  {
     optionName: " Download",
     optionSvgSrc: "../image/svg/download-minimalistic-svgrepo-com.svg",
     optionTarget: "#",
-    number: "2",
+    number: "3",
   },
   {
     optionName: " Share",
     optionSvgSrc: "../image/svg/share-svgrepo-com.svg",
     optionTarget: "#",
-    number: "3",
+    number: "4",
   },
   {
     optionName: "More details",
     optionSvgSrc: "../image/svg/details-symbolic-svgrepo-com.svg",
     optionTarget: "#",
-    number: "4",
+    number: "5",
   },
 ];
 
@@ -310,22 +316,28 @@ const optionSong_favorit = [
     number: "1",
   },
   {
+    optionName: "Add difficult words",
+    optionSvgSrc: "../image/svg/keyboard.svg",
+    optionTarget: "#",
+    number: "2",
+  },
+  {
     optionName: " Download",
     optionSvgSrc: "../image/svg/download-minimalistic-svgrepo-com.svg",
     optionTarget: "#",
-    number: "2",
+    number: "3",
   },
   {
     optionName: " Share",
     optionSvgSrc: "../image/svg/share-svgrepo-com.svg",
     optionTarget: "#",
-    number: "3",
+    number: "4",
   },
   {
     optionName: "More details",
     optionSvgSrc: "../image/svg/details-symbolic-svgrepo-com.svg",
     optionTarget: "#",
-    number: "4",
+    number: "5",
   },
 ];
 
@@ -590,6 +602,9 @@ function createOption() {
       optionLink.setAttribute("class", "dropdown-item");
       optionLink.setAttribute("href", optionSong[i].optionTarget);
       optionLink.setAttribute("number", optionSong[i].number);
+      if (optionSong[i].optionName == "Add difficult words") {
+        optionLink.setAttribute("onclick", "showModal()");
+      }
       optionLink.innerHTML = optionSong[i].optionName;
 
       linkDiv.appendChild(optionLink);
