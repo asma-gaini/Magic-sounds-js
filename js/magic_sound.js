@@ -667,17 +667,11 @@ function createItemOfPlaylist(ulTag) {
     favoritSvg.setAttribute("onClick", "favoritSvg(this.id)");
 
     favoritLink.appendChild(favoritSvg);
-  }
-}
 
-//  **************************************************** CREATE ELEMENT _ CREATE PLAY LIST ELEMENT _ OPTION  ****************************************************
-function createOption() {
-  let contentOption = document.querySelectorAll(".LeftItemesPlayList");
-  for (let evrySong = 0; evrySong < contentOption.length; evrySong++) {
-    // CREATE main div
+    //option
     let optionDiv = document.createElement("div");
     optionDiv.setAttribute("class", "dropdown");
-    contentOption[evrySong].appendChild(optionDiv);
+    divLeftItemes.appendChild(optionDiv);
 
     // CREATE button for option
     let optionbutton = document.createElement("ul");
@@ -707,9 +701,10 @@ function createOption() {
     let optionUl = document.createElement("ul");
     optionUl.setAttribute("class", "dropdown-menu");
     optionUl.classList.add("dropdown-menu-dark");
+    optionUl.setAttribute("idsongoption", data_music[i].id);
     optionDiv.appendChild(optionUl);
 
-    for (let i = 0; i < optionSong.length; i++) {
+    for (let j = 0; j < optionSong.length; j++) {
       // CREATE li
       let optionItem = document.createElement("li");
       optionUl.appendChild(optionItem);
@@ -722,8 +717,8 @@ function createOption() {
       //CREATE image tag
       const imageTag = document.createElement("img");
 
-      imageTag.setAttribute("src", optionSong[i].optionSvgSrc);
-      imageTag.setAttribute("alt", optionSong[i].optionName);
+      imageTag.setAttribute("src", optionSong[j].optionSvgSrc);
+      imageTag.setAttribute("alt", optionSong[j].optionName);
       imageTag.setAttribute("class", "optionSongSvg");
 
       linkDiv.appendChild(imageTag);
@@ -732,21 +727,97 @@ function createOption() {
       const optionLink = document.createElement("a");
 
       optionLink.setAttribute("class", "dropdown-item");
-      optionLink.setAttribute("href", optionSong[i].optionTarget);
-      optionLink.setAttribute("number", optionSong[i].number);
-      if (optionSong[i].optionName == "Add difficult words") {
-        optionLink.setAttribute("onclick", "showModal()");
+      optionLink.setAttribute("href", optionSong[j].optionTarget);
+      optionLink.setAttribute("number", optionSong[j].number);
+      if (optionSong[j].optionName == "Add difficult words") {
+        optionLink.setAttribute("id", data_music[i].id);
+        optionLink.setAttribute("onclick", "showModal(this.id)");
       }
-      optionLink.innerHTML = optionSong[i].optionName;
+      optionLink.innerHTML = optionSong[j].optionName;
 
       linkDiv.appendChild(optionLink);
     }
   }
 }
 
+//  **************************************************** CREATE ELEMENT _ CREATE PLAY LIST ELEMENT _ OPTION  ****************************************************
+// function createOption() {
+//   let contentOption = document.querySelectorAll(".LeftItemesPlayList");
+//   for (let evrySong = 0; evrySong < contentOption.length; evrySong++) {
+//     // CREATE main div
+//     let optionDiv = document.createElement("div");
+//     optionDiv.setAttribute("class", "dropdown");
+//     contentOption[evrySong].appendChild(optionDiv);
+
+//     // CREATE button for option
+//     let optionbutton = document.createElement("ul");
+
+//     optionbutton.setAttribute("class", "btn");
+//     optionbutton.classList.add("btn-secondary");
+//     optionbutton.classList.add("displayOption");
+//     optionbutton.setAttribute("type", "button");
+//     optionbutton.setAttribute("data-bs-toggle", "dropdown");
+//     optionbutton.setAttribute("aria-expanded", "false");
+
+//     optionDiv.appendChild(optionbutton);
+
+//     //CREATE image tag for button
+//     const buttonSvg = document.createElement("img");
+
+//     buttonSvg.setAttribute(
+//       "src",
+//       "../image/svg/dots-three-outline-vertical.svg"
+//     );
+//     buttonSvg.setAttribute("alt", "3-vertical-dots");
+//     buttonSvg.setAttribute("class", "optionSongSvg");
+
+//     optionbutton.appendChild(buttonSvg);
+
+//     // CREATE ul
+//     let optionUl = document.createElement("ul");
+//     optionUl.setAttribute("class", "dropdown-menu");
+//     optionUl.classList.add("dropdown-menu-dark");
+//     optionDiv.appendChild(optionUl);
+
+//     for (let i = 0; i < optionSong.length; i++) {
+//       // CREATE li
+//       let optionItem = document.createElement("li");
+//       optionUl.appendChild(optionItem);
+
+//       //CREATE link div
+//       let linkDiv = document.createElement("div");
+//       linkDiv.setAttribute("class", "linkOptionDiv");
+//       optionItem.appendChild(linkDiv);
+
+//       //CREATE image tag
+//       const imageTag = document.createElement("img");
+
+//       imageTag.setAttribute("src", optionSong[i].optionSvgSrc);
+//       imageTag.setAttribute("alt", optionSong[i].optionName);
+//       imageTag.setAttribute("class", "optionSongSvg");
+
+//       linkDiv.appendChild(imageTag);
+
+//       //CREATE link
+//       const optionLink = document.createElement("a");
+
+//       optionLink.setAttribute("class", "dropdown-item");
+//       optionLink.setAttribute("href", optionSong[i].optionTarget);
+//       optionLink.setAttribute("number", optionSong[i].number);
+//       if (optionSong[i].optionName == "Add difficult words") {
+//         optionLink.setAttribute("onclick", "showModal()");
+//       }
+//       optionLink.innerHTML = optionSong[i].optionName;
+
+//       linkDiv.appendChild(optionLink);
+//     }
+//   }
+// }
+
 //  **************************************************** CREATE ELEMENT _ CREATE PLAY LIST ELEMENT _ OPTION _ ADD FLASH CART  ****************************************************
-function createFlashCart(idSong) {
+function createFlashCart(id) {
   let getFlashCartId = document.querySelector("#flashcart");
+  getFlashCartId.innerHTML = "";
   // CREATE modal word main
   let modalWordMainWin = document.createElement("div");
 
@@ -843,8 +914,8 @@ function createFlashCart(idSong) {
 
   // CREATE modal word tr/th/td tbody table
   for (let j = 0; j < data_music.length; j++) {
-    if (data_music[j].id == idSong) {
-      for (let i = 0; i < data_music[idSong].difficultWords.length; i++) {
+    if (data_music[j].id == id) {
+      for (let i = 0; i < data_music[id].difficultWords.length; i++) {
         // CREATE modal word tr tbody table
         let modalWordTrTbodyTable = document.createElement("tr");
         modalWordTbodyTable.appendChild(modalWordTrTbodyTable);
@@ -859,14 +930,14 @@ function createFlashCart(idSong) {
         // CREATE modal word td word tbody table
         let modalWordTdwordTable = document.createElement("td");
         modalWordTdwordTable.innerHTML =
-          data_music[idSong - 1].difficultWords[i].word;
+          data_music[id - 1].difficultWords[i].word;
 
         modalWordTrTbodyTable.appendChild(modalWordTdwordTable);
 
         // CREATE modal mean td word tbody table
         let modalWordTdMeanTable = document.createElement("td");
         modalWordTdMeanTable.innerHTML =
-          data_music[idSong - 1].difficultWords[i].mean;
+          data_music[id - 1].difficultWords[i].mean;
 
         modalWordTrTbodyTable.appendChild(modalWordTdMeanTable);
       }
@@ -1249,8 +1320,9 @@ function handlePlayPause() {
 }
 
 //  **************************************************** FUNCTION FOR PLAY AND PAUSE AUDIO  ****************************************************
-function showModal() {
-  createFlashCart(1);
+function showModal(id) {
+  console.log(id);
+  createFlashCart(id);
   document.querySelector("#modalword").style.display = "block";
 }
 function hideModal() {
@@ -1405,7 +1477,7 @@ function setPagination(paginationIdClicked) {
   playList.innerHTML = "";
   setStartAndEndIndex(page_counter, page_size);
   createItemOfPlaylist(playList);
-  createOption();
+  // createOption();
 
   //if click on page 1
   if (paginationIdClicked == "1") {
