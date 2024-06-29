@@ -300,6 +300,16 @@ const data_music_favorit = [
       "https://dl.rozmusic.com/Music/1396/10/13/Babak%20Jahanbakhsh%20-%20Roozhaye%20Abri%20(128).mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 1,
+    difficultWords: [
+      {
+        word: "song1 w1",
+        mean: "آهنگ 1 ، کلمه1",
+      },
+      {
+        word: "song1 w2",
+        mean: "آهنگ 1 ، کلمه2",
+      },
+    ],
     time: "04:49",
     textMusic:
       "roozaye abri-1/ روزای ابری/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
@@ -311,6 +321,16 @@ const data_music_favorit = [
       "https://dl.ritmy.io/Single/Shahin_Najafi/Parvaz-128[ritmy.io].mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 2,
+    difficultWords: [
+      {
+        word: "song2 w1",
+        mean: "آهنگ 2 ، کلمه1",
+      },
+      {
+        word: "song2 w2",
+        mean: "آهنگ 2 ، کلمه2",
+      },
+    ],
     time: "03:40",
     textMusic:
       "parvaz-2/پرواز/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
@@ -322,6 +342,16 @@ const data_music_favorit = [
       "https://dl.melonmusic.ir/Music/Shayea%20-%20Nistametoon%20(320).mp3",
     image: "../image/music cover/shaye-nistameton.png",
     id: 3,
+    difficultWords: [
+      {
+        word: "song3 w1",
+        mean: "آهنگ 3 ، کلمه1",
+      },
+      {
+        word: "song3 w2",
+        mean: "آهنگ 3 ، کلمه2",
+      },
+    ],
     time: "03:30",
     textMusic:
       "nistametoon-3/نیستمتون/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
@@ -333,6 +363,16 @@ const data_music_favorit = [
       "https://dl.rozmusic.com/Music/1402/10/21/Salar%20Aghili%20-%20Nafas%20%28128%29.mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 4,
+    difficultWords: [
+      {
+        word: "song4 w1",
+        mean: "آهنگ 4 ، کلمه1",
+      },
+      {
+        word: "song4 w2",
+        mean: "آهنگ 4 ، کلمه2",
+      },
+    ],
     time: "03:30",
     textMusic:
       "nafas/نفس/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
@@ -344,6 +384,16 @@ const data_music_favorit = [
       "https://dl.rozmusic.com/Music/1401/12/16/Moein%20Z%20-%20Male%20Mani%20%28128%29.mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 5,
+    difficultWords: [
+      {
+        word: "song5 w1",
+        mean: "آهنگ 5 ، کلمه1",
+      },
+      {
+        word: "song1 w2",
+        mean: "آهنگ 5 ، کلمه2",
+      },
+    ],
     time: "04:23",
     textMusic:
       "mal mani/مال منی/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
@@ -355,6 +405,16 @@ const data_music_favorit = [
       "https://dl.rozmusic.com/Music/1399/04/29/Alireza%20Ghorbani%20-%20Khiale%20Khosh%20%28128%29.mp3",
     image: "../image/music cover/shaye-nistameton.png",
     id: 6,
+    difficultWords: [
+      {
+        word: "song6 w1",
+        mean: "آهنگ 6 ، کلمه1",
+      },
+      {
+        word: "song6 w2",
+        mean: "آهنگ 6 ، کلمه2",
+      },
+    ],
     time: "03:49",
     textMusic:
       "khial khosh/خیال خوش/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
@@ -366,6 +426,16 @@ const data_music_favorit = [
       "https://dl.rozmusic.com/Music/1400/05/30/Reza%20Sadeghi%20-%20%20Yadam%20Raft%20%28128%29.mp3",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 7,
+    difficultWords: [
+      {
+        word: "song7 w1",
+        mean: "آهنگ 7 ، کلمه1",
+      },
+      {
+        word: "song7 w2",
+        mean: "آهنگ 7 ، کلمه2",
+      },
+    ],
     time: "03:24",
     textMusic:
       "yadam raft/یادم رفت/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
@@ -377,6 +447,16 @@ const data_music_favorit = [
       "https://dl.rozmusic.com/Music/1397/11/09/Farzad%20Farzin%20-%20Kharabesh%20Kardi%20(128).mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 8,
+    difficultWords: [
+      {
+        word: "song8 w1",
+        mean: "آهنگ 8 ، کلمه1",
+      },
+      {
+        word: "song8 w2",
+        mean: "آهنگ 8 ، کلمه2",
+      },
+    ],
     time: "04:04",
     textMusic:
       "kharabesh kardi/خرابش کردی/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
@@ -388,6 +468,16 @@ const data_music_favorit = [
       "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Hoorosh%20Band%20-%20Koja%20Rafte%20Boodi%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
     image: "../image/music cover/shaye-nistameton.png",
     id: 9,
+    difficultWords: [
+      {
+        word: "song9 w1",
+        mean: "آهنگ 9 ، کلمه1",
+      },
+      {
+        word: "song9 w2",
+        mean: "آهنگ 9 ، کلمه2",
+      },
+    ],
     time: "03:26",
     textMusic:
       "koja rafte boodi/کجا رفته بودی/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
@@ -399,6 +489,16 @@ const data_music_favorit = [
       "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Erfan%20Tahmasbi%20-%20Vay%20Agar%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
     image: "../image/music cover/Babak Jahanbakhsh - RoozHaye Abri.jpg",
     id: 10,
+    difficultWords: [
+      {
+        word: "song10 w1",
+        mean: "آهنگ 10 ، کلمه1",
+      },
+      {
+        word: "song10 w2",
+        mean: "آهنگ 10 ، کلمه2",
+      },
+    ],
     time: "02:56",
     textMusic:
       "vay agar/وای اگر/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
@@ -410,6 +510,16 @@ const data_music_favorit = [
       "https://dl.rozmusic.com/Music/1402/07/05/Reza%20Bahram%20-%20Mane%20Divaneh%20%28128%29.mp3",
     image: "../image/music cover/shahin najafi-parvaz.jpg",
     id: 11,
+    difficultWords: [
+      {
+        word: "song11 w1",
+        mean: "آهنگ 11 ، کلمه1",
+      },
+      {
+        word: "song11 w2",
+        mean: "آهنگ 11 ، کلمه2",
+      },
+    ],
     time: "02:53",
     textMusic:
       "mane divaneh/منه دیوانه/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
@@ -421,6 +531,16 @@ const data_music_favorit = [
       "https://hiblog.tv/1000310/file/?Ur=https://irsv.upmusics.com/AliBZ/Behnam%20Bani%20-%20Khastam%20(320).mp3&hst=irsv.upmusics.com&prt=https&cuid=1000310",
     image: "../image/music cover/shaye-nistameton.png",
     id: 12,
+    difficultWords: [
+      {
+        word: "song12 w1",
+        mean: "آهنگ 12 ، کلمه1",
+      },
+      {
+        word: "song12 w2",
+        mean: "آهنگ 12 ، کلمه2",
+      },
+    ],
     time: "03:32",
     textMusic:
       "khastam/خستم/ I gave you your dreams/من رویا هات رو بهت دادم/ Cause you ment the world/چون تو دنیای من بودی/So did I deserve to be left in hurt/پس واقعا لیاقتم این بود که منو با این همه درد تنها بذاری/So you think I don’t know/فکر می کنی نمیدونم/You’re out of control/که تو غیر قابل کنترلی",
@@ -668,6 +788,7 @@ function createItemOfPlaylist(ulTag) {
 
     favoritLink.appendChild(favoritSvg);
 
+    //  **************************************************** CREATE ELEMENT _ CREATE PLAY LIST ELEMENT _ OPTION  ****************************************************
     //option
     let optionDiv = document.createElement("div");
     optionDiv.setAttribute("class", "dropdown");
@@ -731,7 +852,7 @@ function createItemOfPlaylist(ulTag) {
       optionLink.setAttribute("number", optionSong[j].number);
       if (optionSong[j].optionName == "Add difficult words") {
         optionLink.setAttribute("id", data_music[i].id);
-        optionLink.setAttribute("onclick", "showModal(this.id)");
+        optionLink.setAttribute("onclick", "showFlashCardModal(this.id)");
       }
       optionLink.innerHTML = optionSong[j].optionName;
 
@@ -740,84 +861,28 @@ function createItemOfPlaylist(ulTag) {
   }
 }
 
-//  **************************************************** CREATE ELEMENT _ CREATE PLAY LIST ELEMENT _ OPTION  ****************************************************
-// function createOption() {
-//   let contentOption = document.querySelectorAll(".LeftItemesPlayList");
-//   for (let evrySong = 0; evrySong < contentOption.length; evrySong++) {
-//     // CREATE main div
-//     let optionDiv = document.createElement("div");
-//     optionDiv.setAttribute("class", "dropdown");
-//     contentOption[evrySong].appendChild(optionDiv);
-
-//     // CREATE button for option
-//     let optionbutton = document.createElement("ul");
-
-//     optionbutton.setAttribute("class", "btn");
-//     optionbutton.classList.add("btn-secondary");
-//     optionbutton.classList.add("displayOption");
-//     optionbutton.setAttribute("type", "button");
-//     optionbutton.setAttribute("data-bs-toggle", "dropdown");
-//     optionbutton.setAttribute("aria-expanded", "false");
-
-//     optionDiv.appendChild(optionbutton);
-
-//     //CREATE image tag for button
-//     const buttonSvg = document.createElement("img");
-
-//     buttonSvg.setAttribute(
-//       "src",
-//       "../image/svg/dots-three-outline-vertical.svg"
-//     );
-//     buttonSvg.setAttribute("alt", "3-vertical-dots");
-//     buttonSvg.setAttribute("class", "optionSongSvg");
-
-//     optionbutton.appendChild(buttonSvg);
-
-//     // CREATE ul
-//     let optionUl = document.createElement("ul");
-//     optionUl.setAttribute("class", "dropdown-menu");
-//     optionUl.classList.add("dropdown-menu-dark");
-//     optionDiv.appendChild(optionUl);
-
-//     for (let i = 0; i < optionSong.length; i++) {
-//       // CREATE li
-//       let optionItem = document.createElement("li");
-//       optionUl.appendChild(optionItem);
-
-//       //CREATE link div
-//       let linkDiv = document.createElement("div");
-//       linkDiv.setAttribute("class", "linkOptionDiv");
-//       optionItem.appendChild(linkDiv);
-
-//       //CREATE image tag
-//       const imageTag = document.createElement("img");
-
-//       imageTag.setAttribute("src", optionSong[i].optionSvgSrc);
-//       imageTag.setAttribute("alt", optionSong[i].optionName);
-//       imageTag.setAttribute("class", "optionSongSvg");
-
-//       linkDiv.appendChild(imageTag);
-
-//       //CREATE link
-//       const optionLink = document.createElement("a");
-
-//       optionLink.setAttribute("class", "dropdown-item");
-//       optionLink.setAttribute("href", optionSong[i].optionTarget);
-//       optionLink.setAttribute("number", optionSong[i].number);
-//       if (optionSong[i].optionName == "Add difficult words") {
-//         optionLink.setAttribute("onclick", "showModal()");
-//       }
-//       optionLink.innerHTML = optionSong[i].optionName;
-
-//       linkDiv.appendChild(optionLink);
-//     }
-//   }
-// }
-
 //  **************************************************** CREATE ELEMENT _ CREATE PLAY LIST ELEMENT _ OPTION _ ADD FLASH CART  ****************************************************
-function createFlashCart(id) {
-  let getFlashCartId = document.querySelector("#flashcart");
-  getFlashCartId.innerHTML = "";
+function createFlashCard(id) {
+  let flashCardId = document.querySelector("#flashcard");
+
+  // let playerIdChildren = document.getElementById(
+  //   "contentMusicPlaylist"
+  // ).children;
+
+  // let flashCardId = document.createElement("div");
+  // flashCardId.setAttribute("id", "flashcard");
+  flashCardId.innerHTML = "";
+  // for (let i = 0; i < playerIdChildren.length; i++) {
+  //   let playerId = document
+  //     .getElementById("contentMusicPlaylist")
+  //     .children[i].getAttribute("id");
+  //   if (playerId == "playerList" || playerId == "favoritPlayList") {
+  //     console.log(playerId);
+  //        // playerId.insertBefore(flashCardId, playerId);
+  //     playerId.appendChild(flashCardId);
+  //   }
+  // }
+
   // CREATE modal word main
   let modalWordMainWin = document.createElement("div");
 
@@ -825,7 +890,7 @@ function createFlashCart(id) {
   modalWordMainWin.classList.add("fademodalword");
   modalWordMainWin.setAttribute("id", "modalword");
 
-  getFlashCartId.appendChild(modalWordMainWin);
+  flashCardId.appendChild(modalWordMainWin);
 
   // CREATE modal word dialog div
   let modalWordDialog = document.createElement("div");
@@ -862,7 +927,7 @@ function createFlashCart(id) {
 
   modalWordCloseBtn.setAttribute("class", "btn-close");
   modalWordCloseBtn.setAttribute("type", "button");
-  modalWordCloseBtn.setAttribute("onclick", "hideModal()");
+  modalWordCloseBtn.setAttribute("onclick", "hideFlashCardModal()");
 
   modalWordHeaderDiv.appendChild(modalWordCloseBtn);
 
@@ -1034,81 +1099,6 @@ function createFlashCart(id) {
 
   sendWord.appendChild(sendWordBtn);
 }
-
-// function createFlashCart() {
-//   let modalWordBodyDiv = document.querySelector(".modalword-body");
-
-//   let hrLineWordForm = document.createElement("hr");
-//   modalWordBodyDiv.appendChild(hrLineWordForm);
-
-//   // CREATE modal word new word title
-//   let modalNewWordBodyTitle = document.createElement("h5");
-
-//   modalNewWordBodyTitle.setAttribute("class", "headerAddWord");
-//   modalNewWordBodyTitle.innerHTML = "add difficult word";
-
-//   modalWordBodyDiv.appendChild(modalNewWordBodyTitle);
-
-//   // CREATE modal word new word main div
-//   let modalNewWordBodymainDiv = document.createElement("div");
-
-//   modalNewWordBodymainDiv.setAttribute("class", "wordForm");
-
-//   modalWordBodyDiv.appendChild(modalNewWordBodymainDiv);
-
-//   //add word line
-//   let formWordLine = document.createElement("div");
-
-//   formWordLine.setAttribute("class", "formWordLine");
-
-//   modalNewWordBodymainDiv.appendChild(formWordLine);
-//   //label word line
-//   let labelAddWord = document.createElement("label");
-
-//   labelAddWord.setAttribute("for", "word");
-//   labelAddWord.setAttribute("class", "form-label");
-//   labelAddWord.innerHTML = "word:";
-
-//   formWordLine.appendChild(labelAddWord);
-
-//   //input word line
-//   let inputWordLine = document.createElement("input");
-
-//   inputWordLine.setAttribute("type", "text");
-//   inputWordLine.setAttribute("class", "form-control");
-//   inputWordLine.classList.add("inputUploader");
-//   inputWordLine.setAttribute("id", "word");
-//   inputWordLine.setAttribute("placeholder", "Enter difficult word");
-
-//   formWordLine.appendChild(inputWordLine);
-
-//   //add mean line
-//   let formMeanLine = document.createElement("div");
-
-//   formMeanLine.setAttribute("class", "formWordLine");
-
-//   modalNewWordBodymainDiv.appendChild(formMeanLine);
-//   //label mean line
-//   let labelAddMean = document.createElement("label");
-
-//   labelAddMean.setAttribute("for", "mean");
-//   labelAddMean.setAttribute("class", "form-label");
-//   labelAddMean.innerHTML = "mean:";
-
-//   formMeanLine.appendChild(labelAddMean);
-
-//   //input word line
-//   let inputMeanLine = document.createElement("input");
-
-//   inputMeanLine.setAttribute("type", "text");
-//   inputMeanLine.setAttribute("class", "form-control");
-//   inputMeanLine.classList.add("inputUploader");
-//   inputMeanLine.setAttribute("id", "mean");
-//   inputMeanLine.setAttribute("placeholder", "Enter mean of word");
-
-//   formMeanLine.appendChild(inputMeanLine);
-// }
-
 //  **************************************************** CREATE ELEMENT _ CREATE MODAL  ****************************************************
 function createModal() {
   let getModalId = document.getElementById("contentMusicPlaylist").children[0];
@@ -1277,7 +1267,6 @@ function createPaginationItem() {
 
   document.querySelector("li[id='1']").classList.add("active");
   createLastPageOfPagination();
-  // createFirstPageOfPagination();
 }
 
 //  **************************************************** FUNCTION FOR PLAY AND PAUSE AUDIO  ****************************************************
@@ -1319,13 +1308,12 @@ function handlePlayPause() {
   }
 }
 
-//  **************************************************** FUNCTION FOR PLAY AND PAUSE AUDIO  ****************************************************
-function showModal(id) {
-  console.log(id);
-  createFlashCart(id);
+//  **************************************************** FUNCTION FOR FLASHCARD   ****************************************************
+function showFlashCardModal(id) {
+  createFlashCard(id);
   document.querySelector("#modalword").style.display = "block";
 }
-function hideModal() {
+function hideFlashCardModal() {
   document.querySelector("#modalword").style.display = "none";
 }
 
@@ -1477,7 +1465,6 @@ function setPagination(paginationIdClicked) {
   playList.innerHTML = "";
   setStartAndEndIndex(page_counter, page_size);
   createItemOfPlaylist(playList);
-  // createOption();
 
   //if click on page 1
   if (paginationIdClicked == "1") {
@@ -1852,9 +1839,6 @@ function displayNextPages() {
 }
 
 function setPlayerList() {
-  let playerId = document
-    .getElementById("contentMusicPlaylist")
-    .children[0].getAttribute("id");
   let playerIdChildren = document.getElementById(
     "contentMusicPlaylist"
   ).children;
@@ -1863,7 +1847,6 @@ function setPlayerList() {
     let playerId = document
       .getElementById("contentMusicPlaylist")
       .children[i].getAttribute("id");
-    console.log(playerId);
 
     if (playerId == "playerList") {
       data_music = data_music_player;
