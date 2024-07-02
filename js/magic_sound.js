@@ -595,7 +595,7 @@ const headerFlashCartTable = [
 ];
 //  **************************************************** GLOBAL VARIABLE ****************************************************
 
-var page_size = 4;
+var page_size = 1;
 var page_counter = 1;
 var start_indexSong = page_counter - 1;
 var end_indexSong = start_indexSong + page_size;
@@ -605,7 +605,7 @@ function setStartAndEndIndex(page_counter, page_size) {
 }
 
 var pagination_size = 3;
-const page_lenght = data_music.length / page_size;
+let page_lenght = data_music.length / page_size;
 
 var songImage = document.getElementById("single-song-image");
 var songTitle = document.getElementById("modalSong-title");
@@ -632,6 +632,9 @@ function setMusicHasBeenCalled(clickedId) {
 window.onload = createPage();
 function createPage() {
   setPlayerList();
+  //chon bade set play list taze lenght data_music dar miad
+  page_lenght = data_music.length / page_size;
+
   createPlayerTemplate();
 }
 
